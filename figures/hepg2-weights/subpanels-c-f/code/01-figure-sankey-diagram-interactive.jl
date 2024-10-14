@@ -57,8 +57,9 @@ dcr = jldopen(load1 * im_dict_c)["dict"]
 # ------------------------------------------------------------------------------
 
 ## VISUALIZING TOP 5 AEFMS FOR EACH GLUTAMINE CARBON AS A SANKEY DIAGRAM -------
-m = 14
-linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[1]], dcr[m][[1]], subsystems, 1:5)
+m = 14 # source metabolite index
+a = 1  # carbon atom index
+linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[a]], dcr[m][[a]], subsystems, 1:5)
 p = sankey_atomic_chmc(#
     linked_lists_14,
     roots_14,
@@ -67,10 +68,11 @@ p = sankey_atomic_chmc(#
     cutoff = 1e-200000,
     atom_type = :Carbon
 );
-savefig(p, ex_glutamine * "sankey-diagram-carbon-1.html")
+savefig(p, ex_glutamine * "sankey-diagram-carbon-$a.html")
 
-m = 14
-linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[2]], dcr[m][[2]], subsystems, 1:5)
+m = 14 # source metabolite index
+b = 2  # carbon atom index
+linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[b]], dcr[m][[b]], subsystems, 1:5)
 p = sankey_atomic_chmc(#
     linked_lists_14,
     roots_14,
@@ -79,10 +81,11 @@ p = sankey_atomic_chmc(#
     cutoff = 1e-200000,
     atom_type = :Carbon
 );
-savefig(p, ex_glutamine * "sankey-diagram-carbon-2.html")
+savefig(p, ex_glutamine * "sankey-diagram-carbon-$b.html")
 
-m = 14
-linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[3]], dcr[m][[3]], subsystems, 1:5)
+m = 14 # source metabolite index
+c = 3  # carbon atom index
+linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[c]], dcr[m][[c]], subsystems, 1:5)
 p = sankey_atomic_chmc(#
     linked_lists_14,
     roots_14,
@@ -91,10 +94,11 @@ p = sankey_atomic_chmc(#
     cutoff = 1e-200000,
     atom_type = :Carbon
 );
-savefig(p, ex_glutamine * "sankey-diagram-carbon-3.html")
+savefig(p, ex_glutamine * "sankey-diagram-carbon-$c.html")
 
-m = 14
-linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[4]], dcr[m][[4]], subsystems, 1:5)
+m = 14 # source metabolite index
+d = 4  # carbon atom index
+linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[d]], dcr[m][[d]], subsystems, 1:5)
 p = sankey_atomic_chmc(#
     linked_lists_14,
     roots_14,
@@ -103,10 +107,11 @@ p = sankey_atomic_chmc(#
     cutoff = 1e-200000,
     atom_type = :Carbon
 );
-savefig(p, ex_glutamine * "sankey-diagram-carbon-4.html")
+savefig(p, ex_glutamine * "sankey-diagram-carbon-$d.html")
 
-m = 14
-linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[5]], dcr[m][[5]], subsystems, 1:5)
+m = 14 # source metabolite index
+e = 5  # carbon atom index
+linked_lists_14, roots_14 = kegg_linked_list(Ch[m][[e]], dcr[m][[e]], subsystems, 1:5)
 p = sankey_atomic_chmc(#
     linked_lists_14,
     roots_14,
@@ -115,6 +120,6 @@ p = sankey_atomic_chmc(#
     cutoff = 1e-200000,
     atom_type = :Carbon
 );
-savefig(p, ex_glutamine * "sankey-diagram-carbon-5.html")
+savefig(p, ex_glutamine * "sankey-diagram-carbon-$e.html")
 # ------------------------------------------------------------------------------
 
