@@ -1,0 +1,163 @@
+% Glucose
+\node[%
+    ring6,
+    draw opacity=0.25,
+    %right=6.12cm of glucose % 6.12cm is touching
+    %right=6.62cm of glucose
+    right=10.12cm of glucose
+] (glucose_chmc) {};
+\node[above=0.5cm of glucose_chmc.corner 2,carbon,fill=cblue] (glucose_chmc_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (glucose_chmc.corner 2) to (glucose_chmc_c6);
+\draw[fill=white] (glucose_chmc.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (glucose_chmc.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (glucose_chmc.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (glucose_chmc.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (glucose_chmc.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (glucose_chmc.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (glucose_chmc.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (glucose_chmc.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (glucose_chmc.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (glucose_chmc.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(glucose_chmc) (glucose_chmc_c6), draw=none,label={[align=center]above:{\normalsize}}] (glucose_chmc_box) {};
+\node[labelFont] () at (glucose_chmc.center) {Glc};
+
+% Glucose 6-phosphate
+\node[%
+    ring6,
+    draw opacity=0.25,
+] (g6p_chmc) at (pgl.center -| glucose_chmc.center) {};
+\node[above=0.5cm of g6p_chmc.corner 2,carbon,fill=cblue] (g6p_chmc_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (g6p_chmc.corner 2) to (g6p_chmc_c6);
+\draw[fill=white] (g6p_chmc.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (g6p_chmc.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (g6p_chmc.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (g6p_chmc.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (g6p_chmc.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (g6p_chmc.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (g6p_chmc.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (g6p_chmc.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (g6p_chmc.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (g6p_chmc.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(g6p_chmc) (g6p_chmc_c6), draw=none,label={above:{\normalsize}}] (g6p_chmc_box) {};
+\node[labelFont] () at (g6p_chmc.center) {G6P$\,\,$};
+
+% 6-Phosphonoglucono-D-lactone
+\node[%
+    ring6,
+    draw opacity=0.25,
+    below=1.75cm of g6p_chmc_box,xshift=-1.0cm
+] (pgl_chmc) {};
+\node[above=0.5cm of pgl_chmc.corner 2,carbon,fill=cblue] (pgl_chmc_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (pgl_chmc.corner 2) to (pgl_chmc_c6);
+\draw[fill=white] (pgl_chmc.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (pgl_chmc.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (pgl_chmc.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (pgl_chmc.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (pgl_chmc.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (pgl_chmc.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (pgl_chmc.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (pgl_chmc.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (pgl_chmc.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (pgl_chmc.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(pgl_chmc) (pgl_chmc_c6), draw=none,label={left:{\normalsize}}] (pgl_chmc_box) {};
+\node[labelFont] () at (pgl_chmc.center) {6PG};
+
+% Fructose 6-phosphate
+\node[%
+    ring5,
+    draw opacity=0.25,
+    below=1.12cm of g6p_chmc_box,xshift=+1.5cm
+] (f6p_chmc) {};
+\node[above=0.5cm of f6p_chmc.corner 2,carbon,fill=cblue] (f6p_chmc_c2) {};
+\draw[carbonDraw,draw opacity=0.25] (f6p_chmc.corner 2) to (f6p_chmc_c2);
+\node[above=0.5cm of f6p_chmc.corner 5,circle, draw, inner sep=1.5pt,carbonBlank] (f6p_chmc_c5) {};
+\node[above=0.5cm of f6p_chmc.corner 5,circle, draw, inner sep=1.5pt,fill=cpurple,carbonGrey] (f6p_chmc_c5) {};
+\draw[carbonDraw,draw opacity=0.25] (f6p_chmc.corner 5) to (f6p_chmc_c5);
+\draw[fill=white] (f6p_chmc.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (f6p_chmc.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (f6p_chmc.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (f6p_chmc.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (f6p_chmc.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (f6p_chmc.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (f6p_chmc.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (f6p_chmc.corner 5) node[carbonGrey,fill=corange] () {};
+\node[fit=(f6p_chmc) (f6p_chmc_c2) (f6p_chmc_c5), draw=none,label={right:{\normalsize}}] (f6p_chmc_box) {};
+\node[labelFont] () at (f6p_chmc.center) {$\,\,$F6P};
+
+% Fructose 1,6-phosphate
+\node[%
+    ring5,
+    draw opacity=0.25,
+    below=1.5cm of f6p_chmc_box
+] (fdp_chmc) {};
+\node[above=0.5cm of fdp_chmc.corner 2,carbon,fill=cblue] (fdp_chmc_c2) {};
+\draw[carbonDraw,draw opacity=0.25] (fdp_chmc.corner 2) to (fdp_chmc_c2);
+\node[above=0.5cm of fdp_chmc.corner 5,circle, draw, inner sep=1.5pt,carbonBlank] (fdp_chmc_c5) {};
+\node[above=0.5cm of fdp_chmc.corner 5,circle, draw, inner sep=1.5pt,carbonGrey,fill=cpurple] (fdp_chmc_c5) {};
+\draw[carbonDraw,draw opacity=0.25] (fdp_chmc.corner 5) to (fdp_chmc_c5);
+\draw[fill=white] (fdp_chmc.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (fdp_chmc.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (fdp_chmc.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (fdp_chmc.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (fdp_chmc.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (fdp_chmc.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (fdp_chmc.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (fdp_chmc.corner 5) node[carbonGrey,fill=corange] () {};
+\node[fit=(fdp_chmc) (fdp_chmc_c2) (fdp_chmc_c5), draw=none,label={right:{\normalsize}}] (fdp_chmc_box) {};
+\node[labelFont] () at (fdp_chmc.center) {FDP};
+
+% Dihydroxyacetone phosphate
+\node[carbon, below=2.75cm of fdp_chmc_c2,fill=cblue] (dhap_chmc_1) {};
+\node[carbonGrey, right=0.25cm of dhap_chmc_1,fill=cred]  (dhap_chmc_2) {};
+\node[carbonGrey, right=0.25cm of dhap_chmc_2,fill=cyellow] (dhap_chmc_3) {};
+\draw[drawCarbon,draw opacity=0.25] (dhap_chmc_1) to (dhap_chmc_2);
+\draw[drawCarbon,draw opacity=0.25] (dhap_chmc_2) to (dhap_chmc_3);
+\node[fit=(dhap_chmc_1) (dhap_chmc_2) (dhap_chmc_3), draw=none,label={above:{\LARGE $\;\;$DHAP}}] (dhap_chmc_box) {};
+
+% Glycerol 3-phosphate
+\node[carbonGrey, below=2.25cm of dhap_chmc_box,fill=corange] (g3p_chmc_2) {};
+\node[carbon, left=0.25cm of g3p_chmc_2,fill=cblue]  (g3p_chmc_1) {}; % changed from green to yellow
+\node[carbonGrey, right=0.25cm of g3p_chmc_2,fill=cpurple] (g3p_chmc_3) {};
+\draw[draw opacity=0.25] (g3p_chmc_1) to (g3p_chmc_2);
+\draw[draw opacity=0.25] (g3p_chmc_2) to (g3p_chmc_3);
+\node[fit=(g3p_chmc_1) (g3p_chmc_2) (g3p_chmc_3), draw=none,label={below:{\LARGE G3P}}] (g3p_chmc_box) {};/home/jchitpin/Documents/PhD/Projects/reproduce-efm-paper-2024/figures/figure-pipeline-v01/pipeline-v01.pdf
+
+% Transition arrows
+\draw[chmcArrow] (glucose_chmc_c6) to[out=225,in=135] node[midway,left,labelFont] {$p_1$} (g6p_chmc_c6);
+\draw[chmcArrow, out=225,in=90,looseness=1.25] (g6p_chmc_c6) to node[midway,above left,yshift=0.6cm,xshift=+0.3cm,labelFont] {$p_2$} (pgl_chmc_c6);
+\draw[chmcArrow, out=-45,in=90,looseness=1.25] (g6p_chmc_c6) to node[midway,above right,yshift=0.6cm,xshift=-0.3cm,labelFont] {$p_4$} (f6p_chmc_c2);
+\draw[chmcArrow] (f6p_chmc_c2) to[out=225,in=135,looseness=1.0] node[midway,below left,yshift=-0.3cm,labelFont] {$p_5$} (fdp_chmc_c2);
+\draw[chmcArrow] (fdp_chmc_c2) to[out=45,in=-45,looseness=1.0] node[midway,below right,yshift=-0.3cm,labelFont] {$p_6$} (f6p_chmc_c2);
+\draw[chmcArrow] (fdp_chmc_c2) to[out=225,in=135] node[midway,left,labelFont] {$p_7$} (dhap_chmc_1);
+\draw[chmcArrow] (dhap_chmc_1) to[out=225,in=135] node[midway,left,labelFont] {$p_8$} (g3p_chmc_1);
+\draw[chmcArrow] (g3p_chmc_1) to[out=45,in=-45] node[midway,right,labelFont] {$p_9$} (dhap_chmc_1);
+
+% Transition arrows leaving inset
+\draw[chmcArrow] ([yshift=1.85cm]glucose_chmc_c6.center) to node[midway,left,labelFont] {$p_0$} (glucose_chmc_c6.north);
+\node[below=3.0cm of pgl_chmc_c6] (pgl_chmc_out) {};
+\draw[chmcArrow] (pgl_chmc_c6) to[out=225,in=135] node[midway,left,labelFont] {$p_3$} (pgl_chmc_out);
+\node[below=6.85cm of pgl_chmc_out] (dhap_chmc_out) {};
+\node[right=1.5cm of dhap_chmc_out] (g3p_chmc_out) {};
+\draw[chmcArrow] (dhap_chmc_1) to[out=180,in=90] node[midway,above left,labelFont] {$p_{10}$} (dhap_chmc_out);
+\draw[chmcArrow] (g3p_chmc_1) to[out=225,in=90] node[midway,left,labelFont,xshift=-4pt] {$p_{11}$} (g3p_chmc_out);
+
+% Legend
+\node[carbon,fill=white,right=0.65cm of glucose_chmc_c6,yshift=1.48cm] (legend_icon) {};
+\node[right=0.65cm of glucose_chmc_c6,yshift=1.48cm,xshift=-0.1cm] (legend_icon_spacer) {};
+\node[right=0.05cm of legend_icon,font=\LARGE\linespread{0.75}\selectfont,align=left] (legend_label) {Carbon};
+\node[fit=(legend_icon) (legend_icon_spacer) (legend_label), draw, inner sep=1pt] () {};
+
+% Framing box around atomic CHMC
+\node[gem_node_ph,left=1.0cm of pgl_chmc_box] (box_chmc_west) {};
+\node[gem_node_ph,right=0.1cm of f6p_chmc_box] (box_chmc_east) {};
+\node[gem_node_ph,below=0.1cm of g3p_chmc_out.north,yshift=0.185cm] (box_chmc_south) {};
+\node[gem_node_ph,above=1.44cm of glucose_chmc_box.north] (box_chmc_north) {};
+\node[gem_node_ph] (box_chmc_north_west) at (box_chmc_north -| box_chmc_west) {};
+\node[gem_node_ph] (box_chmc_north_east) at (box_chmc_north -| box_chmc_east) {};
+\node[gem_node_ph] (box_chmc_south_west) at (box_chmc_south -| box_chmc_west) {};
+\node[gem_node_ph] (box_chmc_south_east) at (box_chmc_south -| box_chmc_east) {};
+\node[fit=(box_chmc_north_east) (box_chmc_north_west) (box_chmc_south_east) (box_chmc_south_west), draw, ultra thick,inner sep=0pt,rounded corners=10pt] (box_chmc) {};
+\node[fit=(box_chmc_north_east) (box_chmc_north_west) (box_chmc_south_east) (box_chmc_south_west), ultra thick,inner sep=0pt,label={[anchor=south]above:{}}] (box_chmc) {};
+%\node[above=0.1cm of box_chmc.north west, anchor=south west] () {\huge Atomic CHMC\phantom{p}};
+\node[above=0.1cm of box_chmc.north, anchor=south] () {\huge 2. Atomic transition graph};
+

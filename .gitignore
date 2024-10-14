@@ -1,0 +1,17 @@
+figures2/
+data/gems-aggregated/
+data/gems/e_coli_core/atomic-efms-carbon/
+data/gems/e_coli_core/atomic-efms-nitrogen/
+data/gems/hepg2/atomic-efms-carbon/
+data/gems/hepg2/atomic-efms-nitrogen/
+data/gems/hepg2/atomic-efm-weights-carbon/
+data/gems/hepg2/atomic-efm-weights-nitrogen/
+data/gems/iAB_RBC_283/atomic-efms-carbon/
+data/gems/iAB_RBC_283/atomic-efms-nitrogen/
+data/gems/iIT341/atomic-efms-carbon/
+data/gems/iIT341/atomic-efms-nitrogen/
+data/gems/iSB619/atomic-efms-carbon/
+data/gems/iSB619/atomic-efms-nitrogen/
+jobs/figure-pairwise-scatterplot.sh
+figures/pairwise-scatterplot-ratios
+chitpin-justin-aim-2-manuscript

@@ -1,0 +1,40 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{%
+    patterns, plotmarks, backgrounds, shapes, arrows, calc, trees, positioning,
+    chains, shapes.geometric, decorations.pathreplacing,
+    decorations.pathmorphing, shapes.arrows, decorations.markings, quotes,
+    arrows.meta, spy, fit, matrix, math
+}
+\usepackage{amsmath,amsthm,bm}
+
+% General image and colour support
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Captions and subcaptions
+\usepackage{caption}
+\usepackage[labelformat=parens]{subcaption}
+
+\usepackage{amsmath}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+
+\begin{document}
+
+\begin{tikzpicture}[]
+    \node (h0) [font=\Large] {};
+    \node (h1) [right=1.3cm of h0,font=\Large] {{Atom mapped reaction}};
+    \node (h2) [font=\Large,right=2.0cm of h1] {{Atomic fluxes}};
+\end{tikzpicture}
+
+\end{document}
+

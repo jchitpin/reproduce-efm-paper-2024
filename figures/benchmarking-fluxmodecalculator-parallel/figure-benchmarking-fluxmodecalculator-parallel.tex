@@ -1,0 +1,87 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+% Default preamble
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\usepackage{amsmath}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[%
+    height={7cm},
+    width={7cm},
+    xlabel = Threads (\#),
+    ylabel = Speedup $\bigg(\frac{\text{Serial time}}{\text{Parallel time}}\bigg)$,
+    legend cell align = {left},
+    xmajorgrids={false},
+    ymajorgrids={false},
+    xtick pos = bottom,
+    ytick pos = left,
+    legend style={%
+        thick,
+        font=\tiny,
+        at={(0.95,0.35)},
+    },
+    %legend pos={south east},
+    legend entries={FluxModeCalculator, E. coli core, iAB RBC 283},
+    legend image post style={scale=1.0},
+    xmin={0},
+    xmax={33},
+    xtick={1,2,4,8,16,32},
+    ymin={0},
+    ymax={9},
+    ytick={0,2,4,6,8},
+    axis line style={thick,black},
+    minor tick style={draw=none},
+    xtick style={/pgfplots/on layer=axis foreground, thick, black},
+    ytick style={/pgfplots/on layer=axis foreground, thick, black},
+]
+    \addlegendimage{only marks,mark=triangle}
+    \addlegendimage{line width=2pt,cred}
+    \addlegendimage{line width=2pt,cgreen}
+    \addplot[black, mark=triangle*, mark options={fill=cred, fill opacity=1.0}]
+        table[row sep={\\}]
+        {
+            \\
+            1.0   1.0  \\
+            2.0   1.755459826  \\
+            4.0   3.236811773  \\
+            8.0   5.364269313  \\
+            16.0  8.165968373  \\
+            32.0  7.586933629  \\
+        }
+        ;
+    \addplot[black, mark=triangle*, mark options={fill=cgreen, fill opacity=1.0}]
+        table[row sep={\\}]
+        {
+            \\
+            1.0   1.0  \\
+            2.0   1.831312208  \\
+            4.0   3.368274618  \\
+            8.0   5.587407111  \\
+            16.0  8.504177453  \\
+            32.0  8.087571128  \\
+        }
+        ;
+    \addplot[forget plot,samples=2, smooth,domain=1:1,cgrey,dashed] coordinates {(0,1)(33,1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

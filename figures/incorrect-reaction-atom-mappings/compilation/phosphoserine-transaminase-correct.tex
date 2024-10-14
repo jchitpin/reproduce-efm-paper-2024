@@ -1,0 +1,132 @@
+\documentclass{standalone}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+%\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+%\setchemfig{atom sep=10pt}
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=3.5em,
+  bond offset=1pt
+}
+
+\schemestart\
+    \chemname{%
+        \chemfig{
+            \colorbox{white}{}\colorbox{white}{}\mcfright{\colorbox{cyellow}{NH$_2$}}{\mcfatomno{11}}% 1
+            -[:90]\mcfatomno{\colorbox{cblue}{12}}% 2
+                      (
+                      -[:30]\mcfatomno{\colorbox{cblue}{19}}% 8
+                          (
+                          -[:330]\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{21}}% 10
+                          )
+                          =[:90]\mcfright{\colorbox{cblue}{O}}{\mcfatomno{20}}% 9
+                      )
+            -[:150]\mcfatomno{5}% 3
+            -[:210]\mcfatomno{4}% 4
+            -[:150]\mcfatomno{2}% 5
+                      (
+                      =[:90]\mcfright{O}{\mcfatomno{1}}% 6
+                      )
+                      -[:210]\mcfleft{\mcfatomno{3}}{HO}% 7
+        }
+    }{Glutamate}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{
+            \mcfright{\colorbox{corange}{O}}{\mcfatomno{9}}% 1
+            =[:270]\mcfatomno{\colorbox{corange}{8}}% 2
+                      (
+                      -[:210]\mcfleft{\mcfatomno{10}}{\colorbox{corange}{HO}}% 3
+                      )
+                      -[:330]\mcfatomno{\colorbox{corange}{6}}% 4
+                      (
+                      =[:270]\mcfright{\colorbox{cred}{O}}{\mcfatomno{7}}% 5
+                      )
+             -[:30]\mcfatomno{13}% 6
+            -[:330]\mcfbelow{O}{\mcfatomno{14}}% 7
+             -[:30]\mcfbelow{P}{\mcfatomno{15}}% 8
+                      (
+                =[:330]\mcfright{O}{\mcfatomno{16}}% 9
+                      )
+                      (
+                 -[:90]OH\mcfright{}{\mcfatomno{17}}% 10
+                      )
+             -[:30]\mcfright{OH}{\mcfatomno{18}}% 11
+        }
+    }{3-Phosphohydroxypyruvate}
+    \arrow{<=>[\footnotesize KEGG R04173][\footnotesize(Manually corrected)]}[0, 1.75]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{
+                   \mcfright{O}{\mcfatomno{1}}% 1
+            =[:270]\mcfatomno{2}% 2
+                      (
+                -[:210]\mcfleft{\mcfatomno{3}}{HO}% 3
+                      )
+            -[:330]\mcfatomno{4}% 4
+             -[:30]\mcfatomno{5}% 5
+             -[:330]\mcfatomno{\colorbox{cblue}{12}}% 6
+                      (
+                      =[:270]\mcfright{\colorbox{cred}{O}}{\mcfatomno{7}}% 7
+                      )
+                      -[:30]\mcfatomno{\colorbox{cblue}{19}}% 8
+                      (
+                      =[:90]\mcfright{\colorbox{cblue}{O}}{\mcfatomno{20}}% 9
+                      )
+                      -[:330]\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{21}}% 10
+        }
+    }{Alpha-ketoglutarate}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{
+            \mcfright{\colorbox{cyellow}{N}}{\mcfatomno{11}}% 1
+                   >:[:90]\mcfatomno{\colorbox{corange}{6}}% 2
+                      (
+                      -[:150]\mcfatomno{\colorbox{corange}{8}}% 9
+                          (
+                          -[:210]\mcfleft{\mcfatomno{10}}{\colorbox{corange}{HO}}% 11
+                          )
+                          =[:90]\mcfright{\colorbox{corange}{O}}{\mcfatomno{9}}% 10
+                      )
+             -[:30]\mcfatomno{13}% 3
+            -[:330]\mcfbelow{O}{\mcfatomno{14}}% 4
+             -[:30]\mcfbelow{P}{\mcfatomno{15}}% 5
+                      (
+                =[:330]\mcfright{O}{\mcfatomno{16}}% 6
+                      )
+                      (
+                 -[:90]OH\mcfright{}{\mcfatomno{17}}% 7
+                      )
+             -[:30]\mcfright{OH}{\mcfatomno{18}}% 8
+        }
+    }{O-Phospho-L-serine}
+    \arrow{0}[,0]
+\schemestop\
+
+\end{document}
+
+

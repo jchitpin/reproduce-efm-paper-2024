@@ -1,0 +1,111 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+% Default preamble
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\tikzset{
+    pinnode/.style={draw=none, fill=none, outer sep=0.15, font=\tiny},
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pgfplotsset{
+    /pgfplots/mybar/.style 1 args={%
+        legend image code/.code={%
+            \draw[#1]
+                (0cm,-0.1cm)
+                rectangle
+                (0.2cm,0.25cm);
+        }
+    }
+}
+
+\begin{document}
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            height=7cm,
+            width=7cm,
+            ytick = {0, 1, 2},
+            yticklabels = {{$10^0$}, {$10^1$}, {$10^2$}},
+            xtick = {1, 2, 3, 4, 5},
+            xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
+            xticklabel style = {rotate=45},
+            ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Nitrogen AEFMs})}{\min(\text{\# Nitrogen AEFMs})}\bigg)$},
+            ylabel style = {align=center},
+            ymin=-0.5,
+            xmin=0.5,
+            xmax=5.5,
+            xtick pos = bottom,
+            ytick pos = left,
+            legend pos=outer north east,
+            legend cell align=left,
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot [%
+                scatter,
+                only marks,
+                scatter src=explicit symbolic,
+                mark size=2.0pt,
+                scatter/classes={%
+                    1={mark=*,draw=black,fill=cred},
+                    2={mark=*,draw=black,fill=cgreen},
+                    3={mark=*,draw=black,fill=cpurple},
+                    4={mark=*,draw=black,fill=corange},
+                    5={mark=*,draw=black,fill=cblue}
+                }
+            ] table[x=z, y=y, meta=x]{figure-jitter-max-over-min-log10-number-efms-nitrogen.dat};
+
+            % Manual labels of interest
+            \node[pinnode] at (axis cs: 3.895, 2.190) (histidine) {Histidine$^*$};
+            \draw[line width=0.5pt] (axis cs: 3.894640913076108, 1.8409420802430991) -- (histidine);
+            \draw[line width=0.5pt] (axis cs: 4.970727576480841, 2.1903316981702914) -- (histidine);
+
+            \node[pinnode] at (axis cs: 5.08, 1.7) (arginine) {Arginine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.079460517994066, 2.037426497940624) -- (arginine);
+
+            \node[pinnode] at (axis cs: 1.897, 1.5) (sah) {S-adenosylhomocysteine$^*$};
+            \draw[line width=0.5pt] (axis cs: 1.8974404058388985, 1.8325089127062364) -- (sah);
+            \draw[line width=0.5pt] (axis cs: 3.2854530765490680, 1.6180480967120927) -- (sah);
+
+            \node[pinnode] at (axis cs: 2., 2.190) (nac) {N-acetylmuramoylalanine$^*$};
+            \draw[line width=0.5pt] (axis cs: 2.981797227245492, 1.7708520116421442) -- (nac);
+
+            \node[pinnode] at (axis cs: 3.6, 1.0) (nsl) {N-Succinyl-LL-2,6-diaminoheptanedioate};
+            \draw[line width=0.5pt] (axis cs: 2.9382833878495194, 1.6782147827453993) -- (nsl);
+            \draw[line width=0.5pt] (axis cs: 4.0384959759813395, 1.7263196121107753) -- (nsl);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
+

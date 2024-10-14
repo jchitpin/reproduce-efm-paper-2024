@@ -1,0 +1,12 @@
+ID,label,label_pos,x,y,dir
+ID124,AKG[c],left,0,0,right
+ID214,glutamate[c],left,0,0,right
+ID215,glutamate[m],left,0,0,right
+ID125,AKG[m],left,0,0,right
+ID219,glutamine[s],left,0,0,right
+ID217,glutamine[c],left,0,0,right
+ID218,glutamine[m],left,0,0,right
+ID157,CO2[m],left,0,0,right
+ID156,CO2[c],left,0,0,right
+ID158,CO2[s],left,0,0,right
+0,Sink,left,0,0,right

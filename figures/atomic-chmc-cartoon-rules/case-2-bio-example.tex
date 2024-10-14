@@ -1,0 +1,206 @@
+\documentclass{standalone}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+%\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\renewcommand{\familydefault}{\sfdefault}
+
+% The following chemfig code was generated via mol2chemfig:
+% Glutathione peroxidase
+% 2 GSH[m] + H2O2[m] => GSSG[m] + 2 H2O[m]
+% mol2chemfig -w -i direct "C(CC(=O)NC(CS)C(=O)NCC(=O)O)C(C(=O)O)N"
+% mol2chemfig -w -i direct "OO"
+% mol2chemfig -w -i direct "C(CC(=O)NC(CSSCC(C(=O)NCC(=O)O)NC(=O)CCC(C(=O)O)N)C(=O)NCC(=O)O)C(C(=O)O)N"
+% mol2chemfig -w -i direct "O"
+
+\begin{document}
+
+%\setchemfig{atom sep=10pt}
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=2em,
+  bond offset=1pt
+}
+
+\schemestart\
+  \chemname{%
+    \chemfig{%
+                   O% 4
+             =[:90]% 3
+                      (%
+                 -[:30]% 2
+                 -[:330]{\colorbox{cblue}{\color{black}{C}}}% 1
+                 -[:30]% 16
+                          (%
+                 -[:90,,,1]NH_2% 20
+                          )
+                -[:330]% 17
+                          (%
+                 -[:30,,,1]OH% 19
+                          )
+                =[:270]O% 18
+                      )
+            -[:150]\mcfabove{N}{H}% 5
+            -[:210]% 6
+                      (%
+                -[:270]% 7
+            -[:330,,,1]SH% 8
+                      )
+            -[:150]% 9
+                      (%
+                 =[:90]O% 10
+                      )
+            -[:210]\mcfbelow{N}{H}% 11
+            -[:150]% 12
+            -[:210]% 13
+                      (%
+                =[:270]O% 14
+                      )
+        -[:150,,,2]HO% 15
+    }
+  }{Glutathione}
+  %\+{0.5cm, 0.5cm,0.0cm}
+  \+
+  \arrow{0}[,0]
+  \chemname{%
+    \chemfig{%
+                   O% 4
+             =[:90]% 3
+                      (%
+                 -[:30]% 2
+                 -[:330]{\colorbox{corange}{\color{black}{C}}}% 1
+                 -[:30]% 16
+                          (%
+                 -[:90,,,1]NH_2% 20
+                          )
+                -[:330]% 17
+                          (%
+                 -[:30,,,1]OH% 19
+                          )
+                =[:270]O% 18
+                      )
+            -[:150]\mcfabove{N}{H}% 5
+            -[:210]% 6
+                      (%
+                -[:270]% 7
+            -[:330,,,1]SH% 8
+                      )
+            -[:150]% 9
+                      (%
+                 =[:90]O% 10
+                      )
+            -[:210]\mcfbelow{N}{H}% 11
+            -[:150]% 12
+            -[:210]% 13
+                      (%
+                =[:270]O% 14
+                      )
+        -[:150,,,2]HO% 15
+    }
+  }{Glutathione}
+  %\+{0.5cm, 0.5cm,0.0cm}
+  \arrow{0}[,0]
+  \+
+  \arrow{0}[,0]
+  \chemfig{%
+              HO% 1
+      -[,,2,1]OH% 2
+    }
+  \arrow{<=>[Glutathione peroxidase][(Mitochondria)]}[0, 2.5]
+  \chemname{%
+    \chemfig{%
+                   O% 4
+            =[:270]% 3
+                      (%
+                -[:330]% 2
+                 -[:30]{\colorbox{corange}{\color{black}{C}}}% 1
+                -[:330]% 36
+                          (%
+                -[:270,,,1]NH_2% 40
+                          )
+                 -[:30]% 37
+                          (%
+                -[:330,,,1]OH% 39
+                          )
+                 =[:90]O% 38
+                      )
+            -[:210]\mcfbelow{N}{H}% 5
+            -[:150]% 6
+                      (%
+                -[:210]% 29
+                          (%
+                    -[:150]\mcfabove{N}{H}% 31
+                    -[:210]% 32
+                    -[:150]% 33
+                              (%
+                    -[:210,,,2]HO% 35
+                              )
+                     =[:90]O% 34
+                          )
+                =[:270]O% 30
+                      )
+             -[:90]% 7
+             -[:30]S% 8
+             -[:90]S% 9
+             -[:30]% 10
+             -[:90]% 11
+                      (%
+                 -[:30]% 12
+                          (%
+                 -[:90,,,2]HN% 14
+                  -[:30,,2]% 15
+                     -[:90]% 16
+                              (%
+                     -[:30,,,1]OH% 18
+                              )
+                    =[:150]O% 17
+                          )
+                =[:330]O% 13
+                      )
+        -[:150,,,2]HN% 19
+          -[:90,,2]% 20
+                      (%
+                 =[:30]O% 21
+                      )
+            -[:150]{\colorbox{cblue}{\color{black}{C}}}% 22
+             -[:90]% 23
+            -[:150]% 24
+                      (%
+            -[:210,,,2]H_2N% 28
+                      )
+             -[:90]% 25
+                      (%
+                 =[:30]O% 26
+                      )
+        -[:150,,,2]HO% 27
+    }
+  }{Glutathione disulfide}
+  \arrow{0}[,0]
+  %\+{0.5cm, 0.5cm,0.6cm}
+  \+
+  \chemfig{%
+      H_2O% 1
+  }
+  %\+{0.5cm, 0.5cm,0.6cm}
+  \+
+  \arrow{0}[,0]
+  \chemfig{%
+      H_2O% 1
+  }
+\schemestop\
+
+\end{document}
+

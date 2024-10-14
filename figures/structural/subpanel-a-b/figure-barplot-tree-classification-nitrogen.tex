@@ -1,0 +1,68 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+% Default preamble
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+\definecolor{julia4}{HTML}{D62728}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[height={7cm}, width={7cm}, ybar = 0pt, xmajorgrids={false}, ymajorgrids={false}, xtick pos = bottom, ytick pos = left, bar width = 6pt, enlarge x limits = 0.15, enlarge y limits = false, legend image code/.code={\draw [#1] (0cm,-0.1cm) rectangle (0.2cm,0.25cm); }, legend style={legend columns={2}, font=\tiny}, xmax={5}, xtick={1,2,3,4,5}, xticklabels={E. coli core,iAB RBC 283,iIT341,iSB619,HepG2}, xticklabel style = {font=\tiny, align=center,rotate=45}, ylabel={Nitrogen AEFM classes (\#)}, ymin={0}]
+    \addplot[black, fill=julia1]
+        coordinates {
+            (1,88)
+            (2,1390)
+            (3,7548)
+            (4,10711)
+            (5,3105)
+        }
+        ;
+    \addplot[black, fill=julia2]
+        coordinates {
+            (1,3)
+            (2,0)
+            (3,269)
+            (4,291)
+            (5,55)
+        }
+        ;
+    \addplot[black, fill=julia3]
+        coordinates {
+            (1,113)
+            (2,701)
+            (3,2585)
+            (4,3157)
+            (5,1945)
+        }
+        ;
+    \addplot[black, fill=julia4]
+        coordinates {
+            (1,0)
+            (2,0)
+            (3,38)
+            (4,55)
+            (5,0)
+        }
+        ;
+    \legend{{Src-to-sink (no revisit)},{Src-to-sink (revisit)},{Loop (no revisit)},{Looped (revisit)}}
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}

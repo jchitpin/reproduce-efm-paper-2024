@@ -1,0 +1,99 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+% Default preamble
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\tikzset{
+    pinnode/.style={draw=none, fill=none, outer sep=0.15, font=\tiny},
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pgfplotsset{
+    /pgfplots/mybar/.style 1 args={%
+        legend image code/.code={%
+            \draw[#1]
+                (0cm,-0.1cm)
+                rectangle
+                (0.2cm,0.25cm);
+        }
+    }
+}
+
+\begin{document}
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            height=7cm,
+            width=7cm,
+            %ytick = {0, 0.25, 0.5, 0.75, 1},
+            ytick = {0, 0.05, 0.10, 0.15, 0.20, 0.25},
+            yticklabels = {{0}, {5}, {10}, {15}, {20}, {25}},
+            yticklabel style={%
+                /pgf/number format/fixed,
+                /pgf/number format/precision=2
+            },
+            scaled y ticks=false,
+            xtick = {1, 2, 3, 4, 5},
+            xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
+            xticklabel style = {rotate=45},
+            ylabel = {$\frac{\text{ACHMC metabolite-carbon states}}{\text{Total metabolite-carbon states}}$ (\%)},
+            ylabel style = {align=center},
+            ymin=-0.025,
+            ymax=0.275,
+            xmin=0.5,
+            xmax=5.5,
+            xtick pos = bottom,
+            ytick pos = left,
+            legend pos=outer north east,
+            legend cell align=left,
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot [%
+                scatter,
+                only marks,
+                scatter src=explicit symbolic,
+                mark size=2.0pt,
+                scatter/classes={%
+                    1={mark=*,draw=black,fill=cred},
+                    2={mark=*,draw=black,fill=cgreen},
+                    3={mark=*,draw=black,fill=cpurple},
+                    4={mark=*,draw=black,fill=corange},
+                    5={mark=*,draw=black,fill=cblue}
+                }
+            ] table[x=z, y=y, meta=x]{./jitter-carbon.dat};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
+

@@ -1,0 +1,144 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+% Default preamble
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pgfplotsset{
+    /pgfplots/mybar/.style 1 args={%
+        legend image code/.code={%
+            \draw[#1]
+                (0cm,-0.1cm)
+                rectangle
+                (0.2cm,0.25cm);
+        }
+    }
+}
+
+\begin{document}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            height=7cm,
+            width=7cm,
+            ybar  = 0pt,
+            ymode = log,
+            xmajorgrids={false},
+            ymajorgrids={false},
+            xtick pos = bottom,
+            bar width = 6pt,
+            legend image code/.code={\draw [#1] (0cm,-0.1cm) rectangle (0.2cm,0.25cm);},
+            ylabel={Count (\#)},
+            ymin={1},
+            ymax={100000000},
+            ytick={1,100,10000,1000000,100000000},
+            xmin={0.5},
+            xmax={5.5},
+            xtick={1,2,3,4,5},
+            ytick pos=left,
+            axis line style={thick,black},
+            minor tick style={draw=none},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+            xticklabels={%
+                {E. coli core},
+                {iAB RBC 283},
+                {iIT341},
+                {iSB619},
+                {HepG2},
+            },
+            x tick label style={rotate=45},
+            legend cell align={left}, 
+            legend style={%
+                at={(0.464,-0.4)},
+                anchor={north},
+                legend columns={2},
+                thick,
+                draw,
+            },
+        ]
+            \addplot+[black, fill=red]
+                coordinates {
+                    (1, 6519.)
+                    (2, 7958.)
+                    (3, 30633.)
+                    (4, 59444.)
+                    (5, 1377937.)
+                };
+            \addplot[black, fill=cyan]
+                coordinates {
+                    (1, 204.)
+                    (2, 2091.)
+                    (3, 10440.)
+                    (4, 14214.)
+                    (5, 5105.)
+                };
+            \addplot+[black, fill=black]
+                coordinates {
+                    (1, 5999302)
+                    (2, 5058711)
+                    (3, 1.0001)
+                    (4, 1.0001)
+                    (5, 1.0001)
+                };
+            \legend{{Carbon AEFMs\hspace*{+0.0cm}}, {Nitrogen AEFMs}, {Molecular EFMs}}
+
+            % E coli core bars (carbon AEFM, nitrogen AEFM, molecular EFM)
+            \node [left,font=\tiny,anchor=east,rotate=90] at (axis cs: 0.80,6519) {6,519};
+            \node [left,font=\tiny,anchor=east,rotate=89] at (axis cs: 1.00,204) {204};
+            \node [right,font=\tiny,anchor=east,rotate=90,white] at (axis cs: 1.20,5999302) {5,999,302};
+          
+            % iAB RBC 283 bar (carbon AEFM, nitrogen AEFM, molecular EFM)
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 1.80,7958) {7,958};
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 2.00,2091) {2,091};
+            \node [right,font=\tiny,anchor=east,rotate=90,white] at (axis cs: 2.20,5058711) {5,058,711};
+           
+            % iIT341 bar (carbon AEFM, nitrogen AEFM, molecular EFM)
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 2.80,30633) {30,633};
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 3.00,10440) {10,440};
+            \node [above,font=\tiny,anchor=west,rotate=90] at (axis cs: 3.20,1) {Unknown};
+
+            % iSB61 (carbon AEFM, nitrogen AEFM, molecular EFM)
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 3.80,59444) {59,444};
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 4.00,14214) {14,214};
+            \node [above,font=\tiny,anchor=west,rotate=90] at (axis cs: 4.20,1) {Unknown};
+
+            % HepG2 bar (carbon AEFM, nitrogen AEFM, molecular EFM)
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 4.80,1377937) {1,377,937};
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 5.00,5105) {5,105};
+            \node [above,font=\tiny,anchor=west,rotate=90] at (axis cs: 5.20,1) {Unknown};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
+

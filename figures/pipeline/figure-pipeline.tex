@@ -1,0 +1,92 @@
+\documentclass[tikz]{standalone}
+
+% Packages
+\usepackage{amsmath,amsthm,bm} % math libraries
+\usepackage{sankey} % sankey/flow diagram support
+\usepackage{graphicx,xcolor} % general image and colour support
+\usepackage{caption,subcaption} % caption/subcaptions
+
+% Load custom Tikz code
+\usepackage{custom-tikz}
+
+% Colour definitions
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{efm1}{HTML}{017EC3}
+\definecolor{efm2}{HTML}{F31E26}
+\definecolor{efm3}{HTML}{019E5E}
+\definecolor{efm4}{HTML}{FBA61D}
+\definecolor{efm5}{HTML}{916237}
+
+% Font style
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+    % Pipeline
+    \begin{tikzpicture}[]
+        % Intuition of atomic versus molecular EFMs 
+        \input{input-a-intuition-molecular.tex}
+        \input{input-b-intuition-atomic.tex}
+
+        % Input metabolic network
+        \input{input-c-network.tex}
+
+        % Atomic CHMC (subpanel b)
+        \input{input-d-atomic-graph.tex}
+
+        % EFM enumeration (subpanel c)
+        \input{input-e-chmc-enumeration.tex}
+         
+        % EFM weights (subpanel d)
+        \input{input-f-atomic-efm-weights.tex}
+
+        % Arrows from subpanels c-d
+        \draw[subpanelArrow]
+            (box_network) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Trace atoms}
+            (box_chmc);
+        \draw[draw=none]
+            (box_network) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {via\\RXNMapper}
+            (box_chmc);
+
+        % Arrows from subpanels d-e
+        \draw[subpanelArrow]
+            (box_chmc) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Enumerate\\AEFMs}
+            (box_efms);
+        \draw[draw=none]
+            (box_chmc) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {for source\\metabolite\\atoms}
+            (box_efms);
+
+        % Arrows from subpanels e-f
+        \draw[subpanelArrow]
+            (box_efms) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Compute\\AEFM\\ weights}
+            (box_weights);
+        \draw[subpanelArrow]
+            (box_efms) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {for source\\metabolite\\atoms}
+            (box_weights);
+
+    \end{tikzpicture}
+\end{document}

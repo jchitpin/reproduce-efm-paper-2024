@@ -1,0 +1,637 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+% Default preamble
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+\definecolor{julia4}{HTML}{D62728}
+\definecolor{julia5}{HTML}{9864BC}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\tikzset{
+    pinnode/.style={draw=none, fill=none, outer sep=0.15, font=\tiny},
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{groupplot}[%
+            group style={%
+                group name=myplot,
+                group size= 2 by 3,
+                vertical sep=75pt,
+                horizontal sep=81.0pt,
+            },
+            height=7cm,width=7cm
+        ]
+        \nextgroupplot[%
+            %title=type1,
+            title=(a),
+            title style = {text depth=0.15ex,xshift=-30ex},
+            ymode=log,
+            ybar = 0pt,
+            xmajorgrids={false},
+            ymajorgrids={false},
+            xtick pos = bottom,
+            ytick pos = left,
+            bar width = 6pt,
+            legend image code/.code={\draw [#1] (0cm,-0.1cm) rectangle (0.2cm,0.25cm);},
+            legend style={%
+                font=\tiny
+            },
+            xmin=0.3,
+            xmax=5.7,
+            ymin={1},
+            ymax={10000000},
+            ytick={1, 100, 10000, 1000000},
+            xtick={1,2,3,4,5},
+            xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
+            xticklabel style = {%
+                rotate=45
+            },
+            %ytick={0,25,50,75,100},
+            ylabel={Carbon AEFM class (\#)},
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot[black, fill=julia1]
+                coordinates {
+                    (1,1095)
+                    (2,5630)
+                    (3,19795)
+                    (4,39332)
+                    (5,66376)
+                }
+                ;
+            \addplot[black, fill=julia2]
+                coordinates {
+                    (1,4014)
+                    (2,106)
+                    (3,5432)
+                    (4,11696)
+                    (5,1302980)
+                }
+                ;
+            \addplot[black, fill=julia3]
+                coordinates {
+                    (1,1149)
+                    (2,2200)
+                    (3,5370)
+                    (4,8398)
+                    (5,8375)
+                }
+                ;
+            \addplot[black, fill=julia5]
+                coordinates {
+                    (1,261)
+                    (2,22)
+                    (3,36)
+                    (4,18)
+                    (5,206)
+                }
+                ;
+            \coordinate (c1) at (rel axis cs:0,1);
+
+        \nextgroupplot[%
+            %title=type2,
+            title=(b),
+            ymode=log,
+            title style = {text depth=0.15ex,xshift=-30ex},
+            ybar = 0pt,
+            xmajorgrids={false},
+            ymajorgrids={false},
+            xtick pos = bottom,
+            ytick pos = left,
+            bar width = 6pt,
+            legend image code/.code={\draw [#1] (0cm,-0.1cm) rectangle (0.2cm,0.25cm);},
+            legend style={%
+                legend columns={-1},
+                thick,
+            },
+            xmin=0.3,
+            xmax=5.7,
+            ymin={1},
+            ymax={50000},
+            ytick={1,100, 10000},
+            xtick={1,2,3,4,5},
+            xticklabels={%
+                {E. coli core},
+                {iAB RBC 283},
+                {iIT341},
+                {iSB619},
+                {HepG2}
+            },
+            xticklabel style = {%
+                rotate=45
+            },
+            ylabel={Nitrogen AEFM class (\#)},
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+            legend to name=leg,
+        ]
+            \addplot[black, fill=julia1]
+                coordinates {
+                    (1,88)
+                    (2,1390)
+                    (3,7548)
+                    (4,10711)
+                    (5,3105)
+                }
+                ;
+            \addplot[black, fill=julia2]
+                coordinates {
+                    (1,3)
+                    (2,0)
+                    (3,269)
+                    (4,291)
+                    (5,55)
+                }
+                ;
+            \addplot[black, fill=julia3]
+                coordinates {
+                    (1,113)
+                    (2,701)
+                    (3,2585)
+                    (4,3157)
+                    (5,1945)
+                }
+                ;
+            \addplot[black, fill=julia5]
+                coordinates {
+                    (1,0)
+                    (2,0)
+                    (3,38)
+                    (4,55)
+                    (5,0)
+                }
+                ;
+
+        \legend{{Src-to-sink (no revisit)\hspace*{0.35cm}}, {Src-to-sink (revisit)\hspace*{0.35cm}}, {Loop (no revisit)\hspace*{0.35cm}}, {Loop (revisit)\hspace*{0.35cm}}}
+        \coordinate (c2) at (rel axis cs:1,1);
+
+        \nextgroupplot[%
+            %title=type3,
+            title=(c),
+            yshift=-35pt,
+            title style = {text depth=0.15ex,xshift=-30ex},
+            height={7cm},
+            width={7cm},
+            no markers,
+            xlabel = Carbon AEFM length,
+            ylabel = {Probability distribution},
+            scaled y ticks = base 10:2,
+            legend cell align = {left},
+            legend style={%
+                thick,
+            },
+            xmajorgrids={false},
+            ymajorgrids={false},
+            xtick pos = bottom,
+            ytick pos = left,
+            xmax={120},
+            xtick={0,30,60,90,120},
+            ymax={0.15},
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot[cred, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    3.0  0.08559595029912563  \\
+                    5.0  0.03612517257248044  \\
+                    7.0  0.012808712992790305  \\
+                    9.0  0.02024850437183617  \\
+                    11.0  0.026077619266758705  \\
+                    13.0  0.028531983433041877  \\
+                    15.0  0.02569412486577696  \\
+                    17.0  0.024313545022242675  \\
+                    19.0  0.036892161374443934  \\
+                    21.0  0.04149409418622488  \\
+                    23.0  0.03520478601012425  \\
+                    25.0  0.03014265991716521  \\
+                    27.0  0.028992176714219973  \\
+                    29.0  0.023163061819297438  \\
+                    31.0  0.018177634606534744  \\
+                    33.0  0.013805798435342844  \\
+                    35.0  0.007209694738456818  \\
+                    37.0  0.0032213529682466636  \\
+                    39.0  0.0014572787237306336  \\
+                    41.0  0.0006902899217671422  \\
+                    43.0  0.00015339776039269826  \\
+                    120.0  0.0  \\
+                }
+                ;
+            \addlegendentry {E. coli core}
+            \addplot[cgreen, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    2.5  0.09738627795928625  \\
+                    3.5  0.14501130937421464  \\
+                    4.5  0.0975119376727821  \\
+                    5.5  0.06886152299572756  \\
+                    6.5  0.07150037697914048  \\
+                    7.5  0.05064086453882885  \\
+                    8.5  0.049007288263382756  \\
+                    9.5  0.04222166373460669  \\
+                    10.5  0.0389545111837145  \\
+                    11.5  0.0446091982910279  \\
+                    12.5  0.04360392058306107  \\
+                    13.5  0.049509927117366175  \\
+                    14.5  0.055918572505654685  \\
+                    15.5  0.04234732344810254  \\
+                    16.5  0.03933149032420206  \\
+                    17.5  0.02877607439055039  \\
+                    18.5  0.018848957024377985  \\
+                    19.5  0.006785624528776075  \\
+                    20.5  0.005152048253329982  \\
+                    21.5  0.0030158331239004774  \\
+                    22.5  0.0010052777079668257  \\
+                    120.0  0.0  \\
+                }
+                ;
+            \addlegendentry {iAB RBC 283}
+            \addplot[cpurple, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    3.0  0.08229686938922078  \\
+                    5.0  0.0367740671824503  \\
+                    7.0  0.039042862272712434  \\
+                    9.0  0.04806907583325172  \\
+                    11.0  0.051594685469918064  \\
+                    13.0  0.0450984232690236  \\
+                    15.0  0.04038128815329873  \\
+                    17.0  0.034668494760552344  \\
+                    19.0  0.029771814709626872  \\
+                    21.0  0.02534848039695753  \\
+                    23.0  0.01988052100675742  \\
+                    25.0  0.015114419090523292  \\
+                    27.0  0.01150719811967486  \\
+                    29.0  0.007377664610061045  \\
+                    31.0  0.003949988574413215  \\
+                    33.0  0.0025625958933176637  \\
+                    35.0  0.0019423497535337709  \\
+                    37.0  0.0017464825514967519  \\
+                    39.0  0.0016485489504782424  \\
+                    41.0  0.000946691476512258  \\
+                    43.0  0.0002448340025462736  \\
+                    45.0  3.264453367283648e-5  \\
+                    120.0  0.0  \\
+                }
+                ;
+            \addlegendentry {iIT341}
+            \addplot[corange, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    3.0  0.057289213377296276  \\
+                    5.0  0.044958280061907004  \\
+                    7.0  0.04110591481057802  \\
+                    9.0  0.039406836686629435  \\
+                    11.0  0.03872552318148173  \\
+                    13.0  0.04301527488055985  \\
+                    15.0  0.04502557028463764  \\
+                    17.0  0.04320873427091044  \\
+                    19.0  0.03802738712065137  \\
+                    21.0  0.03378810308862122  \\
+                    23.0  0.02655440414507772  \\
+                    25.0  0.018950608976515713  \\
+                    27.0  0.01192719197900545  \\
+                    29.0  0.00800753650494583  \\
+                    31.0  0.005156113316735079  \\
+                    33.0  0.0029607698001480384  \\
+                    35.0  0.001438328510867371  \\
+                    37.0  0.0004037413363838234  \\
+                    39.0  5.0467667047977926e-5  \\
+                    120.0  0.0  \\
+                }
+                ;
+            \addlegendentry {iSB619}
+            \addplot[cblue, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    2.5  0.000686533564306641  \\
+                    7.5  0.0006990159927485799  \\
+                    12.5  0.00016227156974520606  \\
+                    17.5  0.00042759574639479164  \\
+                    22.5  0.000882333517424962  \\
+                    27.5  0.0018190962286374487  \\
+                    32.5  0.0036066960971365162  \\
+                    37.5  0.006348330874343311  \\
+                    42.5  0.010485965613812534  \\
+                    47.5  0.015202581830664247  \\
+                    52.5  0.019823112377416383  \\
+                    57.5  0.02387801474232857  \\
+                    62.5  0.02704434237559482  \\
+                    67.5  0.027543349224238844  \\
+                    72.5  0.023044594927053994  \\
+                    77.5  0.01582771926437856  \\
+                    82.5  0.009680123256723638  \\
+                    87.5  0.00631552821355403  \\
+                    92.5  0.003914257328165221  \\
+                    97.5  0.0018736705669417397  \\
+                    102.5  0.0006312335034185162  \\
+                    107.5  0.0001016011617367122  \\
+                    112.5  2.032023234734244e-6  \\
+                    120.0  0.0  \\
+                }
+                ;
+            \addlegendentry {HepG2}
+        \nextgroupplot[%
+            %title=type4,
+            title=(d),
+            yshift=-35pt,
+            title style = {text depth=0.15ex,xshift=-30ex},
+            no markers,
+            xlabel = Nitrogen AEFM length,
+            ylabel = {Probability distribution},
+            scaled y ticks = base 10:1,
+            legend cell align = {left},
+            xmajorgrids={false},
+            ymajorgrids={false},
+            xtick pos = bottom,
+            ytick pos = left,
+            xmax={40},
+            xtick={0,10,20,30,40},
+            ymax={0.6},
+            extra y tick labels={10},
+            extra y tick style={yticklabel style={color=white}},
+            ytick={0,0.2,0.4,0.6},
+            yticklabels={0,2,4,6},
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot[cred, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    2.5  0.21568627450980393  \\
+                    3.5  0.44607843137254904  \\
+                    4.5  0.17647058823529413  \\
+                    5.5  0.15196078431372548  \\
+                    6.5  0.00980392156862745  \\
+                    40.0  0.0  \\
+                }
+                ;
+            \addplot[cgreen, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    3.0  0.09636537541846006  \\
+                    5.0  0.12338593974175036  \\
+                    7.0  0.09014825442372071  \\
+                    9.0  0.08512673362027738  \\
+                    11.0  0.0471066475370636  \\
+                    13.0  0.023672883787661407  \\
+                    15.0  0.026303204208512673  \\
+                    17.0  0.005021520803443328  \\
+                    19.0  0.0028694404591104736  \\
+                    40.0  0.0  \\
+                }
+                ;
+            \addplot[cpurple, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    2.5  0.045095785440613025  \\
+                    7.5  0.0700191570881226  \\
+                    12.5  0.06093869731800766  \\
+                    17.5  0.01818007662835249  \\
+                    22.5  0.003984674329501916  \\
+                    27.5  0.001781609195402299  \\
+                    40.0  0.0  \\
+                }
+                ;
+            \addplot[corange, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    3.0  0.06405656395103419  \\
+                    5.0  0.060749964823413535  \\
+                    7.0  0.07570001407063459  \\
+                    9.0  0.06813704798086394  \\
+                    11.0  0.05786548473336148  \\
+                    13.0  0.04168425495989869  \\
+                    15.0  0.03616153088504292  \\
+                    17.0  0.0372168284789644  \\
+                    19.0  0.028739271141128463  \\
+                    21.0  0.017342057126776417  \\
+                    23.0  0.00897002954833263  \\
+                    25.0  0.0027789503306599127  \\
+                    27.0  0.0005628253834247924  \\
+                    29.0  3.517658646404953e-5  \\
+                    40.0  0.0  \\
+                }
+                ;
+            \addplot[cblue, line width=1.5pt]
+                table[row sep={\\}]
+                {
+                    \\
+                    0.0  0.0  \\
+                    2.5  0.042664054848188054  \\
+                    7.5  0.0602154750244858  \\
+                    12.5  0.024995102840352595  \\
+                    17.5  0.027580803134182173  \\
+                    22.5  0.0211949069539667  \\
+                    27.5  0.021077375122428993  \\
+                    32.5  0.0022722820763956906  \\
+                    40.0  0.0  \\
+                }
+                ;
+
+        \nextgroupplot[%
+            %title=type5,
+            title=(e),
+            title style = {text depth=0.15ex,xshift=-30ex},
+            yshift=35pt,
+            ytick = {0, 2, 4},
+            yticklabels = {{$10^0$}, {$10^2$}, {$10^4$}},
+            xtick = {1, 2, 3, 4, 5},
+            xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
+            xticklabel style = {rotate=45},
+            ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Carbon AEFMs})}{\min(\text{\# Carbon AEFMs})}\bigg)$},
+            ylabel style = {align=center},
+            ymin=-1.0,
+            ymax=5,
+            xmin=0.5,
+            xmax=5.5,
+            xtick pos = bottom,
+            ytick pos = left,
+            legend pos=outer north east,
+            legend cell align=left,
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot [%
+                scatter,
+                only marks,
+                scatter src=explicit symbolic,
+                mark size=2.0pt,
+                scatter/classes={%
+                    1={mark=*,draw=black,fill=cred},
+                    2={mark=*,draw=black,fill=cgreen},
+                    3={mark=*,draw=black,fill=cpurple},
+                    4={mark=*,draw=black,fill=corange},
+                    5={mark=*,draw=black,fill=cblue}
+                }
+            ] table[x=z, y=y, meta=x]{subpanel-e-f/figure-jitter-max-over-min-log10-number-efms-carbon.dat};
+
+            % Manual labels of interest
+            \node[pinnode] at (axis cs: 4.94, 4.7) (phenylalanine) {Phenylalanine$^*$};
+            \draw[line width=0.5pt] (axis cs: 4.9948498117867500, 4.22772734841117400) -- (phenylalanine);
+            \node[pinnode] at (axis cs: 4.99, 3.982) (methionine) {Methionine$^*$};
+            \draw[line width=0.5pt] (axis cs: 4.99856649012589, 3.435351083036678) -- (methionine);
+            \node[pinnode] at (axis cs: 5.11, 3.2) (histidine) {Histidine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.113849293131518, 2.7963790083759443) -- (histidine);
+            \node[pinnode] at (axis cs: 4.075, 2.567) (isoleucine) {Isoleucine};
+            \draw[line width=0.5pt] (axis cs: 2.7793806780476875, 0.0) -- (isoleucine);
+            \draw[line width=0.5pt] (axis cs: 4.0754640160363770, 1.0511525224473812) -- (isoleucine);
+            \draw[line width=0.5pt] (axis cs: 5.0941185801427600, 2.5668772945310625) -- (isoleucine);
+            \node[pinnode] at (axis cs: 4.5, 1.7) (lysine) {Lysine};
+            \draw[line width=0.5pt] (axis cs: 4.9488657750465440, 1.96829937920344440) -- (lysine);
+
+            \node[pinnode] at (axis cs: 4.5, 2.3) (leucine) {Leucine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.0296293853815195, 1.9682993799034444) -- (leucine);
+
+            \node[pinnode] at (axis cs: 3.5, -0.5) (glycine) {Glycine};
+            \draw[line width=0.5pt] (axis cs: 1.801291611283892, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 2.920326842878735, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 4.047488634997549, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 5.183617418150977, 0) -- (glycine);
+
+            \node[pinnode] at (axis cs: 3.3, 3.0) (gps) {Glycerophosphoserine};
+            \draw[line width=0.5pt] (axis cs: 3.9509088647355926, 1.96791653166285988) -- (gps);
+
+            \node[pinnode] at (axis cs: 1.6, 0.885) (AKG) {AKG$^*$};
+            \draw[line width=0.5pt] (axis cs: 1.0252323439443554, 0.8846065812979305) -- (AKG);
+
+            \node[pinnode] at (axis cs: 2.0, 3.5) (nadmla) {N-Acetyl-D-muramoyl-L-alanine};
+            \draw[line width=0.5pt] (axis cs: 2.9801804884841383, 2.2121876044039577) -- (nadmla);
+
+            \node[pinnode] at (axis cs: 1.93, 1.4) (salh) {S-Adenoyl-L-homocysteine};
+            \draw[line width=0.5pt] (axis cs: 1.9278778556290500, 2.0934216851622350) -- (salh);
+            \draw[line width=0.5pt] (axis cs: 2.8908375782619835, 1.7745169657285496) -- (salh);
+
+            \node[pinnode] at (axis cs: 1.666, 2.6) (o5p) {Orotidine 5'-phosphate};
+            \draw[line width=0.5pt] (axis cs: 1.6661507207468910, 1.6020599913279623) -- (o5p);
+            \draw[line width=0.5pt] (axis cs: 2.7502479469744614, 1.7668182877659970) -- (o5p);
+            \draw[line width=0.5pt] (axis cs: 4.0233417358927310, 1.6014881749426513) -- (o5p);
+
+        \nextgroupplot[%
+            %title=type6,
+            title=(f),
+            title style = {text depth=0.15ex,xshift=-30ex},
+            yshift=35pt,
+            ytick = {0, 1, 2},
+            yticklabels = {{$10^0$}, {$10^1$}, {$10^2$}},
+            xtick  = {1, 2, 3, 4, 5},
+            xticklabels={%
+                {E. coli core},
+                {iAB RBC 283},
+                {iIT341},
+                {iSB619},
+                {HepG2}
+            },
+            xticklabel style = {rotate=45},
+            ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Nitrogen AEFMs})}{\min(\text{\# Nitrogen AEFMs})}\bigg)$},
+            ylabel style = {align=center},
+            ymin=-0.5,
+            xmin=0.5,
+            xmax=5.5,
+            xtick pos = bottom,
+            ytick pos = left,
+            legend pos=outer north east,
+            legend cell align=left,
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot [%
+                scatter,
+                only marks,
+                scatter src=explicit symbolic,
+                mark size=2.0pt,
+                scatter/classes={%
+                    1={mark=*,draw=black,fill=cred},
+                    2={mark=*,draw=black,fill=cgreen},
+                    3={mark=*,draw=black,fill=cpurple},
+                    4={mark=*,draw=black,fill=corange},
+                    5={mark=*,draw=black,fill=cblue}
+                }
+            ] table[x=z, y=y, meta=x]{subpanel-e-f/figure-jitter-max-over-min-log10-number-efms-nitrogen.dat};
+
+            % Manual labels of interest
+            \node[pinnode] at (axis cs: 3.895, 2.190) (histidine) {Histidine$^*$};
+            \draw[line width=0.5pt] (axis cs: 3.894640913076108, 1.8409420802430991) -- (histidine);
+            \draw[line width=0.5pt] (axis cs: 4.970727576480841, 2.1903316981702914) -- (histidine);
+
+            \node[pinnode] at (axis cs: 5.08, 1.7) (arginine) {Arginine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.079460517994066, 2.037426497940624) -- (arginine);
+
+            \node[pinnode] at (axis cs: 1.897, 1.5) (sah) {S-adenosylhomocysteine$^*$};
+            \draw[line width=0.5pt] (axis cs: 1.8974404058388985, 1.8325089127062364) -- (sah);
+            \draw[line width=0.5pt] (axis cs: 3.2854530765490680, 1.6180480967120927) -- (sah);
+
+            \node[pinnode] at (axis cs: 2., 2.190) (nac) {N-acetylmuramoylalanine$^*$};
+            \draw[line width=0.5pt] (axis cs: 2.981797227245492, 1.7708520116421442) -- (nac);
+
+            \node[pinnode] at (axis cs: 3.6, 1.0) (nsl) {N-Succinyl-LL-2,6-diaminoheptanedioate};
+            \draw[line width=0.5pt] (axis cs: 2.9382833878495194, 1.6782147827453993) -- (nsl);
+            \draw[line width=0.5pt] (axis cs: 4.0384959759813395, 1.7263196121107753) -- (nsl);
+
+        \end{groupplot}
+
+        % Bar plot legend programmatically centered.
+        \coordinate (c3) at ($(c1)!0.5!(c2)$);
+        \node[below,yshift=-7.5cm] at (c3)
+        {\pgfplotslegendfromname{leg}};
+
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
+

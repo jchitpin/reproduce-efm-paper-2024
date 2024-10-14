@@ -1,0 +1,142 @@
+\documentclass{standalone}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+%\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+%\setchemfig{atom sep=10pt}
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=3.5em,
+  bond offset=1pt
+}
+
+\schemestart\
+    \chemname{%
+        \chemfig{%
+                   \mcfright{O}{\mcfatomno{6}}% 1
+            =[:270]\mcfatomno{5}% 2
+                      (
+                -[:210]\mcfleft{\mcfatomno{7}}{HO}% 3
+                      )
+            -[:330]\mcfatomno{4}% 4
+             -[:30]\mcfatomno{3}% 5
+             -[:330]\mcfatomno{\colorbox{cblue}{14}}% 6
+                      (
+                      =[:270]\mcfright{\colorbox{cyellow}{O}}{\mcfatomno{15}}% 7
+                      )
+                      -[:30]\mcfatomno{\colorbox{cblue}{12}}% 8
+                      (
+                      =[:90]\mcfright{\colorbox{cblue}{O}}{\mcfatomno{11}}% 9
+                      )
+                      -[:330]\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{13}}% 10
+        }
+    }{Alpha-ketoglutarate\vspace*{0pt}}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{%
+            \colorbox{white}{}\colorbox{white}{}\mcfleft{\mcfatomno{1}}{\colorbox{cred}{NH$_2$}}% 1
+            >[:60]\mcfatomno{\colorbox{corange}{2}}% 2
+                               (
+                               -\mcfatomno{\colorbox{corange}{8}}% 11
+                                   (
+                                   -[:300]\mcfright{\colorbox{corange}{OH}}{\mcfatomno{10}}% 13
+                                   )
+                                   =[:60]\mcfright{\colorbox{corange}{O}}{\mcfatomno{9}}% 12
+                               )
+                     -[:120]\mcfatomno{16}% 3
+                     -[:180]\mcfatomno{17}% 4
+                     -[:240]\mcfatomno{18}% 5
+                               (
+            -[:120,,,,draw=none]\mcfcringle{1.3}% (o)
+                               )
+                     -[:180]\mcfatomno{19}% 6
+                     -[:120]\mcfatomno{20}% 7
+                               (
+                         -[:180]\mcfleft{\mcfatomno{21}}{HO}% 8
+                               )
+                      -[:60]\mcfatomno{22}% 9
+                           -\mcfatomno{23}% 10
+                               (
+                         -[:300]\phantom{4}% -> 4
+                               )
+        }
+    }{Tyrosine}
+    \arrow{<=>[\footnotesize KEGG R00734][\footnotesize(RXNMapper)]}[0, 1.75]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{%
+            \colorbox{white}{}\colorbox{white}{}\mcfright{\colorbox{cred}{NH$_2$}}{\mcfatomno{1}}% 1
+            -[:90]\mcfatomno{\colorbox{corange}{2}}% 2
+                      (
+                      -[:30]\mcfatomno{\colorbox{corange}{8}}% 8
+                          (
+                          -[:330]\mcfright{\colorbox{corange}{OH}}{\mcfatomno{10}}% 10
+                          )
+                          =[:90]\mcfright{\colorbox{corange}{O}}{\mcfatomno{9}}% 9
+                      )
+            -[:150]\mcfatomno{3}% 3
+            -[:210]\mcfatomno{4}% 4
+            -[:150]\mcfatomno{5}% 5
+                      (
+                 =[:90]\mcfright{O}{\mcfatomno{6}}% 6
+                      )
+            -[:210]\mcfleft{\mcfatomno{7}}{HO}% 7
+        }
+    }{Glutamate}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemname{%
+        \chemfig{
+            \mcfright{\colorbox{cblue}{O}}{\mcfatomno{11}}% 1
+                            =[:240]\mcfatomno{\colorbox{cblue}{12}}% 2
+                               (
+                               -[:300]\colorbox{white}{}\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{13}}% 3
+                               )
+                               -[:180]\mcfatomno{\colorbox{cblue}{14}}% 4
+                               (
+                               =[:240]\mcfleft{\mcfatomno{15}}{\colorbox{cyellow}{O}}% 5
+                               )
+                     -[:120]\mcfatomno{16}% 6
+                     -[:180]\mcfatomno{17}% 7
+                     -[:240]\mcfatomno{18}% 8
+                               (
+            -[:120,,,,draw=none]\mcfcringle{1.3}% (o)
+                               )
+                     -[:180]\mcfatomno{19}% 9
+                     -[:120]\mcfatomno{20}% 10
+                               (
+                         -[:180]\mcfleft{\mcfatomno{21}}{HO}% 11
+                               )
+                      -[:60]\mcfatomno{22}% 12
+                           -\mcfatomno{23}% 13
+                               (
+                         -[:300]\phantom{7}% -> 7
+                               )
+        }
+    }{3-(4-hydroxyphenyl)pyruvate\hspace*{0.0cm}}
+    \arrow{0}[,0]
+\schemestop\
+
+\end{document}
+
