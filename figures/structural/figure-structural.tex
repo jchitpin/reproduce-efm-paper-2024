@@ -40,7 +40,7 @@
 
 \begin{document}
 
-\begin{figure}
+%\begin{figure}
     \begin{tikzpicture}
         \begin{groupplot}[%
             group style={%
@@ -74,10 +74,11 @@
             xtick={1,2,3,4,5},
             xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
             xticklabel style = {%
-                rotate=45
+                rotate=45,
+                anchor=north east
             },
             %ytick={0,25,50,75,100},
-            ylabel={Carbon AEFM class (\#)},
+            ylabel={Carbon AEFM class count (\#)},
             axis line style={thick,black},
             xtick style={/pgfplots/on layer=axis foreground, thick, black},
             ytick style={/pgfplots/on layer=axis foreground, thick, black},
@@ -150,9 +151,10 @@
                 {HepG2}
             },
             xticklabel style = {%
-                rotate=45
+                rotate=45,
+                anchor=north east
             },
-            ylabel={Nitrogen AEFM class (\#)},
+            ylabel={Nitrogen AEFM class count (\#)},
             axis line style={thick,black},
             xtick style={/pgfplots/on layer=axis foreground, thick, black},
             ytick style={/pgfplots/on layer=axis foreground, thick, black},
@@ -206,8 +208,8 @@
             height={7cm},
             width={7cm},
             no markers,
-            xlabel = Carbon AEFM length,
-            ylabel = {Probability distribution},
+            xlabel = Carbon AEFM length (\#),
+            ylabel = {Fraction of all carbon AEFMs},
             scaled y ticks = base 10:2,
             legend cell align = {left},
             legend style={%
@@ -381,8 +383,8 @@
             yshift=-35pt,
             title style = {text depth=0.15ex,xshift=-30ex},
             no markers,
-            xlabel = Nitrogen AEFM length,
-            ylabel = {Probability distribution},
+            xlabel = Nitrogen AEFM length (\#),
+            ylabel = {Fraction of all nitrogen AEFMs},
             scaled y ticks = base 10:1,
             legend cell align = {left},
             xmajorgrids={false},
@@ -491,7 +493,7 @@
             yticklabels = {{$10^0$}, {$10^2$}, {$10^4$}},
             xtick = {1, 2, 3, 4, 5},
             xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
-            xticklabel style = {rotate=45},
+            xticklabel style = {rotate=45,anchor=north east},
             ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Carbon AEFMs})}{\min(\text{\# Carbon AEFMs})}\bigg)$},
             ylabel style = {align=center},
             ymin=-1.0,
@@ -576,7 +578,7 @@
                 {iSB619},
                 {HepG2}
             },
-            xticklabel style = {rotate=45},
+            xticklabel style = {rotate=45,anchor=north east},
             ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Nitrogen AEFMs})}{\min(\text{\# Nitrogen AEFMs})}\bigg)$},
             ylabel style = {align=center},
             ymin=-0.5,
@@ -631,7 +633,7 @@
         {\pgfplotslegendfromname{leg}};
 
     \end{tikzpicture}
-\end{figure}
+%\end{figure}
 
 \end{document}
 

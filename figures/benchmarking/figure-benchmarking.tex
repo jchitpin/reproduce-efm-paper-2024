@@ -56,7 +56,7 @@
 
 \begin{document}
 
-\begin{figure}
+%\begin{figure}
     \begin{tikzpicture}
         \begin{groupplot}[%
             group style={%
@@ -98,7 +98,7 @@
                     {iSB619},
                     {HepG2},
                 },
-                x tick label style={rotate=45},
+                x tick label style={rotate=45,anchor=north east},
                 legend cell align={left}, 
                 legend style={%
                     anchor={north},
@@ -197,7 +197,7 @@
                 {iSB619},
                 {HepG2},
             },
-            x tick label style={rotate=45},
+            x tick label style={rotate=45,anchor=north east},
             axis line style={thick,black},
             minor tick style={draw=none},
             xtick style={/pgfplots/on layer=axis foreground, thick, black},
@@ -6652,7 +6652,7 @@
         \draw[black, -, thick] (p12.center) to (p21.center);
 
     \end{tikzpicture}
-\end{figure}
+%\end{figure}
 
 \end{document}
 
