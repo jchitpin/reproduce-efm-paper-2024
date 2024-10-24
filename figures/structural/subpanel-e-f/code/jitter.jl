@@ -130,7 +130,43 @@ CSV.write(save1 * ex_nitrogen_unique_states,      dfn3, header = true, delim = "
 CSV.write(save1 * ex_nitrogen_unique_metabolites, dfn4, header = true, delim = " ")
 # ------------------------------------------------------------------------------
 
-sort(dfc1, [:x, :y])
+## MISCELLANEOUS STATISTICS ----------------------------------------------------
+# Median ratio of number of carbon/nitrogen AEFMs without ratios of one
+f(x) = x[findall(!isinf, x)]
+g(x) = x[x .!= 0]
+
+# E coli core
+median(g(f( dfc1[(dfc1.x .== 1), :y] ))) # 0.58 ratio on a log10 scale
+
+# iAB RBC 283
+median(g(f( dfc1[(dfc1.x .== 2), :y] ))) # 0.31 ratio on a log10 scale
+
+# iIT341
+median(g(f( dfc1[(dfc1.x .== 3), :y] ))) # 0.59 ratio on a log10 scale
+
+# iSB619
+median(g(f( dfc1[(dfc1.x .== 4), :y] ))) # 0.66 ratio on a log10 scale
+
+# HepG2
+median(g(f( dfc1[(dfc1.x .== 5), :y] ))) # 1.67 ratio on a log10 scale
+
+# E coli core
+#median(g(f( dfn1[(dfn1.x .== 1), :y] ))) # N/A since all ratios are 1/0
+
+# iAB RBC 283
+median(g(f( dfn1[(dfn1.x .== 2), :y] ))) # 0.31 ratio on a log10 scale
+
+# iIT341
+median(g(f( dfn1[(dfn1.x .== 3), :y] ))) # 0.29 ratio on a log10 scale
+
+# iSB619
+median(g(f( dfn1[(dfn1.x .== 4), :y] ))) # 0.13 ratio on a log10 scale
+
+# HepG2
+median(g(f( dfn1[(dfn1.x .== 5), :y] ))) # 1.05 ratio on a log10 scale
+# ------------------------------------------------------------------------------
+
+
 ## For manually assigning pins to jitter plot
 regex = r"Phenylalanine_e" # change!
 regex = r"Methionine_e" # change!

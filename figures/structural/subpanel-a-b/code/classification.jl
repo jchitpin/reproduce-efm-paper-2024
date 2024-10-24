@@ -392,14 +392,49 @@ met_names = load_gem_metabolite_names(load1 * load2, datasets)
 resC = get_looped_revisitation_efm_indices(C)
 resN = get_looped_revisitation_efm_indices(N)
 
+# loop_types refers to metabolite sequence; loop_counts refers to # occurrences
 loop_types_C, loop_counts_C = group_looped_revisitations(resC, met_names, C)
 loop_types_N, loop_counts_N = group_looped_revisitations(resN, met_names, N)
 
+# Examples
 findfirst(==(maximum(loop_counts_C[5])), loop_counts_C[5])
 loop_types_C[5][17]
-
 loop_types_C[1][22]
-
 loop_types_N[4][2]
+
+# Classifying AEFMs by dataset by specified lower boundary and upper boundary
+# Boundaries are manually determined by inspecting the histogram bins in 
+# the script subpanel-a-b/histogram-curves.jl
+f(x) = [x.n_pathed_no_rec, x.n_pathed_rec, x.n_looped_no_rec, x.n_looped_rec] ./ (x.n_pathed_no_rec + x.n_pathed_rec + x.n_looped_no_rec + x.n_looped_rec)
+
+# E coli core
+d11 = classify_efm_by_length(C[1], 0, 7)
+d12 = classify_efm_by_length(C[1], 8, 120)
+f(d11) # 58% of shorter pathways are looped without revisitations
+f(d12) # 84% of longer pathways are source-to-sink with revisitations
+
+# iAB RBC 283
+d21 = classify_efm_by_length(C[2], 0, 10)
+d22 = classify_efm_by_length(C[2], 11, 120)
+f(d21) # 41% of shorter pathways are looped without revisitatons
+f(d22) # 96% of longer pathways are source-to-sink without revisitations (100% source-to-sink pathways)
+
+# iIT341
+d31 = classify_efm_by_length(C[3], 0, 5)
+d32 = classify_efm_by_length(C[3], 6, 120)
+f(d31) # of shorter pathways, 41-59% split between source-to-sink and loop (both without revisitations)
+f(d32) # 72% of longer pathways are source-to-sink (95% source to sink pathways)
+
+# iSB619
+d41 = classify_efm_by_length(C[4], 0, 11)
+d42 = classify_efm_by_length(C[4], 12, 120)
+f(d41) # of shorter pathways; 67-32% split between source-to-sink and loop (both without revisitations)
+f(d42) # 65% of longer pathways are source-to-sink (100% source-to-sink pathways)
+
+# HepG2
+d51 = classify_efm_by_length(C[5], 0, 12)
+d52 = classify_efm_by_length(C[5], 13, 120)
+f(d51) # 78% of shorter pathways are looped without revisitations
+f(d52) # 95% of longer pathways are source-to-sink with revisitations
 # ------------------------------------------------------------------------------
 

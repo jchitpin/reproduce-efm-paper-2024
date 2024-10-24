@@ -569,7 +569,7 @@ function classify_atomic_efms(C::Vector{Vector{Vector{CHMCAtomicSummary}}})
                     elseif e[end] != (0, 0) && has_recurrence == false
                         tmp[3] += 1
                     elseif e[end] != (0, 0) && has_recurrence == true
-                        push!(x, c)
+                        #push!(x, c)
                         tmp[4] += 1
                     else
                         @error("Something went wrong. Missing case.")
@@ -656,6 +656,46 @@ function sum_pathed_and_looped_efm_fluxes(D::Vector{Vector{CHMCAtomicSummary}})
         end
     end
     return weight_pathed, weight_looped
+end
+
+# For structural
+function classify_efm_by_length(C::Vector{Vector{CHMCAtomicSummary}},lb::Int64,ub::Int64)
+    tmp = [0, 0, 0, 0]
+    for j in 1:length(C)
+        for k in 1:length(C[j])
+            efms = efm_state_to_metabolite_atom_seq(C[j][k])
+            for e in efms
+                #x = Int64.(first.(unique(e)))
+                x = first.(e)
+                if x[end] != 0
+                    x = x[2:end]
+                end
+                has_recurrence = length(x) == length(unique(x)) ? false : true
+                if length(x) >= lb && length(x) <= ub
+                    if e[end] == (0, 0) && has_recurrence == false # src-to-sink no revisit
+                        tmp[1] += 1
+                    elseif e[end] == (0, 0) && has_recurrence == true # src-to-sink revisit
+                        tmp[2] += 1
+                    elseif e[end] != (0, 0) && has_recurrence == false # looped no revisit
+                        tmp[3] += 1
+                    elseif e[end] != (0, 0) && has_recurrence == true # looped revisit
+                        tmp[4] += 1
+                    else
+                        @error("Something went wrong. Missing case.")
+                    end
+                end
+
+            end
+        end
+    end
+    V = (#
+        n_pathed_no_rec = tmp[1],
+        n_pathed_rec = tmp[2],
+        n_looped_no_rec = tmp[3],
+        n_looped_rec = tmp[4]
+    )
+
+    return V
 end
 
 # For cumulative mass flow

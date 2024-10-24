@@ -39,6 +39,13 @@ efm_c = get_efm_length(C)
 efm_n = get_efm_length(N)
 # ------------------------------------------------------------------------------
 
+## EFM LENGTH STATISTICS -------------------------------------------------------
+mean.(efm_c) # 16.0, 8.2, 12.3, 13.2, 61.7
+mean.(efm_n) #  3.3, 6.8,  8.9,  9.9, 12.0
+mode.(efm_c) #  3.0, 3.0,  3.0,  3.0, 66.0
+mode.(efm_n) #  3.0, 4.0,  3.0,  3.0, 66.0
+# ------------------------------------------------------------------------------
+
 ## CUSTOM TIKZ PREAMBLE --------------------------------------------------------
 # Define custom colours
 pgfplotsx_preamble()
@@ -171,5 +178,19 @@ pgfsave(ex_fig_c, pc) # carbon
 pgfsave(ex_fig_n, pn) # nitrogen
 # ------------------------------------------------------------------------------
 
-
+## INSPECTING HISTOGRAM BINS TO IDENTIFY BOUNDARIES FOR BIMODAL DISTRIBUTIONS --
+# These boundaries are for the subsequent subpanel-c-d classification by
+# AEFM lengths
+# Carbon
+histc[1][1]
+histc[1][2] # 0-7 and 8- boundaries
+histc[2][1]
+histc[2][2] # 0-10 and 11- boundaries
+histc[3][1]
+histc[3][2] # 0-5 and 6- boundaries
+histc[4][1]
+histc[4][2] # 0-11 and 12- boundaries
+histc[5][1]
+histc[5][2] # 0-12 and 13-boundaries
+# ------------------------------------------------------------------------------
 

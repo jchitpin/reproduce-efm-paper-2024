@@ -47,6 +47,9 @@ for i in ii
     n_threshold[findfirst(==(i), ii)] = tmp # number of EFMs omitted from plots
     maximum(output.x) # for specifying xmax on plots
 
+    sum.(n_threshold) # 238,479 glutamine carbon AEFMs that explain less than 1%
+    sum.(n_threshold) / nrow(df) # 98.9% of pathways explain less than 1%
+
     CSV.write(ex_dataframes * "$i.dat", output, delim = ' ')
     CSV.write(ex_dataframes * "$i-full.dat", df, delim = ' ')
 end
