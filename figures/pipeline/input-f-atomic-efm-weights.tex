@@ -109,8 +109,8 @@
 \node[carbon, below=2.75cm of fdp_weights_c2,fill=cblue] (dhap_weights_1) {};
 \node[carbonGrey, right=0.25cm of dhap_weights_1,fill=cred]  (dhap_weights_2) {};
 \node[carbonGrey, right=0.25cm of dhap_weights_2,fill=cyellow] (dhap_weights_3) {};
-\draw[drawCarbon,draw opacity=0.25] (dhap_weights_1) to (dhap_weights_2);
-\draw[drawCarbon,draw opacity=0.25] (dhap_weights_2) to (dhap_weights_3);
+\draw[carbonDraw,draw opacity=0.25] (dhap_weights_1) to (dhap_weights_2);
+\draw[carbonDraw,draw opacity=0.25] (dhap_weights_2) to (dhap_weights_3);
 \node[fit=(dhap_weights_1) (dhap_weights_2) (dhap_weights_3), draw=none,label={above:{\LARGE $\;\;$DHAP}}] (dhap_weights_box) {};
 
 % Glycerol 3-phosphate
@@ -119,7 +119,7 @@
 \node[carbonGrey, right=0.25cm of g3p_weights_2,fill=cpurple] (g3p_weights_3) {};
 \draw[draw opacity=0.25] (g3p_weights_1) to (g3p_weights_2);
 \draw[draw opacity=0.25] (g3p_weights_2) to (g3p_weights_3);
-\node[fit=(g3p_weights_1) (g3p_weights_2) (g3p_weights_3), draw=none,label={below:{\LARGE G3P}}] (g3p_weights_box) {};/home/jchitpin/Documents/PhD/Projects/reproduce-efm-paper-2024/figures/figure-pipeline-v01/pipeline-v01.pdf
+\node[fit=(g3p_weights_1) (g3p_weights_2) (g3p_weights_3), draw=none,label={below:{\LARGE G3P}}] (g3p_weights_box) {};
 
 % Transition arrows
 \draw[chmcArrow2,draw=none] (glucose_weights_c6) to[out=225,in=135] node[midway,left,labelFont] {$v_1$} (g6p_weights_c6);

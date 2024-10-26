@@ -110,8 +110,8 @@
 \node[carbon, below=2.75cm of fdp_chmc_c2,fill=cblue] (dhap_chmc_1) {};
 \node[carbonGrey, right=0.25cm of dhap_chmc_1,fill=cred]  (dhap_chmc_2) {};
 \node[carbonGrey, right=0.25cm of dhap_chmc_2,fill=cyellow] (dhap_chmc_3) {};
-\draw[drawCarbon,draw opacity=0.25] (dhap_chmc_1) to (dhap_chmc_2);
-\draw[drawCarbon,draw opacity=0.25] (dhap_chmc_2) to (dhap_chmc_3);
+\draw[carbonDraw,draw opacity=0.25] (dhap_chmc_1) to (dhap_chmc_2);
+\draw[carbonDraw,draw opacity=0.25] (dhap_chmc_2) to (dhap_chmc_3);
 \node[fit=(dhap_chmc_1) (dhap_chmc_2) (dhap_chmc_3), draw=none,label={above:{\LARGE $\;\;$DHAP}}] (dhap_chmc_box) {};
 
 % Glycerol 3-phosphate
@@ -120,7 +120,7 @@
 \node[carbonGrey, right=0.25cm of g3p_chmc_2,fill=cpurple] (g3p_chmc_3) {};
 \draw[draw opacity=0.25] (g3p_chmc_1) to (g3p_chmc_2);
 \draw[draw opacity=0.25] (g3p_chmc_2) to (g3p_chmc_3);
-\node[fit=(g3p_chmc_1) (g3p_chmc_2) (g3p_chmc_3), draw=none,label={below:{\LARGE G3P}}] (g3p_chmc_box) {};/home/jchitpin/Documents/PhD/Projects/reproduce-efm-paper-2024/figures/figure-pipeline-v01/pipeline-v01.pdf
+\node[fit=(g3p_chmc_1) (g3p_chmc_2) (g3p_chmc_3), draw=none,label={below:{\LARGE G3P}}] (g3p_chmc_box) {};
 
 % Transition arrows
 \draw[chmcArrow] (glucose_chmc_c6) to[out=225,in=135] node[midway,left,labelFont] {$p_1$} (g6p_chmc_c6);
