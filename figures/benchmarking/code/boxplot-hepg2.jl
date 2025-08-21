@@ -75,15 +75,17 @@ end
 # Compute speedup
 hepg2_speedup = [hepg2_serial_thread_times[1] ./ h for h in hepg2_serial_thread_times]
 
+length(hepg2_speedup[1]) # number of ACHMCs with serial times ≥ min_threshold
+
 # Max speedup across serial/parallel runs and the 33 CHMCS:
 maximum(reduce(vcat, hepg2_speedup))
 
 # Statistics for the biggest ACHMC (HepG2 dataset)
 Carbon_ACHMCs = load_aggregated_chmcs(load1 * im_carbon_chmcs, datasets)
 idx = src_met_atoms[findfirst(==(maximum(hepg2_speedup[6])), hepg2_speedup[6])]
-length(Carbon_ACHMCs[5][idx[1]][idx[2]].dchmc) # 1,120,290 CHMC states
+length(Carbon_ACHMCs[5][idx[1]][idx[2]].dchmc) # 1,445,552 CHMC states
 length(Carbon_ACHMCs[5][idx[1]][idx[2]].dmc) # 1,158 MC states
-length(Carbon_ACHMCs[5][idx[1]][idx[2]].e) # 168,793 EFMs
+length(Carbon_ACHMCs[5][idx[1]][idx[2]].e) # 221,933 EFMs
 hepg2_speedup[6][findfirst(==(maximum(hepg2_speedup[6])), hepg2_speedup[6])] # 9.26 times speedup
 
 # Boxplot statistics
@@ -110,9 +112,9 @@ x = xy_c[1][1][5][ids]
 using LinearRegression
 
 lr = linregress(log10.(x), log10.(y))
-lr.coeffs[1] # slope:     +1.90
-lr.coeffs[2] # intercept: -6.54
-# log₁₀(run time (s)) = log₁₀(# AEFMs)*1.9 - 6.54
+lr.coeffs[1] # slope:     +1.85
+lr.coeffs[2] # intercept: -6.31
+# log₁₀(run time (s)) = log₁₀(# AEFMs)*1.85 - 6.31
 # ------------------------------------------------------------------------------
 
 

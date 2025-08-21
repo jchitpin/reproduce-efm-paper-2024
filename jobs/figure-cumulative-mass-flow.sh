@@ -25,8 +25,8 @@ pdflatex -interaction="batchmode" cumulative-source-met-10-log.tex
 rm cumulative-source-met-10-legend.aux cumulative-source-met-10-legend.log
 rm cumulative-source-met-10-log.aux cumulative-source-met-10-log.log
 
-pdflatex -interaction="batchmode" cumulative-source-met-13-legend.tex
-pdflatex -interaction="batchmode" cumulative-source-met-13-log.tex
+lualatex -interaction="batchmode" cumulative-source-met-13-legend.tex
+lualatex -interaction="batchmode" cumulative-source-met-13-log.tex
 rm cumulative-source-met-13-legend.aux cumulative-source-met-13-legend.log
 rm cumulative-source-met-13-log.aux cumulative-source-met-13-log.log
 
@@ -80,8 +80,8 @@ pdflatex -interaction="batchmode" cumulative-source-met-35-log.tex
 rm cumulative-source-met-35-legend.aux cumulative-source-met-35-legend.log
 rm cumulative-source-met-35-log.aux cumulative-source-met-35-log.log
 
-pdflatex -interaction="batchmode" cumulative-source-met-40-legend.tex
-pdflatex -interaction="batchmode" cumulative-source-met-40-log.tex
+lualatex -interaction="batchmode" cumulative-source-met-40-legend.tex
+lualatex -interaction="batchmode" cumulative-source-met-40-log.tex
 rm cumulative-source-met-40-legend.aux cumulative-source-met-40-legend.log
 rm cumulative-source-met-40-log.aux cumulative-source-met-40-log.log
 

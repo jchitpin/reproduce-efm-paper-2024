@@ -40,10 +40,10 @@ efm_n = get_efm_length(N)
 # ------------------------------------------------------------------------------
 
 ## EFM LENGTH STATISTICS -------------------------------------------------------
-mean.(efm_c) # 16.0, 8.2, 12.3, 13.2, 61.7
+mean.(efm_c) # 16.0, 8.2, 12.3, 13.2, 67.7
 mean.(efm_n) #  3.3, 6.8,  8.9,  9.9, 12.0
-mode.(efm_c) #  3.0, 3.0,  3.0,  3.0, 66.0
-mode.(efm_n) #  3.0, 4.0,  3.0,  3.0, 66.0
+StatsBase.mode.(efm_c) #  3.0, 3.0,  3.0,  3.0, 69.0
+StatsBase.mode.(efm_n) #  3.0, 4.0,  3.0,  3.0, 66.0
 # ------------------------------------------------------------------------------
 
 ## CUSTOM TIKZ PREAMBLE --------------------------------------------------------
@@ -52,7 +52,7 @@ pgfplotsx_preamble()
 # ------------------------------------------------------------------------------
 
 ## PLOT EFM LENGTH CURVES ------------------------------------------------------
-fit_mle(Normal, efm_c[5]) # μ = 61.71; σ² = 15.46
+fit_mle(Normal, efm_c[5]) # μ = 67.71; σ² = 16.24
 fit_mle(Normal, efm_n[5]) # μ = 12.03; σ² = 8.17
 
 histc = Vector{Vector{Vector{Real}}}(undef, length(datasets))
@@ -183,14 +183,14 @@ pgfsave(ex_fig_n, pn) # nitrogen
 # AEFM lengths
 # Carbon
 histc[1][1]
-histc[1][2] # 0-7 and 8- boundaries
+histc[1][2] # 0-7 and 9- boundaries
 histc[2][1]
 histc[2][2] # 0-10 and 11- boundaries
 histc[3][1]
-histc[3][2] # 0-5 and 6- boundaries
+histc[3][2] # 0-5 and 7- boundaries
 histc[4][1]
 histc[4][2] # 0-11 and 12- boundaries
 histc[5][1]
-histc[5][2] # 0-12 and 13-boundaries
+histc[5][2] # 0-5 and 15-boundaries
 # ------------------------------------------------------------------------------
 

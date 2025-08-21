@@ -46,6 +46,13 @@ If there are any issues, run the following to manually install the packages:
 $ bash jobs/01-install-julia-packages.sh
 ```
 
+After some Julia updates, it appears the following packages should be explicitly
+loaded for the majority of the Julia scripts to run:
+
+```julia
+julia> using FilePaths, FileIO, JLD2
+```
+
 ### R
 
 The publication-quality Sankey diagrams are made with the `PantaRhei` and

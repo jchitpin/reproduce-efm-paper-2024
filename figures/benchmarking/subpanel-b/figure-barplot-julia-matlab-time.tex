@@ -32,20 +32,8 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 
-\pgfplotsset{
-    /pgfplots/mybar/.style 1 args={%
-        legend image code/.code={%
-            \draw[#1]
-                (0cm,-0.1cm)
-                rectangle
-                (0.2cm,0.25cm);
-        }
-    }
-}
-
 \begin{document}
 
-\begin{figure}
     \begin{tikzpicture}
         \begin{axis}[%
             height=7cm,
@@ -93,9 +81,9 @@
                     (2,1101.1159420013428)
                     (3,2789.4294261932373)
                     (4,5327.3885250091550)
-                    (5,9177356.9047451020)
+                    (5,21337208.898544310)
                 };
-            \addplot[black, fill=cyan] % MATLAB FluxModeCalculator (nitrogen)
+            \addplot[black, fill=cyan] % Julia MarkovWeightedEFMs (nitrogen)
                 coordinates {
                     (1,006.600856781005859)
                     (2,160.629510879516600)
@@ -112,7 +100,7 @@
                     (5,1.0001)
                 };
 
-            % E coli core bars 
+            % E coli core bars
             \node [left,font=\tiny,anchor=east,rotate=90] at (axis cs: 0.73,296) {0.30s};
             \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 1,100.6) {0.0066s};
             \node [right,font=\tiny,anchor=east,rotate=90,white] at (axis cs: 1.27,5858564.1) {5,860s};
@@ -133,14 +121,13 @@
             \node [above,font=\tiny,rotate=90] at (axis cs: 4.42,2.25) {DNF};
 
             % HepG2 bars
-            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 4.73,9177356.9) {9,177s};
+            \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 4.73,21337208.9) {21,337s};
             \node [right,font=\tiny,anchor=east,rotate=90] at (axis cs: 5,386.5) {0.39s};
             \node [above,font=\tiny,rotate=90] at (axis cs: 5.42,2.25) {DNF};
 
             \legend{{MarkovWeightedEFMs.jl (serial)}, {MarkovWeightedEFMs.jl (serial)}, {FluxModeCalculator (serial)}}
         \end{axis}
     \end{tikzpicture}
-\end{figure}
 
 \end{document}
 

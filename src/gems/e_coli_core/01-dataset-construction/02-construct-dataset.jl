@@ -31,6 +31,7 @@ ex_dict_nitrogen          = save * "dictionary-atom-tracing-nitrogen.csv"
 # ------------------------------------------------------------------------------
 
 ## JULIA PACKAGES AND FUNCTIONS ------------------------------------------------
+using FilePaths, FileIO
 using CSV, Tables, MarkovWeightedEFMs, BenchmarkTools
 # ------------------------------------------------------------------------------
 
@@ -73,6 +74,10 @@ print(find_atomic_chmc_input_errors(S4)) # confirm no errors
 # (5) Construct the reaction strings and map atoms via RXNMAPPER
 smiles5 = canonicalize_smiles(smiles4) # smiles strings must be canonicalized!
 rs5, ms5 = map_reaction_strings(S4, smiles5, rxns4, false)
+
+# Manually fix incorrect atom mappings involving transaminases
+#include("./manually-corrected-reaction-mappings.jl")
+#ms5 = manual_fix(rxns4, ms5)
 
 # (6) Precompute atom tracing dictionary (for carbons)
 amax = get_max_atoms(smiles5, :C)

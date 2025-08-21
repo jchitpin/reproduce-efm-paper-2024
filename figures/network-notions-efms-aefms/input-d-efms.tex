@@ -1,0 +1,48 @@
+\node[labelFont,below=12.0cm of Aa,xshift=-5.0cm,draw] (A) {A};
+\node[labelFont,right=1.5cm of A] (Ba) {B};
+\node[labelFont,right=1.5cm of Ba] (Ca) {C};
+\node[labelFont,right=1.5cm of Ca] (Da) {D};
+\node[labelFont,yshift=-1.0cm] (G1a) at ($(Ba)!0.5!(Ca)$) {G\textsubscript{1}};
+\node[labelFont,yshift=-1.75cm] (G2a) at ($(Ba)!0.5!(Ca)$) {G\textsubscript{2}};
+\node[labelFont,right=1.0cm of G1a,yshift=0.25cm] (Ea) {E};
+\node[labelFont,right=1.0cm of G2a,yshift=0.25cm] (Fa) {F};
+\node[font=\normalsize,right=0.1cm of G1a,yshift=0.2cm,xshift=-0.15cm] () {};
+\node[font=\normalsize, left=0.1cm of G1a,yshift=0.2cm,xshift=+0.15cm] () {};
+\node[left=0.2cm of A] (AEa) {};
+\node[right=0.2cm of Da] (DEa) {};
+\node[right=0.2cm of Ea] (EEa) {};
+\node[right=0.2cm of Fa] (FEa) {};
+\node[left=0.5cm of A] (left) {};
+\node[right=0.5cm of Da] (right) {};
+
+\draw[networkArrow,cpurple] ([yshift=+0.10cm]AEa.east) to node[midway,font=\normalsize,xshift=-0.45cm] {$w_1$} ([yshift=+0.10cm]A.west);
+\draw[networkArrow,cpurple] ([yshift=+0.10cm]A.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.10cm]Ba.west);
+\draw[networkArrow,cpurple] ([yshift=+0.10cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.10cm]Ca.west);
+\draw[networkArrow,cpurple] ([yshift=+0.10cm]Ca.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.10cm]Da.west);
+\draw[networkArrow,cpurple] ([yshift=+0.10cm]Da.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.10cm]DEa.west);
+
+\draw[networkArrow,corange] ([yshift=-0.10cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.10cm]Ca.west);
+
+\draw[networkArrow,corange] ([yshift=+0.00cm]EEa.west) to node[midway,font=\normalsize,xshift=+0.45cm] {$w_2$} ([yshift=+0.00cm]Ea.east);
+\draw[networkArrow,corange] ([yshift=+0.00cm]Fa.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.00cm]FEa.west);
+\connectThreeA[%
+    @ratio=3.5,
+    @pos=0.0,
+    @delta=0.3,
+    @edge 1=->,
+    @edge 2=->
+]{G1a.east}{G2a.east}{Ca.south}
+\connectThreeB[%
+    @ratio=3.5,
+    @pos=0.0,
+    @delta=0.3,
+    @edge 3=->
+]{G1a.west}{G2a.west}{Ba.south}
+\draw[-stealth, line width=1.0pt,corange] (Ea.west) to[out=210, in=165, looseness=2.75] node[] {} (Fa.west);
+
+\node[fit=(left) (right) (AEa) (A) (Ba) (Ca) (Da) (DEa) (Ea) (EEa) (Fa) (FEa) (G1a) (G2a), draw=black,inner sep=5pt, line width=1.0pt] (metabolic_flux_network) {};
+\node[above=0.1cm of metabolic_flux_network, labelFont, yshift=-0.1cm,align=center] () {Molecular elementary flux modes};
+
+% Subcaption label
+\node[labelFont,left=0.2cm of metabolic_flux_network.north west,yshift=1.0cm,anchor=south west,font=\huge] () {(d)};
+

@@ -148,7 +148,7 @@ median(g(f( dfc1[(dfc1.x .== 3), :y] ))) # 0.59 ratio on a log10 scale
 median(g(f( dfc1[(dfc1.x .== 4), :y] ))) # 0.66 ratio on a log10 scale
 
 # HepG2
-median(g(f( dfc1[(dfc1.x .== 5), :y] ))) # 1.67 ratio on a log10 scale
+median(g(f( dfc1[(dfc1.x .== 5), :y] ))) # 1.62 ratio on a log10 scale
 
 # E coli core
 #median(g(f( dfn1[(dfn1.x .== 1), :y] ))) # N/A since all ratios are 1/0
@@ -174,7 +174,10 @@ regex = r"Histidine_e" # change!
 regex = r"Isoleucine_e" # change!
 regex = r"Lysine_e" # change!
 regex = r"Leucine_e" # change!
+regex = r"Tryptophan_e" # change!
+regex = r"cholesta" # change!
 regex = r"Glycine_e" # change!
+regex = r"2-Oxoglutarate_e" # change!
 regex = r"Glycerophosphoserine_c" # change!
 regex = r"N-Acetyl-D-muramoyl-L-alanine_c" # change!
 regex = r"S-Adenosyl-L-homocysteine_c" # change!
@@ -199,27 +202,29 @@ df.name[findall(.!isnothing.(match.(regex, df.name)))]
 df.y[findall(.!isnothing.(match.(regex, df.name)))]
 df.z[findall(.!isnothing.(match.(regex, df.name)))]
 
-sum(.!isinf.(dfc1.y)) # total number of source metabolites with carbon
-sum(.!isinf.(dfn1.y)) # total number of source metabolites with nitrogen 
-sum(dfc1.y .> 0) # total number of source metabolites with non-zero carbon statistic
-sum(dfn1.y .> 0) # total number of source metabolites with non-zero nitrogen statistic
+## E coli
+sum(.!isinf.(dfc1.y)) # total number of source metabolite/carbons 443
+sum(.!isinf.(dfn1.y)) # total number of source metabolites/nitrogen 202
+sum(dfc1.y .> 0) # total number of source metabolites with non-zero carbon statistic 209
+sum(dfn1.y .> 0) # total number of source metabolites with non-zero nitrogen statistic 70
 
-c = 0 # equals 16 source metabolites with only 1 carbon
+# All GEMs
+idx_carbon = 0 # equals 16 source metabolites with only 1 carbon
 for i in eachindex(C1)
     for j in 1:length(C1[i])
         if length(C1[i][j]) == 1
-            c += 1
+            idx_carbon += 1
         end
     end
 end
-c
+idx_carbon
 
-n = 0 # equals 108 source metabolites with only 1 nitrogen
+idx_nitrogen = 0 # equals 108 source metabolites with only 1 nitrogen
 for i in eachindex(N1)
     for j in 1:length(N1[i])
         if length(N1[i][j]) == 1
-            n += 1
+            idx_nitrogen += 1
         end
     end
 end
-n
+idx_nitrogen

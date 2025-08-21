@@ -1,0 +1,73 @@
+\node[line width=0.75pt, labelFont,below=5.5cm of Aa,xshift=-5.0cm,draw] (A) {\phantom{A}};
+\node[carbon2,above=0.1cm of A,yshift=-0.725cm,draw=none] (Ac1) {};
+\node[carbon2,below=0.1cm of A,yshift=+0.725cm,draw=none] (Ac2) {};
+\node[labelFont,above=0.1cm of A,yshift=-0.1cm] () {A};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of A,draw] (B) {\phantom{B}};
+\node[carbon2,above=0.1cm of B,yshift=-0.725cm,draw=none] (Bc1) {};
+\node[carbon2,below=0.1cm of B,yshift=+0.725cm,draw=none] (Bc2) {};
+\node[labelFont,above=0.1cm of B,yshift=-0.1cm] () {B};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of B,draw] (C) {\phantom{C}};
+\node[carbon2,above=0.1cm of C,yshift=-0.725cm,draw=none] (Cc1) {};
+\node[carbon2,below=0.1cm of C,yshift=+0.725cm,draw=none] (Cc2) {};
+\node[labelFont,above=0.1cm of C,yshift=-0.1cm] () {C};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of C,draw] (D) {\phantom{D}};
+\node[carbon2,above=0.1cm of D,yshift=-0.725cm,draw=none] (Dc1) {};
+\node[carbon2,below=0.1cm of D,yshift=+0.725cm,draw=none] (Dc2) {};
+\node[labelFont,above=0.1cm of D,yshift=-0.1cm] () {D};
+
+\node[line width=0.75pt,labelFont,yshift=-1.0cm,draw=none] (G1) at ($(B)!0.5!(C)$) {\phantom{G}};
+\node[carbon2,draw=none] (G1c) at (G1.center) {};
+
+\node[line width=0.75pt,labelFont,yshift=-1.75cm,draw] (G2) at ($(B)!0.5!(C)$) {\phantom{G}};
+\node[carbon2,draw=none] (G2c) at (G2.center) {};
+\node[labelFont,below=0.1cm of G2,yshift=+0.1cm] () {G};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of G1,yshift=-0.25cm,draw] (E) {\phantom{E}};
+\node[neutral2,draw=none] (Ed) at (E.center) {};
+\node[labelFont,above=0.1cm of E,yshift=-0.1cm] () {E};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of G2,yshift=-0.5cm,draw] (F) {\phantom{F}};
+\node[neutral2,draw=none] (Fd) at (F.center) {};
+\node[labelFont,below=0.1cm of F,yshift=+0.1cm] () {F};
+
+\node[labelFont,left=0.2cm of A] (AE) {\phantom{A}};
+\node[carbon2,above=0.1cm of AE,yshift=-0.725cm,draw=none] (AEc1) {};
+\node[carbon2,below=0.1cm of AE,yshift=+0.725cm,draw=none] (AEc2) {};
+
+\node[labelFont,right=0.2cm of D] (DE) {\phantom{D}};
+\node[carbon2,above=0.1cm of DE,yshift=-0.725cm,draw=none] (DEc1) {};
+\node[carbon2,below=0.1cm of DE,yshift=+0.725cm,draw=none] (DEc2) {};
+
+\node[right=0.2cm of E] (EE) {};
+\node[right=0.2cm of F] (FE) {};
+
+\node[left=0.5cm of A] (left) {};
+\node[right=0.5cm of D] (right) {};
+
+\node[above=0.5cm of A] (pad_up) {};
+\node[below=0.5cm of F] (pad_down) {};
+
+\draw[networkArrow] ([xshift=+0.0cm]EE.west) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.13cm]Ed.east);
+\draw[networkArrow] ([xshift=+0.13cm]Fd.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=-0.0cm]FE.west);
+\draw[networkArrow] ([xshift=-0.01cm]AE.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=-0.0cm]A.west);
+\draw[networkArrow] ([xshift=+0.0cm]A.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=-0.0cm]B.west);
+\draw[networkArrow] ([xshift=+0.0cm]B.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=-0.0cm]C.west);
+\draw[networkArrow] ([xshift=+0.0cm]C.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=-0.0cm]D.west);
+\draw[networkArrow] ([xshift=+0.0cm]D.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.01cm]DE.west);
+\draw[networkArrow] ([xshift=+0.0cm]E.south) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.00cm]F.north);
+
+\draw[networkArrow] ([xshift=+0.0cm]C.south) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.00cm]G2.north east);
+\draw[networkArrow] ([xshift=+0.0cm]G2.north west) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.00cm]B.south);
+\draw[networkArrow] ([xshift=+0.0cm]C.south) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.00cm]E.north west);
+\draw[networkArrow] ([xshift=+0.0cm]C.south) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([xshift=+0.00cm]F.north west);
+
+
+\node[fit=(left) (right) (A) (B) (C) (D) (E) (F) (G1) (G2) (pad_up) (pad_down), draw=black,inner sep=5pt, line width=1.0pt] (metabolic_graph) {};
+\node[above=0.1cm of metabolic_graph, labelFont,yshift=-0.1cm] () {Metabolic graph};
+
+% Subcaption label
+\node[labelFont,left=0.2cm of metabolic_graph.north west,yshift=1.0cm,anchor=south west,font=\huge] () {(b)};
+

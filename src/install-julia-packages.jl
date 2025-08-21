@@ -70,13 +70,15 @@ Pkg.add([#
     "MolecularGraph",   # checking molecular formulas from SMILES strings
     "NetworkLayout",
     "Printf",
-    "ProgressMeter"
+    "ProgressMeter",
     "PubChemCrawler",   # molecular formula utilities
     "RDKitMinimalLib",
     "Reexport",
     "SparseArrays",
     "Statistics",
     "Tables",           # CSV helper
+    "FilePaths",
+    "FileIO"
 ])
 # ------------------------------------------------------------------------------
 

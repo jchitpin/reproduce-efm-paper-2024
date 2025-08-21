@@ -44,7 +44,7 @@ dict_n = jldopen(load1 * im_dictionary_n)["dict"]
 
 # Load atomic CHMCs
 Ch = load_hepg2_chmcs(load1 * im_carbon_hepg2)
-Nh = load_hepg2_chmcs(load1 * im_nitrogen_hepg2)
+#Nh = load_hepg2_chmcs(load1 * im_nitrogen_hepg2)
 # ------------------------------------------------------------------------------
 
 ## EXPORT GRAPH OF TOP 5, 10 AND 50 CARBON AEFMS FROM GLUTAMINE ----------------
@@ -64,13 +64,14 @@ p14_0_num = sum(sum.([p14[i].efm_fluxes[1:5] for i in 1:length(Ch[y])]))
 p14_1_num = sum(sum.([p14[i].efm_fluxes[1:10] for i in 1:length(Ch[y])]))
 p14_2_num = sum(sum.([p14[i].efm_fluxes[1:50] for i in 1:length(Ch[y])]))
 
-unique([df14_0.Source; df14_0.Target])
-unique([df14_1.Source; df14_1.Target])
-unique([df14_2.Source; df14_2.Target])
+unique([df14_0.Source; df14_0.Target]) # 22 metabolites + Source/Sink
+unique([df14_1.Source; df14_1.Target]) # 32 metabolites + Source/Sink
+unique([df14_2.Source; df14_2.Target]) # 102 metabolites + Source/Sink
 
-p14_0 = p14_0_num / p14_denom # 50.2% explained atomic fluxes (across all 5 carbons); 24 metabolites; 31 edges.
-p14_1 = p14_1_num / p14_denom # 60.0% explained atomic fluxes (across all 5 carbons); 34 metabolites; 45 edges.
-p14_2 = p14_2_num / p14_denom # 87.0% explained atomic fluxes (across all 5 carbons); 112 metabolites. 158 edges.
+# These numbers should roughly equal that from code in subpanel-a
+p14_0 = p14_0_num / p14_denom # 44.66% explained atomic fluxes (across all 5 carbons); 24 metabolites; 31 edges (UNIQUE EDGES COLLAPSING METABOLITE-ATOMS ONTO METABOLITES).
+p14_1 = p14_1_num / p14_denom # 57.25% explained atomic fluxes (across all 5 carbons); 54 metabolites; 46 edges (UNIQUE EDGES COLLAPSING METABOLITE-ATOMS ONTO METABOLITES).
+p14_2 = p14_2_num / p14_denom # 86.94% explained atomic fluxes (across all 5 carbons); 124 metabolites. 146 edges (UNIQUE EDGES COLLAPSING METABOLITE-ATOMS ONTO METABOLITES.
 
 df14_0[:, :Source] .= uppercasefirst.(df14_0[:, :Source])
 df14_0[:, :Target] .= uppercasefirst.(df14_0[:, :Target])
@@ -80,12 +81,79 @@ CSV.write(ex_glutamine_1, df14_1)
 CSV.write(ex_glutamine_2, df14_2)
 # ------------------------------------------------------------------------------
 
+## GET LENGTHS OF TOP AEFMS EXCLUDING SOURCE/SINK PSEUDONODES ------------------
+
+gln_efm_1 = efm_state_to_metabolite_atom_seq(Ch[14][1])
+gln_efm_2 = efm_state_to_metabolite_atom_seq(Ch[14][2])
+gln_efm_3 = efm_state_to_metabolite_atom_seq(Ch[14][3])
+gln_efm_4 = efm_state_to_metabolite_atom_seq(Ch[14][4])
+gln_efm_5 = efm_state_to_metabolite_atom_seq(Ch[14][5])
+
+gln_efm_1 = efm_state_to_metabolite_seq(Ch[14][1])
+gln_efm_2 = efm_state_to_metabolite_seq(Ch[14][2])
+gln_efm_3 = efm_state_to_metabolite_seq(Ch[14][3])
+gln_efm_4 = efm_state_to_metabolite_seq(Ch[14][4])
+gln_efm_5 = efm_state_to_metabolite_seq(Ch[14][5])
+
+ids_1 = sortperm(Ch[14][1].w, rev=true)[1:5]
+ids_2 = sortperm(Ch[14][2].w, rev=true)[1:5]
+ids_3 = sortperm(Ch[14][3].w, rev=true)[1:5]
+ids_4 = sortperm(Ch[14][4].w, rev=true)[1:5]
+ids_5 = sortperm(Ch[14][5].w, rev=true)[1:5]
+
 top_5_glutamine_efm_lengths = [#
-    length.(first.(Ch[14][1].e[sortperm(Ch[14][1].w, rev=true)[1:5]]));
-    length.(first.(Ch[14][2].e[sortperm(Ch[14][2].w, rev=true)[1:5]]));
-    length.(first.(Ch[14][3].e[sortperm(Ch[14][3].w, rev=true)[1:5]]));
-    length.(first.(Ch[14][4].e[sortperm(Ch[14][4].w, rev=true)[1:5]]));
-    length.(first.(Ch[14][5].e[sortperm(Ch[14][5].w, rev=true)[1:5]]));
+    length.(gln_efm_1[ids_1]);
+    length.(gln_efm_2[ids_2]);
+    length.(gln_efm_3[ids_3]);
+    length.(gln_efm_4[ids_4]);
+    length.(gln_efm_5[ids_5]);
 ]
-mean(top_5_glutamine_efm_lengths) # 6.08
+mean(top_5_glutamine_efm_lengths) # 6.0 length
+
+top_5_glutamine_efm_lengths[1:5]   # 7, 7, 5,  3, 15
+top_5_glutamine_efm_lengths[6:10]  # 7, 7, 5,  7,  3
+top_5_glutamine_efm_lengths[11:15] # 7, 7, 5,  7,  3
+top_5_glutamine_efm_lengths[16:20] # 7, 7, 5,  7,  3
+top_5_glutamine_efm_lengths[21:25] # 5, 8, 3,  2,  8
+
+efm_state_to_metabolite_seq(Ch[14][1])[ids_1]
+efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1][1])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1][2])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1][3])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1][4])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][1])[ids_1][5])[1:15]]
+
+efm_state_to_metabolite_seq(Ch[14][2])[ids_2]
+efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2][1])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2][2])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2][3])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2][4])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][2])[ids_2][5])]
+
+efm_state_to_metabolite_seq(Ch[14][3])[ids_3]
+efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3][1])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3][2])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3][3])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3][4])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][3])[ids_3][5])]
+
+efm_state_to_metabolite_seq(Ch[14][4])[ids_4]
+efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4][1])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4][2])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4][3])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4][4])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][4])[ids_4][5])]
+
+efm_state_to_metabolite_seq(Ch[14][5])[ids_5]
+efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5][1])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5][2])[1:8]]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5][3])]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5][4])[1:2]]
+mets[first.(efm_state_to_metabolite_atom_seq(Ch[14][5])[ids_5][5])[1:8]]
+# ------------------------------------------------------------------------------
 

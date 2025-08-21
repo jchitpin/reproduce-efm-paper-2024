@@ -19,7 +19,7 @@ FNAME3="01-enumerate-atomic-efms.jl"
 FNAME4="01-construct-dataset.jl"
 # ------------------------------------------------------------------------------
 
-## E_coli_core
+## E_coli_core -----------------------------------------------------------------
 SET="e_coli_core"
 # Pre-process dataset
 julia --project=$BASE_PATH -t $THREAD $BASE_PATH/$ADD_PATH/$SET/$CONSTRUCTION/$FNAME1

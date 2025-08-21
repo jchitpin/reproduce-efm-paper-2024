@@ -36,19 +36,7 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 
-\pgfplotsset{
-    /pgfplots/mybar/.style 1 args={%
-        legend image code/.code={%
-            \draw[#1]
-                (0cm,-0.1cm)
-                rectangle
-                (0.2cm,0.25cm);
-        }
-    }
-}
-
 \begin{document}
-\begin{figure}
     \begin{tikzpicture}
         \begin{axis}[%
             height=7cm,
@@ -93,7 +81,6 @@
             ] table[x=z, y=y, meta=x]{./jitter-carbon.dat};
         \end{axis}
     \end{tikzpicture}
-\end{figure}
 
 \end{document}
 

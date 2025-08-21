@@ -41,9 +41,9 @@
     height={5cm},
     width={7cm},
     xmin = -50,
-    xmax = 950,
+    xmax = 850,
     xlabel = Ranked carbon AEFM indices (\#),
-    ylabel = Cumulative explained\\mass flow (0-99\%),
+    ylabel = {Cumulative explained\\mass flow (0-99\%)},
     xlabel style = {font=\small},
     ylabel style = {font=\small,align=center},
     legend cell align = {left},
@@ -61,62 +61,62 @@
 ]
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             1={mark=*,draw opacity=0, fill=cred}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{1}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{1}] {./cumulative-source-met-14.dat};
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             2={mark=*,draw opacity=0, fill=cblue}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{2}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{2}] {./cumulative-source-met-14.dat};
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             3={mark=*,draw opacity=0, fill=cgreen}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{3}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{3}] {./cumulative-source-met-14.dat};
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             4={mark=*,draw opacity=0, fill=cyellow}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{4}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{4}] {./cumulative-source-met-14.dat};
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             5={mark=*,draw opacity=0, fill=corange}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{5}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{5}] {./cumulative-source-met-14.dat};
     \addplot[%
         scatter,
-        mark=*, draw=black, line width=0.5pt,
+        mark=*, draw=black, line width=0.5pt, mark size=1pt,
         scatter src=explicit symbolic,
         scatter/classes={%
             6={mark=*,draw opacity=0, fill=cpurple}
         },
         each nth point=1,filter discard warning=false, unbounded coords=discard
-    ] table [x=x, y=yc, meta=atom,discard if not={atom}{6}] {../../cumulative-mass-flow/subpanels/cumulative-source-met-14.dat};
+    ] table [x=x, y=yc, meta=atom,discard if not={atom}{6}] {./cumulative-source-met-14.dat};
 
     % Manually added
     \addplot[black, dashed, domain = -50:950,samples = 2] {0.99};
-    \node[align=center,font=\small] at (rel axis cs:0.60,0.30) {Glutamine\\[0.25cm]\includegraphics[width=3.0cm]{../../source-metabolite-structures/glutamine.pdf}};
+    \node[align=center,font=\small] at (rel axis cs:0.60,0.35) {Glutamine\\[0.25cm]\includegraphics[width=3.0cm]{../../source-metabolite-structures/glutamine.pdf}};
 
 \end{axis}
 \end{tikzpicture}

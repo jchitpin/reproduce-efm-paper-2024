@@ -66,14 +66,14 @@ xy_n = [get_efm_total_vs_time_benchmark(N, n) for n in Ny]
 # xy_c[A][B][C] # A for threads; B = 1 for x-coord, 2 for y-coord; C'th dataset
 # xy_n[A][B][C] # A for threads; B = 1 for x-coord, 2 for y-coord; C'th dataset
 
-# Total number of carbon EFMs
+# Total number of carbon EFMs (for manual subpanel-a)
 sum(xy_c[1][1][1]) # 6,519 E. coli carbon EFMs
 sum(xy_c[1][1][2]) # 7,958 iAB_RBC_283 carbon EFMs
 sum(xy_c[1][1][3]) # 30,633 iIT341 carbon EFMs
 sum(xy_c[1][1][4]) # 59,444 iSB619 carbon EFMs
-sum(xy_c[1][1][5]) # 1,377,937 HepG2 carbon EFMs
+sum(xy_c[1][1][5]) # 2,180,613 HepG2 carbon EFMs
 
-# Total number of nitrogen EFMs
+# Total number of nitrogen EFMs (for manual subpanel-a)
 sum(xy_n[1][1][1]) # 204 E. coli carbon EFMs
 sum(xy_n[1][1][2]) # 2,091 iAB_RBC_283 carbon EFMs
 sum(xy_n[1][1][3]) # 10,440 iIT341 carbon EFMs

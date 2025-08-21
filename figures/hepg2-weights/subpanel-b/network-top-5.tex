@@ -115,39 +115,42 @@
     \node[node,fill=cyto,yshift=1.0cm] at ($(oaaC)!0.33!(oaaM)$) (aspartateC) {};
 
     % Non-TCA source-to-sink nodes
-    \node[node,fill=none,draw=none,right=3.0cm of glutamateM] (glutamineMPH) {};
-    \node[node,fill=mito,right=3.0cm of glutamineMPH] (glutamineM) {};
-    \node[node,fill=none,draw=none,right=3.0cm of glutamineM] (glutamineCPH) {};
-    \node[node,fill=none,draw=none] at (glutamineCPH.center |- akgC.center) (glutamineC) {};
-    \node[node,fill=none,draw=none] at (glutamineCPH.center |- isocitrateC.center) (glutamineS) {};
+    \node[node,fill=cyto,right=8.0cm of isocitrateC] (co2C) {};
+    \node[node,fill=mito] at (co2C.center |- akgM.center) (co2M) {};
+    \node[node,fill=cyto,right=2.0cm of glutamateC] (glutamineC) {};
+    \node[node,fill=else] at (glutamineC.center |- akgC.center) (glutamineS) {};
+    \node[node,fill=mito] at (glutamineC.center |- glutamateM.center) (glutamineM) {};
+    \node[node,fill=else,right=2.0cm of co2C] (co2S) {};
+    \node[font=\bf\Huge] at (co2S.center |- co2M.center) (sink) {Sink};
+    \node[font=\bf\Huge,above=1.0cm of glutamineS] (source) {Source};
 
-    \node[font=\bf\Huge,above=1.5cm of glutamineS] (source) {\textcolor{white}{Source}};
-    \node[node2,fill=mito] at (akgM -| glutamateM) (alanineM) {};
-    \node[node2,fill=mito,below=2.0cm of alanineM] (pyruvateM) {};
-    \node[node,fill=mito,below=2.0cm of pyruvateM] (co2M) {};
-    \node[node,fill=none,draw=none,below=2.0cm of co2M] (co2MPH) {};
-    \node[node,fill=none,draw=none] at ($(alanineM)!0.5!(pyruvateM)$) (alanineCPH) {};
-    \node[node,fill=none,draw=none] at ($(co2M)!0.5!(co2MPH)$) (co2MPH2) {};
-    \node[node2,fill=cyto,right=3.0cm of alanineCPH] (alanineC) {};
-    \node[node2,fill=else,right=3.0cm of alanineC] (alanineS) {};
-    \node[node,fill=cyto,right=3.0cm of co2MPH2] (co2C) {};
-    \node[node,fill=else,right=3.0cm of co2C] (co2S) {};
-    \node[node,fill=none,draw=none,right=3.0cm of co2S] (co2SPH) {};
-    \node[node,fill=none,draw=none] at ($(co2C)!0.5!(co2S)$) (hco3CPH) {};
-    \node[node,fill=none,draw=none] at ($(co2S)!0.5!(co2SPH)$) (hco3SPH) {};
-    \node[node2,fill=cyto] at (co2MPH.center -| hco3CPH.center) (hco3C) {};
-    \node[node2,fill=else] at (co2MPH.center -| hco3SPH.center) (hco3S) {};
-    \node[font=\bf\Huge,below=3.0cm of co2SPH] (sink) {};
-    \node[font=\bf\Huge,below=3.0cm of co2SPH,xshift=-12pt] () {Sink};
+    %\node[node,fill=none,draw=none,right=3.0cm of glutamateM] (glutamineMPH) {};
+    %\node[node,fill=mito,right=3.0cm of glutamineMPH] (glutamineM) {};
+    %\node[node,fill=none,draw=none,right=3.0cm of glutamineM] (glutamineCPH) {};
+    %\node[node,fill=none,draw=none] at (glutamineCPH.center |- akgC.center) (glutamineC) {};
+    %\node[node,fill=none,draw=none] at (glutamineCPH.center |- isocitrateC.center) (glutamineS) {};
 
-    \node[node,fill=none,draw=none] at ($(glutamateM)!0.5!(alanineM)$) (gluAlaPH) {};
-    \node[node,fill=else] at (gluAlaPH.center -| glutamineC.center) (glutamineCSink) {};
+    %\node[font=\bf\Huge,above=1.5cm of glutamineS] (source) {\textcolor{white}{Source}};
+    %\node[node2,fill=mito] at (akgM -| glutamateM) (alanineM) {};
+    %\node[node2,fill=mito,below=2.0cm of alanineM] (pyruvateM) {};
+    %\node[node,fill=mito,below=2.0cm of pyruvateM] (co2M) {};
+    %\node[node,fill=none,draw=none,below=2.0cm of co2M] (co2MPH) {};
+    %\node[node,fill=none,draw=none] at ($(alanineM)!0.5!(pyruvateM)$) (alanineCPH) {};
+    %\node[node,fill=none,draw=none] at ($(co2M)!0.5!(co2MPH)$) (co2MPH2) {};
+    %\node[node2,fill=cyto,right=3.0cm of alanineCPH] (alanineC) {};
+    %\node[node2,fill=else,right=3.0cm of alanineC] (alanineS) {};
+    %\node[node,fill=cyto,right=3.0cm of co2MPH2] (co2C) {};
+    %\node[node,fill=else,right=3.0cm of co2C] (co2S) {};
+    %\node[node,fill=none,draw=none,right=3.0cm of co2S] (co2SPH) {};
+    %\node[node,fill=none,draw=none] at ($(co2C)!0.5!(co2S)$) (hco3CPH) {};
+    %\node[node,fill=none,draw=none] at ($(co2S)!0.5!(co2SPH)$) (hco3SPH) {};
+    %\node[node2,fill=cyto] at (co2MPH.center -| hco3CPH.center) (hco3C) {};
+    %\node[node2,fill=else] at (co2MPH.center -| hco3SPH.center) (hco3S) {};
+    %\node[font=\bf\Huge,below=3.0cm of co2SPH] (sink) {};
+    %\node[font=\bf\Huge,below=3.0cm of co2SPH,xshift=-12pt] () {Sink};
 
-    % Remaining two looped AEFMs
-    \node[node2,fill=mito] at (malateM |- co2M) (prolineM) {};
-    \node[node2,fill=cyto] at (prolineM |- hco3C) (prolineC) {};
-    \node[node2,fill=cyto] at (succoaM |- co2M) (gshC) {};
-    \node[node2,fill=cyto] at (gshC |- hco3C) (ssgC) {};
+    %\node[node,fill=none,draw=none] at ($(glutamateM)!0.5!(alanineM)$) (gluAlaPH) {};
+    %\node[node,fill=else] at (gluAlaPH.center -| glutamineC.center) (glutamineCSink) {};
 
     % Node labels (starting with TCA)
     \foreach \n [count=\i from 0] in {%
@@ -159,15 +162,15 @@
     \foreach \n [count=\i from 0] in {%
         {}, {}, {icit[c]}, {},
         {cit[m]}, {}, {}, {},
-        {succ[m]}, {}, {}, {}
+        {succ[m]}, {}, {akg[m]}, {}
     }
         \node[font=\Huge] at (\i*360/12:7.0) {\n};
-    \foreach \n [count=\i from 0] in {%
-        {}, {akg[c]}, {}, {},
-        {}, {}, {}, {},
-        {}, {}, {}, {}
-    }
-        \node[font=\Huge] at (\i*360/12:7.2) {\n};
+    %\foreach \n [count=\i from 0] in {%
+        %{}, {akg[c]}, {}, {},
+        %{}, {}, {}, {},
+        %{}, {}, {}, {}
+    %}
+        %\node[font=\Huge] at (\i*360/12:6.0) {\n};
     \foreach \n [count=\i from 0] in {%
         {}, {}, {}, {},
         {}, {oaa[m]}, {mal[m]}, {fum[m]},
@@ -180,34 +183,44 @@
         {}, {}, {}, {glu[m]}
     }
     \node[font=\Huge] at (\i*360/12:4.6) {\n};
-    \node[font=\Huge,left=0.10cm of akgM,xshift=-0.1cm,yshift=+0.2cm] () {akg[m]}
-    \node[font=\Huge,above left=0.20cm of glutamateC,xshift=0.1cm,yshift=-0.1cm] () {glu[c]}
-    \node[font=\Huge,below=0.10cm of aspartateM,xshift=0.0cm,yshift=+0.1cm] () {asp[m]}
-    \node[font=\Huge,above=0.10cm of aspartateC,xshift=0.0cm,yshift=-0.1cm] () {asp[c]}
-    \node[font=\Huge,below=0.10cm of malateC,yshift=-0.1cm] () {mal[c]}
-    \node[font=\Huge,right=0.1cm of oaaC,xshift=-0.1cm] () {oaa[c]}
-    \node[font=\Huge,above=0.1cm of glutamineM,yshift=-0.1cm] () {gln[m]}
-    \node[font=\Huge,above=0.1cm of alanineC,yshift=-0.1cm] () {ala[c]}
-    \node[font=\Huge,above=0.1cm of alanineS,yshift=-0.1cm] () {ala[s]}
-    \node[font=\Huge,above=0.1cm of co2C,yshift=-0.1cm] () {co\textsubscript{2}[c]}
-    \node[font=\Huge,above=0.1cm of co2S,yshift=-0.1cm] () {co\textsubscript{2}[s]}
-    \node[font=\Huge,right=0.1cm of alanineM,xshift=-0.1cm] () {ala[m]}
-    \node[font=\Huge,right=0.1cm of pyruvateM,xshift=-0.1cm] () {pyr[m]}
-    \node[font=\Huge,right=0.1cm of co2M,xshift=-0.1cm,yshift=+0.1cm] () {co\textsubscript{2}[m]}
-    \node[font=\Huge,below=0.1cm of hco3S,xshift=-0.6cm,yshift=+0.1cm] () {hco\textsubscript{3}\textsuperscript{-}[s]}
-    \node[font=\Huge,below=0.1cm of hco3C,xshift=-0.0cm,yshift=+0.1cm] () {hco\textsubscript{3}\textsuperscript{-}[c]}
-    \node[font=\Huge,above=0.1cm of prolineM,yshift=-0.1cm] () {pro[m]}
-    \node[font=\Huge,below=0.1cm of prolineC,yshift=+0.1cm] () {pro[c]}
-    \node[font=\Huge,above=0.1cm of gshC,yshift=-0.1cm] () {gsh[c]}
-    \node[font=\Huge,below=0.1cm of ssgC,yshift=+0.1cm] () {S-sulfanylgsh[c]}
+    \node[font=\Huge,above=0.1cm of akgC] () {akg[c]};
+
+    \node[font=\Huge,left=0.10cm of glutamateC] () {glu[c]};
+    \node[font=\Huge,below=0.10cm of aspartateM,xshift=0.0cm,yshift=+0.1cm] () {asp[m]};
+    \node[font=\Huge,above=0.10cm of aspartateC,xshift=0.0cm,yshift=-0.1cm] () {asp[c]};
+    \node[font=\Huge,below=0.10cm of malateC,yshift=-0.1cm] () {mal[c]};
+    \node[font=\Huge,right=0.1cm of oaaC,xshift=-0.1cm] () {oaa[c]};
+
+    \node[font=\Huge,above=0.1cm of co2C] () {co\textsubscript{2}[c]};
+    \node[font=\Huge,below=0.1cm of co2M] () {co\textsubscript{2}[m]};
+    \node[font=\Huge,above=0.1cm of co2S] () {co\textsubscript{2}[s]};
+
+    \node[font=\Huge,right=0.1cm of glutamineS,yshift=-0.1cm] () {gln[s]};
+    \node[font=\Huge,right=0.1cm of glutamineC,yshift=-0.1cm] () {gln[c]};
+    \node[font=\Huge,right=0.1cm of glutamineM,yshift=-0.1cm] () {gln[m]};
+    %\node[font=\Huge,above=0.1cm of alanineC,yshift=-0.1cm] () {ala[c]};
+    %\node[font=\Huge,above=0.1cm of alanineS,yshift=-0.1cm] () {ala[s]};
+
+    %\node[font=\Huge,above=0.1cm of co2S,yshift=-0.1cm] () {co\textsubscript{2}[s]};
+    %\node[font=\Huge,right=0.1cm of alanineM,xshift=-0.1cm] () {ala[m]};
+    %\node[font=\Huge,right=0.1cm of pyruvateM,xshift=-0.1cm] () {pyr[m]};
+    %\node[font=\Huge,right=0.1cm of co2M,xshift=-0.1cm,yshift=+0.1cm] () {co\textsubscript{2}[m]};
+    %\node[font=\Huge,below=0.1cm of hco3S,xshift=-0.6cm,yshift=+0.1cm] () {hco\textsubscript{3}\textsuperscript{-}[s]};
+    %\node[font=\Huge,below=0.1cm of hco3C,xshift=-0.0cm,yshift=+0.1cm] () {hco\textsubscript{3}\textsuperscript{-}[c]};
+    %\node[font=\Huge,above=0.1cm of prolineM,yshift=-0.1cm] () {pro[m]};
+    %\node[font=\Huge,below=0.1cm of prolineC,yshift=+0.1cm] () {pro[c]};
+    %\node[font=\Huge,above=0.1cm of gshC,yshift=-0.1cm] () {gsh[c]};
+    %\node[font=\Huge,below=0.1cm of ssgC,yshift=+0.1cm] () {S-sulfanylgsh[c]};
+
+
 
     % Edges (starting with TCA)
-    \draw[postaction={decorate},line width=2pt] (isocitrateC)  to [bend left=12] node [] {} (akgC);
+    %\draw[postaction={decorate},line width=2pt] (isocitrateC)  to [bend left=12] node [] {} (akgC);
     \draw[postaction={decorate},line width=2pt] (akgC)         to [bend left=12] node [] {} (glutamateC);
     \draw[postaction={decorate},line width=2pt] (glutamateC)   to [bend left=12] node [] {} (glutamateM);
 
     \draw[postaction={decorate},line width=2pt] (glutamateM)   to [bend left=12] node [] {} (akgM);
-    \draw[postaction={decorate},line width=2pt] (akgM)   to [bend left=12] node [] {} (glutamateM);
+    \draw[postaction={decorate},line width=2pt] (akgM)         to [bend left=12] node [] {} (glutamateM);
     \draw[postaction={decorate},line width=2pt] (akgM)         to [bend left=12] node [] {} (succinylcoaM);
     \draw[postaction={decorate},line width=2pt] (succinylcoaM) to [bend left=12] node [] {} (succinateM);
     \draw[postaction={decorate},line width=2pt] (succinateM)   to [bend left=12] node [] {} (fumarateM);
@@ -224,39 +237,16 @@
     \draw[postaction={decorate},line width=2pt] (oaaM)         to [bend left=10] node [] {} (aspartateM);
     \draw[postaction={decorate},line width=2pt] (aspartateM)   to [bend left=10] node [] {} (aspartateC);
     \draw[postaction={decorate},line width=2pt] (aspartateC)   to [bend left=10] node [] {} (oaaC);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm] (akgM.south) |- (co2M.west);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm] ([xshift=-8pt,yshift=2pt]glutamineC.south) |- (glutamateC);
-    \draw[postaction={decorate},line width=2pt] ([yshift=2pt]glutamineC.south)   to [bend right=0] node [] {} (glutamineCSink);
-    \draw[postaction={decorate},line width=2pt] (glutamineCSink)   to [bend right=0] node [] {} (sink);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm] ([xshift=-4pt,yshift=1.5pt]glutamineC.south) |- (glutamineM);
-    \draw[postaction={decorate},line width=2pt] (glutamineM)   to [bend right=0] node [] {} (glutamateM);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm] (co2M.south) |- (co2C);
-    \draw[postaction={decorate},line width=2pt] (co2C)         to [bend right=0] node [] {} (co2S);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm] (co2S.east) -| ([xshift=-16pt]sink.north);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm,cgrey] (hco3S) -| ([xshift=-24pt]sink.north);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm,cgrey] (co2C.south) |- (hco3C);
-    \draw[postaction={decorate},line width=2pt,cgrey] (hco3C)        to [bend right=0] node [] {} (hco3S);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm,cgrey] ([xshift=+4pt,yshift=1.5pt]alanineM.south) |- (alanineC);
-    \draw[postaction={decorate},line width=2pt,cgrey] (glutamateM)   to [bend left=12] node [] {} (glutamateC);
-    \draw[postaction={decorate},line width=2pt,cgrey] (glutamateM)   to [bend right=0] node [] {} (alanineM);
-    \draw[postaction={decorate},line width=2pt,cgrey] (alanineM)     to [bend right=0] node [] {} (pyruvateM);
-    \draw[postaction={decorate},line width=2pt,cgrey] (pyruvateM)    to [bend right=0] node [] {} (co2M);
-    \draw[postaction={decorate},line width=2pt,cgrey] (alanineC)     to [bend right=0] node [] {} (alanineS);
-    \draw[postaction={decorate},line width=2pt,rounded corners=5mm,cgrey] (alanineS.east) -| ([xshift=-8pt]sink.north);
-    \draw[postaction={decorate},line width=2pt,cgrey] (prolineC)     to [bend right=45] node [] {} (prolineM);
-    \draw[postaction={decorate},line width=2pt,cgrey] (prolineM)     to [bend right=45] node [] {} (prolineC);
-    \draw[postaction={decorate},line width=2pt,cgrey] (gshC)         to [bend right=45] node [] {} (ssgC);
-    \draw[postaction={decorate},line width=2pt,cgrey] (ssgC)         to [bend right=45] node [] {} (gshC);
-
-    % Shifting the top 3 source nodes
-    \node[node,fill=cyto,left=1pt of glutamineC,xshift=12.5pt] (glutamineCShift) {};
-    \node[node,fill=else,left=1pt of glutamineS,xshift=12.5pt] (glutamineSShift) {};
-    \node[font=\bf\Huge,above=1.5cm of glutamineSShift] (sourceShift) {Source};
-    \draw[postaction={decorate},line width=2pt] (sourceShift)  to [bend right=0] node [] {} (glutamineSShift);
-    \draw[postaction={decorate},line width=2pt] (glutamineSShift)  to [bend right=0] node [] {} (glutamineCShift);
-    \node[font=\Huge,left=0.1cm of glutamineCShift,xshift=+0.1cm] () {gln[c]}
-    \node[font=\Huge,left=0.1cm of glutamineSShift,xshift=+0.1cm] () {gln[s]}
-    \node[font=\Huge,left=0.1cm of glutamineCSink,xshift=+0.1cm,align=flushleft] () {gln[s]\textunderscore protein\textunderscore pool}
+    
+    \draw[postaction={decorate},line width=2pt] (isocitrateC)  to [bend left=0] node [] {} (co2C);
+    \draw[postaction={decorate},line width=2pt] (co2C)         to [bend left=0] node [] {} (co2S);
+    \draw[postaction={decorate},line width=2pt] (co2S)         to [bend left=0] node [] {} (sink);
+    \draw[postaction={decorate},line width=2pt] (akgM)         to [bend left=0] node [] {} (co2M);
+    \draw[postaction={decorate},line width=2pt] (co2M)         to [bend left=0] node [] {} (co2C);
+    \draw[postaction={decorate},line width=2pt] (source)       to [bend left=0] node [] {} (glutamineS);
+    \draw[postaction={decorate},line width=2pt] (glutamineS)   to [bend left=0] node [] {} (glutamineC);
+    \draw[postaction={decorate},line width=2pt] (glutamineC)   to [bend left=0] node [] {} (glutamineM);
+    \draw[postaction={decorate},line width=2pt] (glutamineM)   to [bend left=0] node [] {} (glutamateM);
 
 \end{tikzpicture}
 

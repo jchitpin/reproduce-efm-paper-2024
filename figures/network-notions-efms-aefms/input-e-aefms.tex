@@ -1,0 +1,80 @@
+%\node[line width=0.75pt, labelFont,below=5.5cm of Aa,xshift=-5.0cm,draw] (A) {\phantom{A}};
+\node[line width=0.75pt,labelFont,right=9.0cm of Aa,draw,below=12.0cm of Aa,xshift=+5.0cm] (Aa) {\phantom{A}};
+\node[carbon2,above=0.1cm of Aa,yshift=-0.725cm] (Aac1) {};
+\node[carbon2,below=0.1cm of Aa,yshift=+0.725cm] (Aac2) {};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of Aa,draw] (Ba) {\phantom{B}};
+\node[carbon2,above=0.1cm of Ba,yshift=-0.725cm] (Bac1) {};
+\node[carbon2,below=0.1cm of Ba,yshift=+0.725cm] (Bac2) {};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of Ba,draw] (Ca) {\phantom{C}};
+\node[carbon2,above=0.1cm of Ca,yshift=-0.725cm] (Cac1) {};
+\node[carbon2,below=0.1cm of Ca,yshift=+0.725cm] (Cac2) {};
+
+\node[line width=0.75pt,labelFont,right=1.5cm of Ca,draw] (Da) {\phantom{D}};
+\node[carbon2,above=0.1cm of Da,yshift=-0.725cm] (Dac1) {};
+\node[carbon2,below=0.1cm of Da,yshift=+0.725cm] (Dac2) {};
+
+\node[line width=0.75pt,labelFont,yshift=-1.0cm,draw] (G1a) at ($(Ba)!0.5!(Ca)$) {\phantom{G}};
+\node[carbon2] at (G1a.center) {};
+
+\node[line width=0.75pt,labelFont,yshift=-1.79cm,draw] (G2a) at ($(Ba)!0.5!(Ca)$) {\phantom{G}};
+\node[carbon2] at (G2a.center) {};
+
+\node[line width=0.75pt,labelFont,right=1.75cm of G1a,yshift=0.25cm,draw] (Ea) {\phantom{E}};
+\node[carbon2] at (Ea) {};
+
+\node[line width=0.75pt,labelFont,right=1.75cm of G2a,yshift=0.0cm,draw] (Fa) {\phantom{F}};
+\node[carbon2] at (Fa) {};
+
+%\node[font=\normalsize,right=0.1cm of G1a,yshift=0.2cm,xshift=-0.15cm] () {$v_8$};
+%\node[font=\normalsize, left=0.1cm of G1a,yshift=0.2cm,xshift=+0.15cm] () {$v_9$};
+\node[left=0.2cm of Aa] (AEa) {};
+\node[right=0.2cm of Da] (DEa) {};
+\node[right=0.2cm of Ea] (EEa) {};
+\node[right=0.2cm of Fa] (FEa) {};
+\node[left=0.5cm of Aa] (left) {};
+\node[right=0.5cm of Da] (right) {};
+
+\node[below=1.0cm of Ba,efm3] () {$x_4$};
+\node[below=0.2cm of Ba,efm4] () {$x_3$};
+
+\draw[networkArrow,efm1] ([yshift=+0.25cm]AEa.east) to node[midway,font=\normalsize,xshift=-0.45cm,yshift=+0.0cm] {$x_{1}$} ([yshift=+0.25cm]Aa.west);
+\draw[networkArrow,efm1] ([yshift=+0.25cm]Aa.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.25cm]Ba.west);
+\draw[networkArrow,efm1] ([yshift=+0.25cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.25cm]Ca.west);
+\draw[networkArrow,efm1] ([yshift=+0.25cm]Ca.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.25cm]Da.west);
+\draw[networkArrow,efm1] ([yshift=+0.25cm]Da.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.25cm]DEa.west);
+
+\draw[networkArrow,efm2] ([yshift=-0.05cm]AEa.east) to node[midway,font=\normalsize,xshift=-0.45cm,yshift=-0.0cm] {$x_{2}$} ([yshift=-0.05cm]Aa.west);
+\draw[networkArrow,efm2] ([yshift=-0.05cm]Aa.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.05cm]Ba.west);
+\draw[networkArrow,efm3] ([yshift=+0.10cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.10cm]Ca.west);
+\draw[networkArrow,efm2] ([yshift=-0.05cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.05cm]Ca.west);
+\draw[networkArrow,efm4] ([yshift=-0.20cm]Ba.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.20cm]Ca.west);
+\draw[networkArrow,efm2] ([yshift=-0.05cm]Ca.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.05cm]Da.west);
+\draw[networkArrow,efm2] ([yshift=-0.05cm]Da.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=-0.05cm]DEa.west);
+
+\node[right=0.5cm of Cac1,yshift=-0.5cm] (ph1) {};
+\node[right=0.3cm of Cac1,yshift=-0.5cm] (ph2) {};
+\node[left=0.5cm of Bac1,yshift=-0.5cm] (ph3) {};
+\node[left=0.3cm of Bac1,yshift=-0.5cm] (ph4) {};
+
+\draw[networkArrow,-,rounded corners=5pt,efm3] ([yshift=+0.10cm]Ca.east) -| (ph1.center) {};
+\draw[networkArrow,  rounded corners=5pt,efm3] (ph1.center) |- (G2a) {};
+\draw[networkArrow,-,rounded corners=3pt,efm4] ([yshift=+0.00cm]G1a.west) -| (ph4.center) {};
+\draw[networkArrow,  rounded corners=3pt,efm4] (ph4.center) |- ([yshift=-0.20cm]Ba.west) {};
+
+\draw[networkArrow,-,rounded corners=3pt,efm4] ([yshift=-0.20cm]Ca.east) -| (ph2.center) {};
+\draw[networkArrow,  rounded corners=3pt,efm4] (ph2.center) |- (G1a) {};
+\draw[networkArrow,-,rounded corners=5pt,efm3] ([yshift=+0.00cm]G2a.west) -| (ph3.center) {};
+\draw[networkArrow,  rounded corners=5pt,efm3] (ph3.center) |- ([yshift=+0.10cm]Ba.west) {};
+
+\draw[networkArrow,efm5] ([yshift=+0.00cm]EEa.west) to node[midway,font=\normalsize,xshift=+0.45cm] {$y_1$} ([yshift=+0.00cm]Ea.east);
+\draw[networkArrow,efm5] ([yshift=+0.00cm]Ea.south) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.00cm]Fa.north);
+\draw[networkArrow,efm5] ([yshift=+0.00cm]Fa.east) to node[midway,above,font=\normalsize,yshift=+0.0cm] {} ([yshift=+0.00cm]FEa.west);
+
+\node[fit=(left) (right) (AEa) (Aa) (Ba) (Ca) (Da) (DEa) (Ea) (EEa) (Fa) (FEa) (G1a) (G2a), draw=black,inner sep=5pt, line width=1.0pt] (atom_transition_graph) {};
+\node[above=0.1cm of atom_transition_graph, labelFont, yshift=-0.1cm,align=center] () {Atomic elementary flux modes};
+
+% Subcaption label
+\node[labelFont,left=0.2cm of atom_transition_graph.north west,yshift=1.0cm,anchor=south west,font=\huge] () {(e)};
+

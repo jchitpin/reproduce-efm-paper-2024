@@ -33,6 +33,7 @@ ex_dict_nitrogen = save * "dictionary-atom-tracing-nitrogen.csv"
 # ------------------------------------------------------------------------------
 
 ## JULIA PACKAGES AND FUNCTIONS ------------------------------------------------
+using FilePaths, FileIO
 using CSV, Tables, MarkovWeightedEFMs, BenchmarkTools, DataFrames
 # ------------------------------------------------------------------------------
 
@@ -108,4 +109,59 @@ CSV.write(ex_dict_nitrogen, D_N, header = false)
 @info("Dropped rows pseudomets: $(length(i4.dropped_rows_pseudometabolites))") # 33
 @info("Dropped cols pseudomets: $(length(i4.dropped_cols_pseudometabolites))") # 46
 @info("Dropped cols rxnmapper:  $(length(i4.dropped_cols_rxnmapper_limit))")   # 3
+# ------------------------------------------------------------------------------
+
+## Inspecting some mapped reaction SMILES strings
+#using ElectronDisplay
+
+# HMR_4964 (citrate[m] to citrate[c])
+#id1 = findfirst(==("HMR_4964"), rxns4)
+#plot_mapped_reaction(ms5[id1], view = true)
+
+# HMR_4454 (citrate[c] to isocitrate[c] results in the central carbon popped off as CO2)
+# This mapping needs to be corrected...
+# 6 to 11 is incorrect (citrate to isocitrate)
+# 5 to 9 is incorrect (citrate to isocitrate)
+#id2 = findfirst(==("HMR_4454"), rxns4)
+#plot_mapped_reaction(ms5[id2], view = true)
+
+# HMR_0710 (isocitrate[c] to AKG[c])
+#id3 = findfirst(==("HMR_0710"), rxns4)
+#plot_mapped_reaction(ms5[id3], view = true)
+
+# HMR_3829 (AKG[c] to glutamate[c])
+#id4 = findfirst(==("HMR_3829"), rxns4)
+#plot_mapped_reaction(ms5[id4], view = true)
+
+# HMR_3825 (glutamate[c] to glutamate[m])
+#id5 = findfirst(==("HMR_3825"), rxns4)
+#plot_mapped_reaction(ms5[id5], view = true)
+
+# HMR_3827 (glutamate[m] to AKG[m])
+#id6 = findfirst(==("HMR_3827"), rxns4)
+#plot_mapped_reaction(ms5[id6], view = true)
+
+# HMR_5297 (AKG[m] to succinyl-coA[m] involves CO2 production)
+#id7 = findfirst(==("HMR_5297"), rxns4)
+#plot_mapped_reaction(ms5[id7], view = true)
+
+# HMR_4152 (succinyl-coA[m] to succinate[m])
+#id8 = findfirst(==("HMR_4152"), rxns4)
+#plot_mapped_reaction(ms5[id8], view = true)
+
+# HMR_4652 (succinate[m] to fumarate[m])
+#id9 = findfirst(==("HMR_4652"), rxns4)
+#plot_mapped_reaction(ms5[id9], view = true)
+
+# HMR_4410 (fumarate[m] to malate[m])
+#id10 = findfirst(==("HMR_4410"), rxns4)
+#plot_mapped_reaction(ms5[id10], view = true)
+
+# HMR_4141 (malate[m] to oaa[m])
+#id11 = findfirst(==("HMR_4141"), rxns4)
+#plot_mapped_reaction(ms5[id11], view = true)
+
+# HMR_4145 (oaa[m] to citrate[m])
+#id12 = findfirst(==("HMR_4145"), rxns4)
+#plot_mapped_reaction(ms5[id12], view = true)
 

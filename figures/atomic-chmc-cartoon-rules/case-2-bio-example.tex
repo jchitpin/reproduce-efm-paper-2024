@@ -35,8 +35,10 @@
   bond offset=1pt
 }
 
-\schemestart\
-  \chemname{%
+\begin{tikzpicture}
+    \node (glut1)
+        []
+        {
     \chemfig{%
                    O% 4
              =[:90]% 3
@@ -71,17 +73,22 @@
                       )
         -[:150,,,2]HO% 15
     }
-  }{Glutathione}
-  %\+{0.5cm, 0.5cm,0.0cm}
-  \+
-  \arrow{0}[,0]
-  \chemname{%
+        };
+
+        \node (p1)
+            [below=1.0cm of glut1]
+            {
+        \schemestart\ \+ \schemestop
+            };
+    \node (glut2)
+        [below=0.1cm of p1]
+        {
     \chemfig{%
                    O% 4
              =[:90]% 3
                       (%
                  -[:30]% 2
-                 -[:330]{\colorbox{corange}{\color{black}{C}}}% 1
+                 -[:330]{\colorbox{cblue}{\color{black}{C}}}% 1
                  -[:30]% 16
                           (%
                  -[:90,,,1]NH_2% 20
@@ -110,17 +117,25 @@
                       )
         -[:150,,,2]HO% 15
     }
-  }{Glutathione}
-  %\+{0.5cm, 0.5cm,0.0cm}
-  \arrow{0}[,0]
-  \+
-  \arrow{0}[,0]
-  \chemfig{%
-              HO% 1
-      -[,,2,1]OH% 2
-    }
-  \arrow{<=>[Glutathione peroxidase][(Mitochondria)]}[0, 2.5]
-  \chemname{%
+        };
+    \node (h2o2)
+        [right=0.1cm of p1]
+        {
+          \chemfig{%
+                      HO% 1
+              -[,,2,1]OH% 2
+            }
+        };
+
+    \node (arr1)
+    [right=0.1cm of h2o2]
+    {
+        \schemestart\ \arrow{<=>[Glutathione peroxidase][(Mitochondria)]}[0, 2.5]\schemestop\
+    };
+
+    \node (glutdi)
+        [right=0.1cm of arr1]
+        {
     \chemfig{%
                    O% 4
             =[:270]% 3
@@ -187,20 +202,21 @@
                       )
         -[:150,,,2]HO% 27
     }
-  }{Glutathione disulfide}
-  \arrow{0}[,0]
-  %\+{0.5cm, 0.5cm,0.6cm}
-  \+
-  \chemfig{%
-      H_2O% 1
-  }
-  %\+{0.5cm, 0.5cm,0.6cm}
-  \+
-  \arrow{0}[,0]
-  \chemfig{%
-      H_2O% 1
-  }
-\schemestop\
+        };
+
+        \node (p2)
+            [right=0.1cm of glutdi]
+            {
+        \schemestart\ \+ \schemestop
+            };
+        \node (h2o)
+            [right=0.1cm of p2]
+            {
+              \chemfig{%
+                  H_2O% 1
+              }
+            };
+\end{tikzpicture}
 
 \end{document}
 

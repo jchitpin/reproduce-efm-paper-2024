@@ -17,9 +17,9 @@ im_subsystems = "raw/HMRdatabase2_00.xlsx"
 im_mets       = "processed/metabolites-processed.csv"
 
 # Export filenames
-ex_glutamine_1_2 = save1 * "glutamine/carbon-1-2/01-for-R/"
-ex_glutamine_3_4 = save1 * "glutamine/carbon-3-4/01-for-R/"
-ex_glutamine_5   = save1 * "glutamine/carbon-5/01-for-R/"
+ex_glutamine_1     = save1 * "glutamine/carbon-1/01-for-R/"
+ex_glutamine_2_3_4 = save1 * "glutamine/carbon-2-3-4/01-for-R/"
+ex_glutamine_5     = save1 * "glutamine/carbon-5/01-for-R/"
 # ------------------------------------------------------------------------------
 
 ## JULIA PACKAGES AND FUNCTIONS ------------------------------------------------
@@ -45,7 +45,7 @@ mets = vec(CSV.read(load1 * im_mets, Tables.matrix, header=false))
 # ------------------------------------------------------------------------------
 
 ## BINNING ATOMIC EFMS IN SORTED ORDER -----------------------------------------
-# GLUTAMINE carbon 1/2
+# Glutamine carbon 1
 m = 14    # glutamine source metabolite
 a = 1     # glutamine carbon index (corresponding to greatest number of EFMs)
 s = 5     # number of atomic EFMs in each bin (bin size)
@@ -66,11 +66,11 @@ nodes_14_bin = efms_to_r_node_dataframe.(sseq_14, Ref(mets))
 flows_14_bin = efms_to_r_flow_dataframe.(sseq_14, wseq_14)
 
 # Export to text file for R Sankey diagrams
-CSV.write(ex_glutamine_1_2 * "nodes.csv", nodes_14_bin[1])
-CSV.write(ex_glutamine_1_2 * "flows.csv", flows_14_bin[1])
+CSV.write(ex_glutamine_1 * "nodes.csv", nodes_14_bin[1])
+CSV.write(ex_glutamine_1 * "flows.csv", flows_14_bin[1])
 
-# Extract EFM sequences for carbon 3/4
-a = 3     # glutamine carbon index
+# Extract EFM sequences for carbon 2, 3, 4
+a = 2     # glutamine carbon index
 seq_14 = efm_state_to_metabolite_seq(Ch[m][a])
 top_ids = sortperm(Ch[m][a].w, rev = true)[1:t]
 subseq_14 = seq_14[top_ids]
@@ -84,8 +84,8 @@ nodes_14_bin = efms_to_r_node_dataframe.(sseq_14, Ref(mets))
 flows_14_bin = efms_to_r_flow_dataframe.(sseq_14, wseq_14)
 
 # Export to text file for R Sankey diagrams
-CSV.write(ex_glutamine_3_4 * "nodes.csv", nodes_14_bin[1])
-CSV.write(ex_glutamine_3_4 * "flows.csv", flows_14_bin[1])
+CSV.write(ex_glutamine_2_3_4 * "nodes.csv", nodes_14_bin[1])
+CSV.write(ex_glutamine_2_3_4 * "flows.csv", flows_14_bin[1])
 
 # Extract EFM sequences for carbon 5
 a = 5     # glutamine carbon index

@@ -29,7 +29,8 @@ time_N_loc = "data/gems/$set/efm-enumeration-times-nitrogen-T2.jld2"
 # ------------------------------------------------------------------------------
 
 ## JULIA PACKAGES AND FUNCTIONS ------------------------------------------------
-using CSV, Tables, MarkovWeightedEFMs, JLD2, Dates
+using FilePaths, FileIO, JLD2
+using CSV, Tables, MarkovWeightedEFMs, Dates
 # ------------------------------------------------------------------------------
 
 ## LOAD FINAL DATA -------------------------------------------------------------

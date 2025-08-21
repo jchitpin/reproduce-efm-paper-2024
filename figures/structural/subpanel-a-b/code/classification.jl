@@ -403,21 +403,21 @@ loop_types_C[1][22]
 loop_types_N[4][2]
 
 # Classifying AEFMs by dataset by specified lower boundary and upper boundary
-# Boundaries are manually determined by inspecting the histogram bins in 
+# Boundaries are manually determined by inspecting the histogram bins in
 # the script subpanel-a-b/histogram-curves.jl
 f(x) = [x.n_pathed_no_rec, x.n_pathed_rec, x.n_looped_no_rec, x.n_looped_rec] ./ (x.n_pathed_no_rec + x.n_pathed_rec + x.n_looped_no_rec + x.n_looped_rec)
 
 # E coli core
 d11 = classify_efm_by_length(C[1], 0, 7)
 d12 = classify_efm_by_length(C[1], 8, 120)
-f(d11) # 58% of shorter pathways are looped without revisitations
-f(d12) # 84% of longer pathways are source-to-sink with revisitations
+f(d11) # 57.6% of shorter pathways are looped without revisitations
+f(d12) # 84.4% of longer pathways are source-to-sink with revisitations
 
 # iAB RBC 283
 d21 = classify_efm_by_length(C[2], 0, 10)
 d22 = classify_efm_by_length(C[2], 11, 120)
-f(d21) # 41% of shorter pathways are looped without revisitatons
-f(d22) # 96% of longer pathways are source-to-sink without revisitations (100% source-to-sink pathways)
+f(d21) # 41.6% of shorter pathways are looped without revisitatons
+f(d22) # 96.1% of longer pathways are source-to-sink without revisitations (100% source-to-sink pathways)
 
 # iIT341
 d31 = classify_efm_by_length(C[3], 0, 5)
@@ -434,7 +434,7 @@ f(d42) # 65% of longer pathways are source-to-sink (100% source-to-sink pathways
 # HepG2
 d51 = classify_efm_by_length(C[5], 0, 12)
 d52 = classify_efm_by_length(C[5], 13, 120)
-f(d51) # 78% of shorter pathways are looped without revisitations
-f(d52) # 95% of longer pathways are source-to-sink with revisitations
+f(d51) # 77.7% of shorter pathways are looped without revisitations
+f(d52) # 96.7% of longer pathways are source-to-sink with revisitations
 # ------------------------------------------------------------------------------
 

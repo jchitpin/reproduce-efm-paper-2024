@@ -1,0 +1,208 @@
+\documentclass[tikz]{standalone}
+
+% Packages
+\usepackage{amsmath,amsthm,bm} % math libraries
+\usepackage{sankey} % sankey/flow diagram support
+\usepackage{graphicx,xcolor} % general image and colour support
+\usepackage{caption,subcaption} % caption/subcaptions
+
+% Load custom Tikz code
+\usepackage{custom-tikz}
+
+% Hypergraph arrows
+% https://tex.stackexchange.com/questions/108064/typesetting-a-directed-hypergraph-in-tikz
+\makeatletter
+\tikzset{
+    @pos/.style={@pos1={#1},@pos2={#1}},
+    @ratio/.style={@ratio1={#1},@ratio2={#1}},
+    @delta/.style={@delta1={#1},@delta2={#1}},
+    @edge/.style={@@edge/.append style={#1}},
+    @edge 0/.style={@@edge 0/.append style={#1}},
+    @edge 1/.style={@@edge 1/.append style={#1}},
+    @edge 2/.style={@@edge 2/.append style={#1}},
+    @edge 3/.style={@@edge 3/.append style={#1}},
+    @edge 4/.style={@@edge 4/.append style={#1}},
+    % and for four:
+    @pos1/.store in=\qrr@posA,
+    @pos2/.store in=\qrr@posB,
+    @ratio1/.store in=\qrr@ratioA,
+    @ratio2/.store in=\qrr@ratioB,
+    @delta1/.store in=\qrr@deltaA,
+    @delta2/.store in=\qrr@deltaB,
+    @pos=.5,
+    @ratio=.5,
+    @delta=.1,
+}
+\newcommand*{\connectThreeAa}[4][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux2) at ($(#4)!\qrr@posA!(@aux1)$);
+    \path (@aux2) edge[@@edge/.try, @@edge 0/.try, @@edge 3/.try] (#4);
+    \draw[%
+        line width=1.0pt,
+        @@edge/.try, @@edge 1/.try,
+        -stealth
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#2);
+    \draw[%
+        line width=1.0pt,
+        @@edge/.try, @@edge 2/.try,
+        -stealth
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#3);
+    \endgroup
+}
+\newcommand*{\connectThreeBb}[4][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux2) at ($(#4)!\qrr@posA!(@aux1)$);
+    \path[line width=1.0pt] (@aux2) edge[@@edge/.try, @@edge 0/.try, @@edge 3/.try,-] (#4);
+    \draw[%
+        line width=1.0pt,
+        @@edge/.try, @@edge 1/.try,
+        shorten <=0.035cm
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#2);
+    \draw[%
+        line width=1.0pt,
+        @@edge/.try, @@edge 2/.try, stealth-
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#3);
+    \endgroup
+}
+% \renewcommand*{\connectThree}[4][]{\connectFour[#1, @@edge 4/.style={draw=none}, @ratio2=0]{#2}{#3}{#4}{0,0}}
+
+\newcommand*{\connectFour}[5][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1a) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux1b) at ($(#4)!\qrr@ratioB!(#5)$);
+    \coordinate (@aux2a) at ($(@aux1b)!\qrr@posA!(@aux1a)$);
+    \coordinate (@aux2b) at ($(@aux1a)!\qrr@posB!(@aux1b)$);
+    \path (@aux2a) edge[@@edge/.try,@@edge 0/.try] (@aux2b);
+    \draw[@@edge/.try,@@edge 1/.try] (@aux2a) .. controls ($(@aux1b)!\qrr@posA+\qrr@deltaA!(@aux1a)$) .. (#2);
+    \draw[@@edge/.try,@@edge 2/.try] (@aux2a) .. controls ($(@aux1b)!\qrr@posA+\qrr@deltaA!(@aux1a)$) .. (#3);
+    \draw[@@edge/.try,@@edge 3/.try] (@aux2b) .. controls ($(@aux1a)!\qrr@posB+\qrr@deltaB!(@aux1b)$) .. (#4);
+    \draw[@@edge/.try,@@edge 4/.try] (@aux2b) .. controls ($(@aux1a)!\qrr@posB+\qrr@deltaB!(@aux1b)$) .. (#5);
+    \draw[help lines] (@aux1a) -- (@aux1b) node[midway,above,sloped,font=\tiny,shape=rectangle,inner xsep=+0pt,draw=none,align=center,fill=white,fill opacity=.75,outer ysep=\pgflinewidth,text opacity=1] {ratio: \qrr@ratioA/\qrr@ratioB\\pos: \qrr@posA/\qrr@posB\\delta: \qrr@deltaA/\qrr@deltaB};
+    \endgroup
+}
+
+% Updated with colour!
+\makeatletter
+\tikzset{
+    @pos/.style={@pos1={#1},@pos2={#1}},
+    @ratio/.style={@ratio1={#1},@ratio2={#1}},
+    @delta/.style={@delta1={#1},@delta2={#1}},
+    @edge/.style={@@edge/.append style={#1}},
+    @edge 0/.style={@@edge 0/.append style={#1}},
+    @edge 1/.style={@@edge 1/.append style={#1}},
+    @edge 2/.style={@@edge 2/.append style={#1}},
+    @edge 3/.style={@@edge 3/.append style={#1}},
+    @edge 4/.style={@@edge 4/.append style={#1}},
+    % and for four:
+    @pos1/.store in=\qrr@posA,
+    @pos2/.store in=\qrr@posB,
+    @ratio1/.store in=\qrr@ratioA,
+    @ratio2/.store in=\qrr@ratioB,
+    @delta1/.store in=\qrr@deltaA,
+    @delta2/.store in=\qrr@deltaB,
+    @pos=.5,
+    @ratio=.5,
+    @delta=.1,
+}
+\newcommand*{\connectThreeA}[4][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux2) at ($(#4)!\qrr@posA!(@aux1)$);
+    \path (@aux2) edge[@@edge/.try, @@edge 0/.try, @@edge 3/.try] (#4);
+    \draw[%
+        corange,
+        line width=1.0pt,
+        @@edge/.try, @@edge 1/.try,
+        -stealth
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#2);
+    \draw[%
+        corange,
+        line width=1.0pt,
+        @@edge/.try, @@edge 2/.try,
+        -stealth
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#3);
+    \endgroup
+}
+\newcommand*{\connectThreeB}[4][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux2) at ($(#4)!\qrr@posA!(@aux1)$);
+    \path[line width=1.0pt] (@aux2) edge[@@edge/.try, @@edge 0/.try, @@edge 3/.try,-] (#4);
+    \draw[%
+        corange,
+        line width=1.0pt,
+        @@edge/.try, @@edge 1/.try,
+        shorten <=0.035cm
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#2);
+    \draw[%
+        corange,
+        line width=1.0pt,
+        @@edge/.try, @@edge 2/.try, stealth-
+    ] (@aux2) .. controls ($(#4)!\qrr@posA+\qrr@deltaA!(@aux1)$) .. (#3);
+    \endgroup
+}
+% \renewcommand*{\connectThree}[4][]{\connectFour[#1, @@edge 4/.style={draw=none}, @ratio2=0]{#2}{#3}{#4}{0,0}}
+
+\newcommand*{\connectFour}[5][]{
+    \begingroup
+    \tikzset{#1}
+    \coordinate (@aux1a) at ($(#2)!\qrr@ratioA!(#3)$);
+    \coordinate (@aux1b) at ($(#4)!\qrr@ratioB!(#5)$);
+    \coordinate (@aux2a) at ($(@aux1b)!\qrr@posA!(@aux1a)$);
+    \coordinate (@aux2b) at ($(@aux1a)!\qrr@posB!(@aux1b)$);
+    \path (@aux2a) edge[@@edge/.try,@@edge 0/.try] (@aux2b);
+    \draw[@@edge/.try,@@edge 1/.try] (@aux2a) .. controls ($(@aux1b)!\qrr@posA+\qrr@deltaA!(@aux1a)$) .. (#2);
+    \draw[@@edge/.try,@@edge 2/.try] (@aux2a) .. controls ($(@aux1b)!\qrr@posA+\qrr@deltaA!(@aux1a)$) .. (#3);
+    \draw[@@edge/.try,@@edge 3/.try] (@aux2b) .. controls ($(@aux1a)!\qrr@posB+\qrr@deltaB!(@aux1b)$) .. (#4);
+    \draw[@@edge/.try,@@edge 4/.try] (@aux2b) .. controls ($(@aux1a)!\qrr@posB+\qrr@deltaB!(@aux1b)$) .. (#5);
+    \draw[help lines] (@aux1a) -- (@aux1b) node[midway,above,sloped,font=\tiny,shape=rectangle,inner xsep=+0pt,draw=none,align=center,fill=white,fill opacity=.75,outer ysep=\pgflinewidth,text opacity=1] {ratio: \qrr@ratioA/\qrr@ratioB\\pos: \qrr@posA/\qrr@posB\\delta: \qrr@deltaA/\qrr@deltaB};
+    \endgroup
+}
+
+\makeatother
+
+% Colour definitions
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{efm1}{HTML}{017EC3}
+\definecolor{efm2}{HTML}{F31E26}
+\definecolor{efm3}{HTML}{019E5E}
+\definecolor{efm4}{HTML}{FBA61D}
+\definecolor{efm5}{HTML}{916237}
+
+% Font style
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+    % Figure
+    \begin{tikzpicture}[]
+        % (a) metabolic network
+        \input{input-a-metabolic-flux-network.tex}
+
+        % (b) Metabolic graph
+        \input{input-b-metabolic-graph-2.tex}
+
+        % (c) Atomic transition/flux graph
+        \input{input-c-atom-transition-graph.tex}
+
+        % (d) EFMs
+        \input{input-d-efms.tex}
+
+        % (e) AEFMs
+        \input{input-e-aefms.tex}
+
+    \end{tikzpicture}
+\end{document}
