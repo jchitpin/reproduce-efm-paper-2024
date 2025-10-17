@@ -1,0 +1,137 @@
+% Glucose
+\node[%
+    ring6,
+    %yshift=-4.725cm
+    yshift=-8cm
+] (glucose) {};
+\node[above=0.5cm of glucose.corner 2,carbon,fill=cblue] (glucose_c6) {};
+\draw[carbonDraw] (glucose.corner 2) to (glucose_c6);
+\draw[fill=white] (glucose.corner 2) node[carbon,fill=cred] () {};
+\draw[fill=white] (glucose.corner 3) node[carbon,fill=cyellow] () {};
+\draw[fill=white] (glucose.corner 4) node[carbon,fill=cgreen] () {};
+\draw[fill=white] (glucose.corner 5) node[carbon,fill=corange] () {};
+\draw[fill=white] (glucose.corner 6) node[carbon,fill=cpurple] () {};
+\node[fit=(glucose) (glucose_c6), draw=none,inner sep=5pt] (glucose_box) {};
+\node[labelFont] () at (glucose.center) {Glc};
+
+% Subcaption label
+%\node[labelFont,left=1.05cm of glucose.west,yshift=6.0cm,font=\Huge] () {(c)};
+
+% Glucose 6-phosphate
+\node[%
+    ring6,
+    below=2.5cm of glucose_box
+] (g6p) {};
+\node[above=0.5cm of g6p.corner 2,carbon,fill=cblue] (g6p_c6) {};
+\draw[carbonDraw] (g6p.corner 2) to (g6p_c6);
+\draw[fill=white] (g6p.corner 2) node[carbon,fill=cred] () {};
+\draw[fill=white] (g6p.corner 3) node[carbon,fill=cyellow] () {};
+\draw[fill=white] (g6p.corner 4) node[carbon,fill=cgreen] () {};
+\draw[fill=white] (g6p.corner 5) node[carbon,fill=corange] () {};
+\draw[fill=white] (g6p.corner 6) node[carbon,fill=cpurple] () {};
+\node[fit=(g6p) (g6p_c6), draw=none,inner sep=5pt] (g6p_box) {};
+\node[labelFont] () at (g6p.center) {G6P};
+
+% 6-Phosphonoglucono-D-lactone
+\node[%
+    ring6,
+    right=1.5cm of g6p
+] (pgl) {};
+\node[above=0.5cm of pgl.corner 2,carbon,fill=cblue] (pgl_c6) {};
+\draw[carbonDraw] (pgl.corner 2) to (pgl_c6);
+\draw[fill=white] (pgl.corner 2) node[carbon,fill=cred] () {};
+\draw[fill=white] (pgl.corner 3) node[carbon,fill=cyellow] () {};
+\draw[fill=white] (pgl.corner 4) node[carbon,fill=cgreen] () {};
+\draw[fill=white] (pgl.corner 5) node[carbon,fill=corange] () {};
+\draw[fill=white] (pgl.corner 6) node[carbon,fill=cpurple] () {};
+\node[fit=(pgl) (pgl_c6), draw=none,inner sep=5pt] (pgl_box) {};
+\node[labelFont] () at (pgl.center) {6PG};
+
+% Fructose 6-phosphate
+\node[%
+    ring5,
+    below=2.0cm of g6p_box
+] (f6p) {};
+\node[above=0.5cm of f6p.corner 2,carbon,fill=cblue] (f6p_c2) {};
+\draw[carbonDraw] (f6p.corner 2) to (f6p_c2);
+\node[above=0.5cm of f6p.corner 5,carbon,fill=cpurple] (f6p_c5) {};
+\draw[carbonDraw] (f6p.corner 5) to (f6p_c5);
+\draw[fill=white] (f6p.corner 2) node[carbon,fill=cred] () {};
+\draw[fill=white] (f6p.corner 3) node[carbon,fill=cyellow] () {};
+\draw[fill=white] (f6p.corner 4) node[carbon,fill=cgreen] () {};
+\draw[fill=white] (f6p.corner 5) node[carbon,fill=corange] () {};
+\node[fit=(f6p) (f6p_c2) (f6p_c5), draw=none,inner sep=5pt] (f6p_box) {};
+\node[labelFont] () at (f6p.center) {F6P};
+
+% Fructose 1,6-phosphate
+\node[%
+    ring5,
+    below=2.0cm of f6p_box
+] (fdp) {};
+\node[above=0.5cm of fdp.corner 2,carbon,fill=cblue] (fdp_c2) {};
+\draw[carbonDraw] (fdp.corner 2) to (fdp_c2);
+\node[above=0.5cm of fdp.corner 5,circle,carbon,fill=cpurple] (fdp_c5) {};
+\draw[carbonDraw] (fdp.corner 5) to (fdp_c5);
+\draw[fill=white] (fdp.corner 2) node[carbon,fill=cred] () {};
+\draw[fill=white] (fdp.corner 3) node[carbon,fill=cyellow] () {};
+\draw[fill=white] (fdp.corner 4) node[carbon,fill=cgreen] () {};
+\draw[fill=white] (fdp.corner 5) node[carbon,fill=corange] () {};
+\node[fit=(fdp) (fdp_c2) (fdp_c5), draw=none,inner sep=5pt] (fdp_box) {};
+\node[labelFont] () at (fdp.center) {FDP};
+
+% Dihydroxyacetone phosphate
+\node[carbon, below=1.5cm of fdp_box,xshift=-1.5cm,fill=cred] (dhap_2) {};
+\node[carbon, left=0.25cm of dhap_2,fill=cblue]  (dhap_1) {};
+\node[carbon, right=0.25cm of dhap_2,fill=cyellow] (dhap_3) {};
+\draw[carbonDraw] (dhap_1) to (dhap_2);
+\draw[carbonDraw] (dhap_2) to (dhap_3);
+\node[fit=(dhap_1) (dhap_2) (dhap_3), draw=none,inner sep=5pt] (dhap_box) {};
+\node[above=0.25cm of dhap_1.north west,anchor=south,align=left,labelFont] () {DHAP};
+
+% Glycerol 3-phosphate
+\node[carbon, below=1.5cm of fdp_box,xshift=+1.5cm,fill=corange] (g3p_2) {};
+\node[carbon, left=0.25cm of g3p_2,fill=cgreen]  (g3p_1) {};
+\node[carbon, right=0.25cm of g3p_2,fill=cpurple] (g3p_3) {};
+\draw[carbonDraw] (g3p_1) to (g3p_2);
+\draw[carbonDraw] (g3p_2) to (g3p_3);
+\node[fit=(g3p_1) (g3p_2) (g3p_3), draw=none,inner sep=5pt] (g3p_box) {};
+\node[above=0.25cm of g3p_3.north east,anchor=south,align=right,labelFont] () {G3P};
+
+% Reaction arrows
+\draw[chmcArrow] ([yshift=1.4cm]glucose_box.north) to node[midway,left,labelFont,xshift=-3pt] {v\textsubscript{0}} (glucose_box.north);
+\draw[chmcArrow] (glucose_box) to node[midway,right,labelFont] {v\textsubscript{1}} (g6p_box);
+\draw[chmcArrow] ([xshift=+0.3cm]g6p.east) to node[midway,above,labelFont,yshift=0.1cm] {v\textsubscript{2}} ([xshift=-0.3cm]pgl.west);
+\draw[chmcArrow] (pgl_box.south) to node[midway,right,labelFont] {v\textsubscript{3}} ([yshift=-1.62cm]pgl_box.south);
+\draw[chmcArrow] (g6p_box) to node[midway,right,labelFont] {v\textsubscript{4}} (f6p_box);
+\draw[reactionArrow,-{Stealth[left]}] ([xshift=+0.10cm]f6p_box.south) to node[midway,right,labelFont,xshift=+0.1cm] {v\textsubscript{5}} ([xshift=+0.10cm]fdp_box.north);
+\draw[reactionArrow,-{Stealth[left]}] ([xshift=-0.10cm]fdp_box.north) to node[midway,left,labelFont,xshift=-0.1cm] {v\textsubscript{6}} ([xshift=-0.10cm]f6p_box.south);
+
+\draw[line width=6pt] (fdp_box) to node[midway,right,labelFont,] {v\textsubscript{7}} ([yshift=-0.5cm]fdp_box.south);
+\draw[chmcArrow] ([yshift=-0.5cm]fdp_box.south) to node[midway,right,labelFont] {} (dhap_box);
+\draw[chmcArrow] ([yshift=-0.5cm]fdp_box.south) to node[midway,left,labelFont] {} (g3p_box);
+
+\draw[reactionArrow,-{Stealth[left]}] ([yshift=+0.10cm]dhap_box.east) to node[midway,above,labelFont,yshift=+0.1cm] {v\textsubscript{8}} ([yshift=+0.10cm]g3p_box.west);
+\draw[reactionArrow,-{Stealth[left]}] ([yshift=-0.10cm]g3p_box.west) to node[midway,below,labelFont,yshift=-0.1cm] {v\textsubscript{9}} ([yshift=-0.10cm]dhap_box.east);
+\draw[chmcArrow] (dhap_box.south) to node[midway,right,labelFont] {v\textsubscript{10}} ([yshift=-1.6cm]dhap_box.south);
+\draw[chmcArrow] (g3p_box.south)  to node[midway,right,labelFont] {v\textsubscript{11}} ([yshift=-1.6cm]g3p_box.south);
+
+% Legend
+%\node[right=1.40cm of glucose_c6,yshift=1.37cm,font=\LARGE\linespread{0.75}\selectfont,align=left] (legend_label_1) {Metabolites};
+%\node[below=0.05cm of legend_label_1.south west,font=\LARGE\linespread{0.75}\selectfont,anchor=north west] (legend_label_2) {Reactions};
+%\node[below=0.05cm of legend_label_2.south west,font=\LARGE\linespread{0.75}\selectfont,anchor=north west] (legend_label_3) {SMILES};
+%\node[below=0.05cm of legend_label_3.south west,font=\LARGE\linespread{0.75}\selectfont,anchor=north west] (legend_label_4) {Fluxes};
+%\node[fit=(legend_label_1) (legend_label_2) (legend_label_3) (legend_label_4), draw, inner sep=1pt] () {};
+
+% Framing box around atomic flux network network
+\node[gem_node_ph,right=0.1cm of pgl] (box_network_east) {};
+\node[gem_node_ph,above=1.38cm of glucose_box.north] (box_network_north) {};
+\node[gem_node_ph,left=0.6cm of dhap_1] (box_network_west) {};
+\node[gem_node_ph,below=1.714cm of dhap_1] (box_network_south) {};
+\node[gem_node_ph] (box_network_north_west) at (box_network_north -| box_network_west) {};
+\node[gem_node_ph] (box_network_north_east) at (box_network_north -| box_network_east) {};
+\node[gem_node_ph] (box_network_south_west) at (box_network_south -| box_network_west) {};
+\node[gem_node_ph] (box_network_south_east) at (box_network_south -| box_network_east) {};
+\node[fit=(box_network_north_east) (box_network_north_west) (box_network_south_east) (box_network_south_west), draw, ultra thick,inner sep=0pt,rounded corners=10pt] (box_network) {};
+\node[fit=(box_network_north_east) (box_network_north_west) (box_network_south_east) (box_network_south_west), ultra thick,inner sep=0pt,label={[anchor=south]above:{\huge \phantom{p}\phantom{p}}}] (box_network) {};
+\node[above=0.1cm of box_network.north,align=center,text width=7.0cm] () {\huge 2. Model processing\\\phantom{g}and validation\;\phantom{g}};
+

@@ -18,8 +18,14 @@ save1 = "figures/structural/subpanel-a-b/"
 # Import filenames
 im_carbon         = "/gems-aggregated/gems-carbon.jld2"
 im_nitrogen       = "/gems-aggregated/gems-nitrogen.jld2"
-im_carbon_hepg2   = "gems/hepg2/atomic-efm-weights-carbon"
-im_nitrogen_hepg2 = "gems/hepg2/atomic-efm-weights-nitrogen"
+im_carbon_hepg2   = "/gems/hepg2/atomic-efm-weights-carbon"
+im_nitrogen_hepg2 = "/gems/hepg2/atomic-efm-weights-nitrogen"
+
+im_ecoli_mets  = "/e_coli_core/processed/metabolites-processed.csv"
+im_iabrbc_mets = "/iAB_RBC_283/processed/metabolites-processed.csv"
+im_iit341_mets = "/iIT341/processed/metabolites-processed.csv"
+im_isb619_mets = "/iSB619/processed/metabolites-processed.csv"
+im_hepg2_mets  = "/hepg2/processed/metabolites-processed.csv"
 
 # Export filenames
 ex_fig_c1    = save1 * "/figure-barplot-tree-classification-carbon.tex"
@@ -41,6 +47,56 @@ N = load_aggregated_chmcs(load1 * im_nitrogen, datasets)
 
 Ch = load_hepg2_chmcs(load1 * im_carbon_hepg2)
 Nh = load_hepg2_chmcs(load1 * im_nitrogen_hepg2)
+
+mets = [#
+    CSV.read(load1 * load2 * im_ecoli_mets, DataFrame)[:,1],
+    CSV.read(load1 * load2 * im_iabrbc_mets, DataFrame)[:,1],
+    CSV.read(load1 * load2 * im_iit341_mets, DataFrame)[:,1],
+    CSV.read(load1 * load2 * im_isb619_mets, DataFrame)[:,1],
+    CSV.read(load1 * load2 * im_hepg2_mets, DataFrame)[:,1],
+]
+# ------------------------------------------------------------------------------
+
+##  ATOMIC EFMS IN TCA ---------------------------------------------------------
+tca_mets = [#
+    "Citrate_c",
+    "Cis-Aconitate_c",
+    "Isocitrate_c",
+    "2-Oxoglutarate_c",
+    "Succinate_c",
+    "Fumarate_c",
+    "L-Malate_c",
+    "Oxaloacetate_c",
+    "citrate[c]",
+    "citrate[m]",
+    "isocitrate[c]",
+    "AKG[c]",
+    "AKG[m]",
+    "succinate[m]",
+    "fumarate[c]",
+    "fumarate[m]",
+    "OAA[c]",
+    "OAA[m]",
+]
+tca_met_ids = findall.(!isnothing, indexin.(mets, Ref(tca_mets)))
+tca_C, tca_looped_C, tca_src_C = count_percentage_tca_atomic_efms(C, tca_met_ids)
+
+# Fraction of carbon AEFMs involving TCA intermediates
+frac_tca_C = first.(tca_C) ./ last.(tca_C)
+
+# Fraction of looped carbon AEFMs involving TCA intermediates
+frac_tca_looped_C = first.(tca_looped_C) ./ last.(tca_looped_C)
+
+# Fraction of src-to-sink carbon AEFMs involving TCA intermediates
+frac_tca_src_C = first.(tca_src_C) ./ last.(tca_src_C)
+
+# Fraction of src-to-sink carbon AEFMs involving TCA intermediates with revisitations
+tca_src_revisit_C = count_percentage_tca_atomic_efms_src_revisit(C, tca_met_ids)
+frac_tca_src_revisit_C = first.(tca_src_revisit_C) ./ last.(tca_src_revisit_C)
+
+# Fraction of src-to-sink carbon AEFMs involving TCA intermediates without revisitations
+tca_src_norevisit_C = count_percentage_tca_atomic_efms_src_no_revisit(C, tca_met_ids)
+frac_tca_src_norevisit_C = first.(tca_src_norevisit_C) ./ last.(tca_src_norevisit_C)
 # ------------------------------------------------------------------------------
 
 ## CLASSIFY ATOMIC EFMS --------------------------------------------------------
@@ -398,6 +454,7 @@ loop_types_N, loop_counts_N = group_looped_revisitations(resN, met_names, N)
 
 # Examples
 findfirst(==(maximum(loop_counts_C[5])), loop_counts_C[5])
+loop_types_C[5][16]
 loop_types_C[5][17]
 loop_types_C[1][22]
 loop_types_N[4][2]
@@ -405,6 +462,7 @@ loop_types_N[4][2]
 # Classifying AEFMs by dataset by specified lower boundary and upper boundary
 # Boundaries are manually determined by inspecting the histogram bins in
 # the script subpanel-a-b/histogram-curves.jl
+# (1) Path no revisit (2) path revisit (3) loop no revisit (4) loop revisit
 f(x) = [x.n_pathed_no_rec, x.n_pathed_rec, x.n_looped_no_rec, x.n_looped_rec] ./ (x.n_pathed_no_rec + x.n_pathed_rec + x.n_looped_no_rec + x.n_looped_rec)
 
 # E coli core

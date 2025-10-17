@@ -588,6 +588,123 @@ function classify_atomic_efms(C::Vector{Vector{Vector{CHMCAtomicSummary}}})
 end
 
 # For structural
+function count_percentage_tca_atomic_efms(#
+    C::Vector{Vector{Vector{CHMCAtomicSummary}}},
+    tca_met_ids::Vector{Vector{Int64}}
+)
+    frac_efms_involving_tca = Vector{Vector{Int64}}(undef, length(C))
+    frac_efms_involving_tca_looped = Vector{Vector{Int64}}(undef, length(C))
+    frac_efms_involving_tca_src = Vector{Vector{Int64}}(undef, length(C))
+    for i in 1:length(C)
+        c1 = 0
+        c2 = 0
+        c3 = 0
+        c4 = 0
+        c5 = 0
+        c6 = 0
+        for j in 1:length(C[i])
+            for k in 1:length(C[i][j])
+                efms = efm_state_to_metabolite_seq(C[i][j][k])
+                has_tca_mets = findall(#
+                    !isempty,
+                    findall.(!isnothing, indexin.(efms, Ref(tca_met_ids[i])))
+                )
+                c1 += length(has_tca_mets)
+                c2 += length(efms)
+
+                has_tca_mets_looped = findall(#
+                    !isempty,
+                    findall.(#
+                        !isnothing,
+                        indexin.(#
+                            efms[first.(efms) .== last.(efms)],
+                            Ref(tca_met_ids[i])
+                        )
+                    )
+                )
+                c3 += length(has_tca_mets_looped)
+                c4 += length(efms[first.(efms) .== last.(efms)])
+                has_tca_mets_src = findall(#
+                    !isempty,
+                    findall.(#
+                        !isnothing,
+                        indexin.(#
+                            efms[first.(efms) .!= last.(efms)],
+                            Ref(tca_met_ids[i])
+                        )
+                    )
+                )
+                c5 += length(has_tca_mets_src)
+                c6 += length(efms[first.(efms) .!= last.(efms)])
+            end
+        end
+        frac_efms_involving_tca[i] = [c1; c2]
+        frac_efms_involving_tca_looped[i] = [c3; c4]
+        frac_efms_involving_tca_src[i] = [c5; c6]
+    end
+
+    return frac_efms_involving_tca, frac_efms_involving_tca_looped, frac_efms_involving_tca_src
+end
+
+# For structural
+function count_percentage_tca_atomic_efms_src_revisit(#
+    C::Vector{Vector{Vector{CHMCAtomicSummary}}},
+    tca_met_ids::Vector{Vector{Int64}}
+)
+    frac_src_efms_involving_tca_revisit = Vector{Vector{Int64}}(undef, length(C))
+    for i in 1:length(C)
+        c1 = 0
+        c2 = 0
+        for j in 1:length(C[i])
+            for k in 1:length(C[i][j])
+                efms = efm_state_to_metabolite_seq(C[i][j][k])
+                has_tca_mets = findall(#
+                    !isempty,
+                    findall.(!isnothing, indexin.(efms, Ref(tca_met_ids[i])))
+                )
+                src_with_tca_ids = findall(first.(efms[has_tca_mets]) .!= last.(efms[has_tca_mets]))
+                src_with_tca_revisit_ids = findall(length.(unique.(efms[src_with_tca_ids])) .!= length.(efms[src_with_tca_ids]))
+
+                c1 += length(src_with_tca_revisit_ids)
+                c2 += length(efms)
+            end
+        end
+        frac_src_efms_involving_tca_revisit[i] = [c1; c2]
+    end
+
+    return frac_src_efms_involving_tca_revisit
+end
+
+# For structural
+function count_percentage_tca_atomic_efms_src_no_revisit(#
+    C::Vector{Vector{Vector{CHMCAtomicSummary}}},
+    tca_met_ids::Vector{Vector{Int64}}
+)
+    frac_src_efms_involving_tca_norevisit = Vector{Vector{Int64}}(undef, length(C))
+    for i in 1:length(C)
+        c1 = 0
+        c2 = 0
+        for j in 1:length(C[i])
+            for k in 1:length(C[i][j])
+                efms = efm_state_to_metabolite_seq(C[i][j][k])
+                has_tca_mets = findall(#
+                    !isempty,
+                    findall.(!isnothing, indexin.(efms, Ref(tca_met_ids[i])))
+                )
+                src_with_tca_ids = findall(first.(efms[has_tca_mets]) .!= last.(efms[has_tca_mets]))
+                src_with_tca_norevisit_ids = findall(length.(unique.(efms[src_with_tca_ids])) .== length.(efms[src_with_tca_ids]))
+
+                c1 += length(src_with_tca_norevisit_ids)
+                c2 += length(efms)
+            end
+        end
+        frac_src_efms_involving_tca_norevisit[i] = [c1; c2]
+    end
+
+    return frac_src_efms_involving_tca_norevisit
+end
+
+# For structural
 function get_looped_revisitation_efm_indices(C::Vector{Vector{Vector{CHMCAtomicSummary}}})
     tmp2 = Any[]
     for i in 1:length(C)

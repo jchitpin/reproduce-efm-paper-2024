@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-printf "This script compiles the pipeline figure.\n\n"
+printf "This script compiles the introduction figure.\n\n"
 
 JOB_PATH=$(pwd)
 cd ".."
 BASE_PATH=$(pwd)
 
 ## NETWORK HAIRBALLS -----------------------------------------------------------
-DIR="figures/pipeline/"
+DIR="figures/network-notions-efms-aefms-v2/"
 cd $DIR
-pdflatex -interaction="batchmode"  figure-pipeline-v2.tex
-rm figure-pipeline-v2.aux figure-pipeline-v2.log
+pdflatex -interaction="batchmode"  figure-network-notions.tex
+rm figure-network-notions.aux figure-network-notions.log
 cd $BASE_PATH
 # ------------------------------------------------------------------------------
 

@@ -122,7 +122,7 @@
     \node[node,fill=mito] at (glutamineC.center |- glutamateM.center) (glutamineM) {};
     \node[node,fill=else,right=2.0cm of co2C] (co2S) {};
     \node[font=\bf\Huge] at (co2S.center |- co2M.center) (sink) {Sink};
-    \node[font=\bf\Huge,above=1.0cm of glutamineS] (source) {Source};
+    \node[font=\bf\Huge,above=3.5cm of glutamineS] (source) {Source};
 
     %\node[node,fill=none,draw=none,right=3.0cm of glutamateM] (glutamineMPH) {};
     %\node[node,fill=mito,right=3.0cm of glutamineMPH] (glutamineM) {};
@@ -238,7 +238,7 @@
     \draw[postaction={decorate},line width=2pt] (aspartateM)   to [bend left=10] node [] {} (aspartateC);
     \draw[postaction={decorate},line width=2pt] (aspartateC)   to [bend left=10] node [] {} (oaaC);
     
-    \draw[postaction={decorate},line width=2pt] (isocitrateC)  to [bend left=0] node [] {} (co2C);
+    \draw[dash pattern={on 15.7pt off 10pt},postaction={decorate},line width=2pt] (isocitrateC)  to [bend left=0] node [] {} (co2C);
     \draw[postaction={decorate},line width=2pt] (co2C)         to [bend left=0] node [] {} (co2S);
     \draw[postaction={decorate},line width=2pt] (co2S)         to [bend left=0] node [] {} (sink);
     \draw[postaction={decorate},line width=2pt] (akgM)         to [bend left=0] node [] {} (co2M);

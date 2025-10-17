@@ -1,0 +1,101 @@
+\documentclass[tikz]{standalone}
+
+% Packages
+\usepackage{amsmath,amsthm,bm} % math libraries
+\usepackage{sankey} % sankey/flow diagram support
+\usepackage{graphicx,xcolor} % general image and colour support
+\usepackage{caption,subcaption} % caption/subcaptions
+
+% Load custom Tikz code
+\usepackage{custom-tikz}
+
+% Colour definitions
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{efm1}{HTML}{017EC3}
+\definecolor{efm2}{HTML}{F31E26}
+\definecolor{efm3}{HTML}{019E5E}
+\definecolor{efm4}{HTML}{FBA61D}
+\definecolor{efm5}{HTML}{916237}
+
+% Font style
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+    % Pipeline
+    \begin{tikzpicture}[mymatrixenv]
+
+        % Inputs (a)
+        \input{input-a-start.tex}
+
+        % Model processing (b)
+        \input{input-b-network.tex}
+
+        % Atomic flux graph (c)
+        \input{input-c-atomic-graph.tex}
+
+        % AEFM enumeration (d)
+        \input{input-d-chmc-enumeration.tex}
+         
+        % AEFM weights (e)
+        \input{input-e-atomic-efm-weights.tex}
+
+        % Arrows from subpanels a-b
+        \node[left=1.5cm of box_inputs,yshift=-5.0cm] (ph) {.};
+        \draw[subpanelArrow,-, rounded corners=30pt]
+            (box_inputs.west) -| (ph.center);
+        \draw[subpanelArrow, rounded corners=30pt]
+            (ph.center) |- (box_network.west);
+        \draw[subpanelArrow,-]
+            ([yshift=1.0cm]ph.center) to ([yshift=-1.0cm]ph.center);
+
+        % Arrows from subpanels b-c
+        \draw[subpanelArrow]
+            (box_network) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Trace atoms}
+            (box_chmc);
+        \draw[draw=none]
+            (box_network) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {via\\RXNMapper}
+            (box_chmc);
+
+        % Arrows from subpanels c-d
+        \draw[subpanelArrow]
+            (box_chmc) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Enumerate\\AEFMs}
+            (box_efms);
+        \draw[draw=none]
+            (box_chmc) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {for source\\metabolite\\atoms}
+            (box_efms);
+
+        % Arrows from subpanels d-e
+        \draw[subpanelArrow]
+            (box_efms) to node[%
+                midway,above,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=0.3cm
+            ] {Compute\\AEFM\\ weights}
+            (box_weights);
+        \draw[subpanelArrow]
+            (box_efms) to node[%
+                midway,below,align=center,
+                font=\huge\linespread{0.75}\selectfont,yshift=-0.3cm
+            ] {for source\\metabolite\\atoms}
+            (box_weights);
+
+    \end{tikzpicture}
+\end{document}

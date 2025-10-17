@@ -1,0 +1,956 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.7.13)  11 OCT 2025 10:33
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**figure-structural.tex
+(./figure-structural.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texmf-dist/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+) (/usr/share/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files standalone
+(/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)) (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+ (/usr/share/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count196
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count197
+\c@sapage=\count198
+ (/usr/share/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2025/02/22 v1.5a Default configuration file for 'standalone' class
+) (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count199
+\c@section=\count266
+\c@subsection=\count267
+\c@subsubsection=\count268
+\c@paragraph=\count269
+\c@subparagraph=\count270
+\c@figure=\count271
+\c@table=\count272
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+\sa@box=\box52
+) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen142
+\pgfutil@tempdimb=\dimen143
+) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box53
+) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+) (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count273
+\c@pgf@countb=\count274
+\c@pgf@countc=\count275
+\c@pgf@countd=\count276
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count277
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count278
+\pgfsyssoftpath@bigbuffer@items=\count279
+) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count280
+\pgfmath@box=\box54
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count281
+)) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count282
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen175
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen179
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count283
+\pgf@shadingcount=\count284
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box58
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box59
+) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count285
+\pgfplotmarksize=\dimen185
+)
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikz@lastmovetox=\dimen190
+\tikz@lastmovetoy=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count286
+\tikznumberofchildren=\count287
+\tikznumberofcurrentchild=\count288
+\tikz@fig@count=\count289
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count290
+\pgfmatrixcurrentcolumn=\count291
+\pgf@matrix@numberofcolumns=\count292
+)
+\tikz@expandcount=\count293
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks31
+\t@pgfplots@tokb=\toks32
+\t@pgfplots@tokc=\toks33
+\pgfplots@tmpa=\dimen194
+\c@pgfplots@coordindex=\count294
+\c@pgfplots@scanlineindex=\count295
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count296
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count297
+\t@pgfplotstable@a=\toks37
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count298
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen195
+\pgfdecoratedremainingdistance=\dimen196
+\pgfdecoratedinputsegmentcompleteddistance=\dimen197
+\pgfdecoratedinputsegmentremainingdistance=\dimen198
+\pgf@decorate@distancetomove=\dimen199
+\pgf@decorate@repeatstate=\count299
+\pgfdecorationsegmentamplitude=\dimen256
+\pgfdecorationsegmentlength=\dimen257
+)
+\tikz@lib@dec@box=\box64
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count300
+\pgfplots@xmin@reg=\dimen258
+\pgfplots@xmax@reg=\dimen259
+\pgfplots@ymin@reg=\dimen260
+\pgfplots@ymax@reg=\dimen261
+\pgfplots@zmin@reg=\dimen262
+\pgfplots@zmax@reg=\dimen263
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.groupplots.code.tex
+\pgfplots@group@current@plot=\count301
+\pgfplots@group@current@row=\count302
+\pgfplots@group@current@column=\count303
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.polar.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.smithchart.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.statistics.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.dateplot.code.tex (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+File: pgfcalendar.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfcalendarcurrentjulian=\count304
+\pgf@cal@easter@Y=\count305
+\pgf@cal@easter@G=\count306
+\pgf@cal@easter@C=\count307
+\pgf@cal@easter@X=\count308
+\pgf@cal@easter@Z=\count309
+\pgf@cal@easter@D=\count310
+\pgf@cal@easter@E=\count311
+\pgf@cal@easter@N=\count312
+\pgf@cal@easter@M=\count313
+\pgf@cal@easter@julianday=\count314
+))) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.ternary.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen264
+\captionmargin=\dimen265
+\caption@leftmargin=\dimen266
+\caption@rightmargin=\dimen267
+\caption@width=\dimen268
+\caption@indent=\dimen269
+\caption@parindent=\dimen270
+\caption@hangindent=\dimen271
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count315
+\c@continuedfloat=\count316
+) (/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count317
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count318
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks38
+\ex@=\dimen272
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen273
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count319
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count320
+\leftroot@=\count321
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count322
+\DOTSCASE@=\count323
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box65
+\strutbox@=\box66
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen274
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count324
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count325
+\dotsspace@=\muskip17
+\c@parentequation=\count326
+\dspbrk@lvl=\count327
+\tag@help=\toks39
+\row@=\count328
+\column@=\count329
+\maxfields@=\count330
+\andhelp@=\toks40
+\eqnshift@=\dimen275
+\alignsep@=\dimen276
+\tagshift@=\dimen277
+\tagwidth@=\dimen278
+\totwidth@=\dimen279
+\lineht@=\dimen280
+\@envbody=\toks41
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks42
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count331
+\l__pdf_internal_box=\box67
+) (./figure-structural.aux)
+\openout1 = `figure-structural.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count332
+\scratchdimen=\dimen281
+\scratchbox=\box68
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen282
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks44
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package pgfplots info on input line 86: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
+Package pgfplots info on input line 165: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
+NOTE: coordinate (1Y2.0e0],0Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1Y1.0e0],0Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1Y2.0e0],0Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1Y5.0e0],0Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+PGFPlots: reading {subpanel-e-f/figure-jitter-max-over-min-log10-number-efms-carbon.dat}
+NOTE: coordinate (0.9319741344964222,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0967542795467105,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0958716166718614,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0411427165685576,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9840409673856926,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.1190710886379187,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9954511535948388,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.2402345513983237,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9864801855331143,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9515748937035144,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9099689490872591,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.006816841672048,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.7849961442553104,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.965319361310912,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9886446754972633,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.213847818813713,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9618667245025712,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.039375862889586,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0737536158332284,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9675159823102215,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0648419927037636,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9222461611832111,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0243677060301297,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9953228768778626,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.189152557029516,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.2582264890419363,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.067098021352971,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.173118982712542,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.069988573670263,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9163390493726533,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0824169056212396,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0275052088320544,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0219121332473646,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0358326768960042,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9746493348612226,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.8476910469300054,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1233194726619105,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.988664525040037,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.045907217596654,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0853985642577726,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.117183913832391,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.992083633797129,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1857115786637955,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0725325874042033,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.047796258471015,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9393843351201965,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.106266587164216,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.932849488826179,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.145181452975347,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.103294780009531,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.994741934407086,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.004690239551988,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9625065664827197,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.032700930199909,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.149417882676934,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.945899896557905,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9836671959809404,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.966501931495037,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.051839897336049,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0330728478959,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.073477961043106,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.962381957457822,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9500951545149827,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.013107718570018,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.832600721020501,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9824703004947226,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9455721651560216,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+
+./figure-structural.tex:516: Package PGF Math Error: Could not parse input 'C[m]"' as a floating point number, sorry. The unreadable part was near 'C[m]"'..
+
+See the PGF Math package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.516 ...x-over-min-log10-number-efms-carbon.dat};
+                                                  ^^M
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+NOTE: coordinate (C[m]",0.0) has been dropped because it is unbounded (in x). (see also unbounded coords=jump). 
+
+./figure-structural.tex:516: Package PGF Math Error: Could not parse input 'C[m]"' as a floating point number, sorry. The unreadable part was near 'C[m]"'..
+
+See the PGF Math package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.516 ...x-over-min-log10-number-efms-carbon.dat};
+                                                  ^^M
+(That was another \errmessage.)
+
+NOTE: coordinate (C[m]",0.0) has been dropped because it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (5.227864365573296,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.880241401226335,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.133139068379785,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.024376878907237,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.050746233750905,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.913381259553132,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+PGFPlots: reading {subpanel-e-f/figure-jitter-max-over-min-log10-number-efms-nitrogen.dat}
+NOTE: coordinate (1.0696083833779366,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0716295969856622,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9100608801450257,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9144235716298813,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0005485604085476,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.979490970196023,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9162108667818707,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.90447784045927,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9916018028369824,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.8850390236011506,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0938372540507897,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.1549883558644032,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.8987444279128564,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0276536869101596,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.073957911190564,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9885222009499554,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9951721863416089,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.9818277113027956,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (0.8953720315578743,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.1358546097874422,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.041412562227212,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.1399298280585566,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.2612890262575454,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0989140013077492,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.0485293930445718,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8911785512451798,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9817972272454922,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.875742219154152,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8631981623846214,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.1549858587364814,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.111307162582069,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.096295898803329,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.1105237566382216,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8063083154835147,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9954010125395873,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0642443233748,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.043791334272684,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.114545273110962,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9844023312140442,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8686160633935358,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.059115353897317,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0855617951589096,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.765955203293097,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0664734464848014,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0002963080237883,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.998755415315605,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9412426513122338,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9532639891339423,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9011504279331288,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8209579082708829,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.910485537558889,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0634502325057733,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0220665061428216,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.039985322086359,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9278949500641267,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.7828985757748317,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.7804577938898922,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0609975102679057,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8184940666051044,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0603421866036324,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.045460794077838,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9220899698204286,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.006289999084659,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0888803750607785,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0730168885411495,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9703645671863144,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.063616324676461,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9195741512375828,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.922102297371751,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0020366931629594,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0860554052300277,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.131338018177521,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.7125323109398705,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8932918921087196,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0552242189335788,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.904865247366161,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.8953158616968802,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.880076278758355,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.997546079042408,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.92294232309718,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.7957500333493397,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.92433112818554,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.1342340409823395,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.2194626918210107,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9363509579351224,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.0018201674325002,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (1.9894436569170861,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.072636215821566,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1581061231339165,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.063656410041849,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0502932962092446,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.003423314569626,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0738640278322826,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9582276377425707,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9886558408701474,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1342793380374734,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1912371564389668,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.152205445478677,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.921173884490552,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0392213378245225,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.844109549092304,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0814561358769,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.8450780006562097,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9562167499786858,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.062070886641597,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.999717298768185,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.023747704779944,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.764123464047165,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.042485570442705,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9509749366137465,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9221021604805655,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.907302629565838,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.894165220714272,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.949102718493523,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.075089354472917,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9370410129629083,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0785735346431915,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.947551035755742,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.846076168622875,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9692798144379795,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.956499834217995,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.094315622103062,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0723240602553847,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9987051615031026,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.8663388376692036,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.92065977028837,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0413638638558202,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.081061730656164,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.041748811079655,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9366272848963133,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0410897856459442,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9982099704148775,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.986008751219309,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.926738332130194,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.8895177056244306,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9132999662371244,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1005301728416708,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.019084101806489,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0731401335645367,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9118464701871196,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9020591023157,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0490307179021663,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.016923250577091,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0998130391877057,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0582354823381324,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9460130549471835,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.1110215779019166,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0118102815262247,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.041704138002744,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.941028018757615,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.026150472654585,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9837670833920815,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.057658525306927,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9843591188231673,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.073327802588137,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0715889297546406,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0925025348523376,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0173762784364646,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.095227085372804,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0575363463091714,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.937005731121215,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0151809197257853,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.030391723338944,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.663301584888178,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.9543426013865406,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.954360654982078,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.958028170651836,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (2.8797108584269187,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.0425088195865735,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.046523848936516,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.974541273308946,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.214076044486313,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.148277975349803,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9995273070226283,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.903235370581257,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0948078127949845,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.110496644508169,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.893887266637118,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.017892724549808,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.105051768935693,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8728621554253637,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.058236456306571,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.12822280885294,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.015177161139217,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.1906041906079965,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.925466314016178,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8487600021704234,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0916817138330055,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.088246784411577,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9366977377168784,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.115946310508605,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.031817314932056,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9294300202599786,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9485938800549,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9701210066089354,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.905523796382978,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.03619456452518,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9935381953368685,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.128690325134148,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.028128414731027,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.131728846081146,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.005789546181028,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.7376301275180324,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.865403450956433,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.02012492201743,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.008510200424965,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9106120491545986,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.1038950685935855,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.100247882429293,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.022990064965246,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.054808831036512,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0854241240303635,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.951385129094909,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.044710282597542,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.09240688081804,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8854812100250893,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.994892322851412,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.076382723426733,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9653264340231233,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.996762987092526,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.96185308547191,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.129011947520821,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.042307506165898,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.1463790226524155,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.061292629813338,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.885602830586927,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.927214849805903,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8165116406179873,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.012017285210755,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.913896483634511,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9946305232082957,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9126691361154373,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.072382823672308,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.006566678853377,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.011724916003409,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9414760870849763,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.048960319767627,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.10582595312689,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9580717327680963,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.146258777349511,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.056674012177412,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.1107077340137534,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.283725779891757,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8986852802481,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.157472738385694,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9895230365647087,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.033668491693941,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.980447459177087,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.971302810457628,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.044576190401203,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.971972409685106,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9932428632756554,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8172464156102146,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.960297207892139,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.096279585459488,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9736456619034826,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.79904898833806,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.11952117634444,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.118635856314032,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.099133942996866,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.117350911060927,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.017580262900429,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9542231692983933,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.085078077380832,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8486612237997564,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.002135755524979,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.067601267547662,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.884663483722024,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.6266226270241733,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.009627842465008,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9794979730406985,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0298522640397705,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.8620629397217336,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9348285943963823,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.0452612820324765,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.888079419275205,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.087939043067539,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.949783212879099,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.101228899507296,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.06700579891915,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9620368930075314,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.085101231615267,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.069427809466636,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.297173900998086,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.000898619300299,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.084128025454927,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.038762117518137,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.9396237978935713,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.015321849336561,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.1237410335570255,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (3.886376001176754,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.721834433255594,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.881990777093144,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.003194177482137,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.087644944991312,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+
+./figure-structural.tex:598: Package PGF Math Error: Could not parse input 'C[m]"' as a floating point number, sorry. The unreadable part was near 'C[m]"'..
+
+See the PGF Math package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 ...over-min-log10-number-efms-nitrogen.dat};
+                                                  ^^M
+(That was another \errmessage.)
+
+NOTE: coordinate (C[m]",0.0) has been dropped because it is unbounded (in x). (see also unbounded coords=jump). 
+
+./figure-structural.tex:598: Package PGF Math Error: Could not parse input 'C[m]"' as a floating point number, sorry. The unreadable part was near 'C[m]"'..
+
+See the PGF Math package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 ...over-min-log10-number-efms-nitrogen.dat};
+                                                  ^^M
+(That was another \errmessage.)
+
+NOTE: coordinate (C[m]",0.0) has been dropped because it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (4.995324769636244,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.123517219562709,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.976722986105138,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.954882023942816,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.111519755769902,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.89090447875868,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.916716139722897,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.971321401015963,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.071062384311475,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.06298647474264,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.991967740274113,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.052353583429562,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.852168268086822,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.166211734527381,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.020059581256628,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (4.886763149130398,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.2051315854314675,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.095053404110045,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+NOTE: coordinate (5.256275675746724,-Inf) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
+
+
+[1
+
+
+Non-PDF special ignored!
+<special> papersize=463.54228pt,688.3947pt
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./figure-structural.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 26906 strings out of 475095
+ 699164 string characters out of 5765553
+ 1560706 words of memory out of 5000000
+ 49489 multiletter control sequences out of 15000+600000
+ 560196 words of font info for 41 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 102i,18n,117p,8201b,2413s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on figure-structural.pdf (1 page, 136623 bytes).
+PDF statistics:
+ 51 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,78 @@
+%\node[#
+%] (start) {};
+
+\matrix[%
+    mymatrix,
+    outer ysep=0.7pt,
+    inner sep=4pt,
+    row sep=1em,
+    %xshift=0.89cm
+    xshift=3.84cm
+] (matrix1) {%
+    1 &           -1 & \phantom{-}0 & \phantom{-}0 & $\dots$\\
+    0 & \phantom{-}1 &           -1 &           -1 & $\dots$\\
+    0 & \phantom{-}0 & \phantom{-}1 & \phantom{-}0 & $\dots$\\
+    0 & \phantom{-}0 & \phantom{-}0 & \phantom{-}1 & $\dots$\\
+    $\vdots$ & $\vdots$ &  $\vdots$ & $\vdots$     & $\ddots$\\
+};
+\node[left=0.0cm of matrix1,font=\LARGE] (t1) {Stoichiometry = };
+
+\matrix[%
+    mymatrix,
+    nodes={align=left},
+    text width=16.7cm,
+    outer ysep=0.7pt,
+    inner sep=4pt,
+    row sep=1em,
+    right=3.0cm of matrix1,
+    anchor=west
+] (matrix2) {%
+    C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O\\
+    C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)OP(=O)(O)O\\
+    C([C@H]([C@H]([C@@H]([C@H](C(=O)O)O)O)O)O)OP(=O)(O)[O-]\\
+    \vspace*{-0.37cm}\begin{center}$\vdots$\end{center}\\
+};
+\node[left=0.0cm of matrix2,font=\LARGE] (t2) {SMILES = };
+
+\matrix[%
+    mymatrix,
+    nodes={align=left},
+    outer ysep=0.7pt,
+    inner sep=4pt,
+    row sep=1em,
+    right=3.0cm of matrix2,
+    anchor=west
+] (matrix3) {%
+    Carbon\\
+    Nitrogen\\
+    $\vdots$\\
+};
+\node[left=0.0cm of matrix3,font=\LARGE] (t3) {Element =};
+
+\matrix[%
+    mymatrix,
+    outer ysep=0.7pt,
+    inner sep=4pt,
+    row sep=1em,
+    right=2.05cm of matrix3,
+    anchor=west
+] (matrix4) {%
+    v\textsubscript{1}\\
+    v\textsubscript{2}\\
+    v\textsubscript{3}\\
+    v\textsubscript{4}\\
+    $\vdots$\\
+};
+\node[left=0.0cm of matrix4,font=\LARGE] (t4) {Flux = };
+
+\node[left=0.52cm of t1] (box_west) {};
+\node[right=0.9cm of matrix4] (box_east) {};
+\node[above=0.3cm of matrix4] (box_north) {};
+\node[below=0.3cm of matrix4] (box_south) {};
+
+\node[fit=(matrix1) (matrix4) (t1) (box_west) (box_east) (box_north) (box_south), draw, ultra thick,inner sep=0pt,rounded corners=10pt] (box_inputs) {};
+\node[above=0.1cm of box_inputs.north, anchor=south] () {\huge 1. Pipeline inputs};
+%\node[fit=(box_network_north_east) (box_network_north_west) (box_network_south_east) (box_network_south_west), draw, ultra thick,inner sep=0pt,rounded corners=10pt] (box_network) {};
+
+
+
