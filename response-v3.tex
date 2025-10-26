@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent Dear Editors and Reviewers,\\
+
+We thank both the editors and reviewers for their feedback on our
+manuscript and have revised it accordingly. We detail the changes below,
+but the main changes are as follows. First, we have revised our
+introduction to describe related approaches for constructing and analysing
+metabolic networks at the atomic level. These additions clarify how our
+analysis of atomic transition graphs via AEFMs is distinct from other types of
+pathway analysis methods. We further discuss the relationship between AEFMs and
+EFMs and why these atomic pathways can be viewed as the EFMs of a certain
+atomic flux graph. Second, we have described our computational pipeline in
+greater detail in the methods section. We explain the construction and analysis
+of the ACHMC to obtain AEFM probabilities that are scaled to AEFM weights.
+Finally, we have noted two atom mapping errors in our HepG2 weight
+analysis from RXNMapper. We describe these two erroneous reaction mappings
+in-text and have updated all figures, tables, and statistics. In
+particular, our final HepG2 figure shows dominant AEFMs that are not only
+more biologically accurate, but predict greater metabolic activity through
+the non-canonical TCA cycle pathway.
+
+~
+
+\noindent Sincerely,
+
+\noindent Justin G. Chitpin, Theodore J. Perkins
+
+%\noindent\textcolor{blue}{\hline} 
+
+%\hline
+
+~\\
+
+\noindent\textcolor{blue}{Reviewer: 1}\\
+
+No comments.\\
+
+\noindent\textcolor{blue}{Reviewer: 2}\\
+
+\noindent\textcolor{blue}{Major comments:}\\
+
+\noindent\textcolor{blue}{1. The reviewer was very puzzled by the proposed
+approach and lack of any mention of previous studies that have precisely
+proposed the same idea. For instance,\\
+https://pmc.ncbi.nlm.nih.gov/articles/PMC2881407/ and\\
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-315
+to name just a few.}\\
+
+These papers, as well as several others that analyse various notions of
+atomic transition graphs derived from metabolic flux networks, are
+discussed in our introduction. We have included a new figure (Fig 1) that
+visualises these different types of networks and explains how these
+constructs are analysed to uncover metabolic pathways or estimate
+intracellular fluxes. Although some elements of our approach have been
+previously proposed, the pipeline we offer has unique distinguishing
+strengths not present in any single prior work: (1) We automatically
+(albeit with manual checking) construct atomic flux networks based on
+SMILES descriptions of metabolites and reaction stoichiometries, using
+a machine-learning based approach; (2) we have generalised previous atomic
+flux methods to work with any element (not just carbon, but also nitrogen
+or any other element, except for hydrogen, which is not well-handled by
+the RXNMapper software, and is any case often omitted from metabolite
+descriptions); (3) use serial or parallel computing strategies to
+efficiently compute AEFMs for different source atoms; (4) we can
+\textit{uniquely} decompose atomic fluxes onto the AEFMs using our
+previously-published Markob chain-based theory. With these combined
+strengths, our paper demonstrates for the first time the feasibility of
+flux decomposition on genome-scale metabolic networks.
+
+\noindent\textcolor{blue}{2. The concept of AEFM has nothing to do with EFMs.
+The so-called AEFMs are paths in a graph, given by the atom mapping.
+A metabolic network, in contrast, is a hypergraph – precluding the search for
+(shortest) paths. Therefore, the naming of the paths itself gives a wrong
+impression that the concept has anything to do with EFMs.}\\
+
+Following point 1, we better describe the concept of the AEFM and its
+precise relationship to EFMs in our introduction. Briefly, the formal
+relationship is that AEFMs \textit{are} EFMs of the atomic flux graph of
+a metabolic network. Similar terminology exists in literature from Pey
+\textit{et al.} (2011) who propose ``elementary carbon modes" to describe
+what we could call carbon AEFMs. Because Pey's terminology does not
+readily generalise to other element types, we believe AEFM is a suitable
+and appropriate term that accurately describes our proposed pathway
+concept. We recognise, and emphasise in the introduction, that AEFMs are
+\textit{not} EFMs of the metabolic flux network. We demonstrate this with
+additional panels in Fig 1.\\
+
+\noindent\textcolor{blue}{3. To make point 2 more precise, presence of any
+splitting or condensation reaction would result in calling a sequence of
+reactions (i.e. a path) an AEFM although these reactions are only subsets
+of an EFM and cannot themselves support steady-state.}\\
+
+We agree that an AEFM in a multispecies network does not correspond to
+a minimal pathway maintaining steady state reaction flux in a metabolic
+flux network. Our new figure comparing EFMs/AEFMs highlights this
+distinction between the two pathway types and how EFMs balance molecular
+stoichiometries across reactions while AEFMs balance individual atomic
+movements.\\
+
+\noindent\textcolor{blue}{4. Therefore, the study presents a comparison of
+``apples and oranges'', since the two concepts cannot be reconciled.}\\
+
+EFMs and AEFMs solve different, but related problems: Giving
+insight into flux pathways is complicated metabolic networks. Similarly,
+one might compare a bicycle and a car as alternate modes of
+transportation---while recognising that they do not solve entirely the
+same set of problems. For that matter, one might compare the relative
+merits of apples and oranges as part of one's diet, without claiming that
+apples and oranges are interchangeable. We do not claim that EFMs and
+AEFMs solve exactly the same problem, and indeed this is a strength of our
+paper. By exploring AEFMs as an alternative to EFMs, we have been able to
+demonstrate the previously-unrecognised fact that AEFM enumeration in
+atomic flux networks is computationally \textit{more feasible} than EFM
+enumeration in the corresponding molecular flux networks -- at least for
+the five different networks we studied.\\
+
+\noindent\textcolor{blue}{5. As a result of this elaboration, the
+CHMC-based approach is not applicable in this setting, contrary to what is
+claimed on page 6, last paragraph.}\\
+
+Recognising that AEFMs are EFMs of atomic flux graphs, and that atomic
+flux graphs are unimolecular transformation networks as studied in our
+previous CHMC work, the ACHMC approach we describe here is applicable and
+mathematically sound.\\
+
+\noindent\textcolor{blue}{6. The authors also draw analogies to
+isotopomers from “metabolite revisitation”, which also is misleading and
+erroneous; isotopomers are properties of metabolites irrespective of the
+network in which they occur (i.e. they are independent of the network
+structure).}\\
+
+We thank the Reviewer for pointing this out and the misleading statement has
+been removed.\\
+
+\noindent\textcolor{blue}{Other revisions:}\\
+
+\noindent\textcolor{blue}{Figure formatting:}\\
+
+We have improved figure font readability and uniformity across our figures. In
+particular, Figure S1 has been split into two figures.\\
+
+\noindent\textcolor{blue}{Description of the methods:}\\
+
+We structure the methods section to be more consistent with our AEFM pipeline
+figure. We describe the atomic flux graph in more detail and how our ACHMC is
+constructed from atomic flux graphs specific to each source
+metabolite-atom position. We further provide pseudocode for constructing
+the ACHMC. Finally, we describe how the ACHMC is analysed to identify
+simple cycles corresponding to AEFMs and how AEFM probabilities and
+weights are computed from these simple cycles.
+
+\end{document}
+

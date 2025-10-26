@@ -7,7 +7,7 @@
     inner sep=4pt,
     row sep=1em,
     %xshift=0.89cm
-    xshift=3.84cm
+    xshift=3.54cm
 ] (matrix1) {%
     1 &           -1 & \phantom{-}0 & \phantom{-}0 & $\dots$\\
     0 & \phantom{-}1 &           -1 &           -1 & $\dots$\\
@@ -34,27 +34,27 @@
 };
 \node[left=0.0cm of matrix2,font=\LARGE] (t2) {SMILES = };
 
-\matrix[%
-    mymatrix,
-    nodes={align=left},
-    outer ysep=0.7pt,
-    inner sep=4pt,
-    row sep=1em,
-    right=3.0cm of matrix2,
-    anchor=west
-] (matrix3) {%
-    Carbon\\
-    Nitrogen\\
-    $\vdots$\\
-};
-\node[left=0.0cm of matrix3,font=\LARGE] (t3) {Element =};
+%\matrix[%
+    %mymatrix,
+    %nodes={align=left},
+    %outer ysep=0.7pt,
+    %inner sep=4pt,
+    %row sep=1em,
+    %right=3.0cm of matrix2,
+    %anchor=west
+%] (matrix3) {%
+    %Carbon\\
+    %Nitrogen\\
+    %$\vdots$\\
+%};
+\node[right=0.1cm of matrix2,font=\LARGE] (matrix3) {Element = Carbon (C)};
 
 \matrix[%
     mymatrix,
     outer ysep=0.7pt,
     inner sep=4pt,
     row sep=1em,
-    right=2.05cm of matrix3,
+    right=2.28cm of matrix3,
     anchor=west
 ] (matrix4) {%
     v\textsubscript{1}\\
@@ -65,8 +65,8 @@
 };
 \node[left=0.0cm of matrix4,font=\LARGE] (t4) {Flux = };
 
-\node[left=0.52cm of t1] (box_west) {};
-\node[right=0.9cm of matrix4] (box_east) {};
+\node[left=0.22cm of t1] (box_west) {};
+\node[right=0.6cm of matrix4] (box_east) {};
 \node[above=0.3cm of matrix4] (box_north) {};
 \node[below=0.3cm of matrix4] (box_south) {};
 
