@@ -1,0 +1,55 @@
+\documentclass{standalone}
+\usepackage{amsmath,amsthm,bm}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+% General image and colour support
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+
+% Coloured atoms of interest
+\newcommand*\circleatom[2]{\tikz\node[circle,minimum width=15pt, line width=1pt, draw=black,fill=#2]{\printatom{#1}};}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+
+\begin{document}
+
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=2em,
+  bond offset=0.5pt
+}
+
+\chemfig{
+                      NH_2% 1
+                >[:90,,1]\circleatom{}{cred}% 2
+                         (
+                -[:30]\circleatom{}{black}% 10
+                             (
+                   -[:330,,,1]OH% 12
+                             )
+                    =[:90]O% 11
+                         )
+                -[:150]\circleatom{}{cblue}% 3
+                -[:210]% 4
+                =[:150]\circleatom{}{cyellow}% 5
+                -[:210]\circleatom{}{corange}% 6
+                =[:270]\circleatom{}{cpurple}% 7
+                -[:330]\circleatom{}{pink}% 8
+                =[:30]\circleatom{}{gray}% 9
+                         (
+            -[:90]\circleatom{}{cgreen}% -> 4
+                         )
+}
+
+
+\end{document}
+
+

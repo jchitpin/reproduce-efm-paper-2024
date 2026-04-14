@@ -1,0 +1,117 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+% Default preamble
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+\definecolor{julia4}{HTML}{D62728}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[height={7cm}, width={7cm}, no markers, xlabel = Nitrogen AEFM length, ylabel = PDF, scaled y ticks = base 10:1, legend cell align = {left}, xmajorgrids={false}, ymajorgrids={false}, xtick pos = bottom, ytick pos = left, xmax={40}, xtick={0,10,20,30,40}, ymax={0.6}, extra y ticks={-0.06}, extra y tick labels={10}, extra y tick style={yticklabel style={color=white}}, ytick={0.0,0.2,0.4,0.6}, yticklabels={0,2,4,6}]
+    \addplot[cred]
+        table[row sep={\\}]
+        {
+            \\
+            0.0  0.0  \\
+            2.5  0.21568627450980393  \\
+            3.5  0.44607843137254904  \\
+            4.5  0.17647058823529413  \\
+            5.5  0.15196078431372548  \\
+            6.5  0.00980392156862745  \\
+            40.0  0.0  \\
+        }
+        ;
+    \addlegendentry {E. coli core}
+    \addplot[cgreen]
+        table[row sep={\\}]
+        {
+            \\
+            0.0  0.0  \\
+            2.5  0.06791009086561454  \\
+            3.5  0.12482065997130559  \\
+            4.5  0.13868962219033956  \\
+            5.5  0.10808225729316116  \\
+            6.5  0.10425633668101388  \\
+            7.5  0.07604017216642754  \\
+            8.5  0.09182209469153516  \\
+            9.5  0.0784313725490196  \\
+            10.5  0.05117168818747011  \\
+            11.5  0.043041606886657105  \\
+            12.5  0.029172644667623145  \\
+            13.5  0.018173122907699665  \\
+            14.5  0.028694404591104734  \\
+            15.5  0.02391200382592061  \\
+            16.5  0.0014347202295552368  \\
+            17.5  0.00860832137733142  \\
+            18.5  0.005738880918220947  \\
+            40.0  0.0  \\
+        }
+        ;
+    \addlegendentry {iAB RBC 283}
+    \addplot[cpurple]
+        table[row sep={\\}]
+        {
+            \\
+            0.0  0.0  \\
+            2.5  0.045095785440613025  \\
+            7.5  0.0700191570881226  \\
+            12.5  0.06093869731800766  \\
+            17.5  0.01818007662835249  \\
+            22.5  0.003984674329501916  \\
+            27.5  0.001781609195402299  \\
+            40.0  0.0  \\
+        }
+        ;
+    \addlegendentry {iIT341}
+    \addplot[corange]
+        table[row sep={\\}]
+        {
+            \\
+            0.0  0.0  \\
+            2.5  0.040453074433656956  \\
+            7.5  0.06700436189672154  \\
+            12.5  0.046883354439285214  \\
+            17.5  0.03378359364007317  \\
+            22.5  0.01129871957225271  \\
+            27.5  0.0005768960180104123  \\
+            40.0  0.0  \\
+        }
+        ;
+    \addlegendentry {iSB619}
+    \addplot[cblue]
+        table[row sep={\\}]
+        {
+            \\
+            0.0  0.0  \\
+            2.5  0.042664054848188054  \\
+            7.5  0.0602154750244858  \\
+            12.5  0.024995102840352595  \\
+            17.5  0.027580803134182173  \\
+            22.5  0.0211949069539667  \\
+            27.5  0.021077375122428993  \\
+            32.5  0.0022722820763956906  \\
+            40.0  0.0  \\
+        }
+        ;
+    \addlegendentry {HepG2}
+\end{axis}
+\end{tikzpicture}
+\end{document}

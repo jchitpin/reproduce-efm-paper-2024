@@ -1,0 +1,112 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{%
+    patterns, plotmarks, backgrounds, shapes, arrows, calc, trees, positioning,
+    chains, shapes.geometric, decorations.pathreplacing,
+    decorations.pathmorphing, shapes.arrows, decorations.markings, quotes,
+    arrows.meta, spy, fit, matrix, math
+}
+\usepackage{amsmath,amsthm,bm}
+
+% General image and colour support
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Captions and subcaptions
+\usepackage{caption}
+\usepackage[labelformat=parens]{subcaption}
+%\renewcommand\thesubfigure{\sffamily\alph{subfigure})}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+
+% Define main node types
+\tikzstyle{ball} = [%
+    circle,
+    draw=black,
+    minimum height=0.5cm,
+    line width=1.0pt,
+    align=center,
+    fill=cgrey,
+    fill opacity=1.0,
+    text opacity=1.0,
+    text centered,
+    text=black,
+    inner sep=0.5pt,
+    font=\normalsize
+]
+
+\usepackage{amsmath}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\tikzmath{%
+    \innerspace=0.25pt;
+    \outerspace=1.5pt;
+    \rxnspace=5pt;
+    \fluxspace=0.5pt;
+}
+\begin{tikzpicture}[]
+
+    %% Reaction mapping
+    % Substrate 1
+    \node[ball,fill=cblue] (b1) {$a_1$};
+    \node[ball,right=\innerspace of b1,fill=corange] (b2) {$a_2$};
+    \node[ball,right=\innerspace of b2,fill=cred] (b3) {$a_3$};
+    \node[ball,right=\innerspace of b3,fill=cgrey] (b4) {$a_4$};
+
+    \draw[-,line width=1.0pt] (b1.center) to (b2.center);
+    \draw[-,line width=1.0pt] (b2.center) to (b3.center);
+    \draw[-,line width=1.0pt] (b3.center) to (b4.center);
+
+    \node[ball,fill=cblue] (b1) {$a_1$};
+    \node[ball,right=\innerspace of b1,fill=corange] (b2) {$a_2$};
+    \node[ball,right=\innerspace of b2,fill=cred] (b3) {$a_3$};
+    \node[ball,right=\innerspace of b3,fill=cgrey] (b4) {$a_4$};
+
+    % Product 1
+    \node[ball,right=1.165*\outerspace of b4,fill=corange] (b5) {$b_1$};
+    \node[ball,right=\innerspace of b5,fill=cblue] (b6) {$b_2$};
+    \node[ball,right=\innerspace of b6,fill=cred] (b7) {$b_3$};
+    \node[ball,right=\innerspace of b7,fill=cgrey] (b8) {$b_4$};
+
+    \draw[-,line width=1.0pt] (b5.center) to (b6.center);
+    \draw[-,line width=1.0pt] (b6.center) to (b7.center);
+    \draw[-,line width=1.0pt] (b7.center) to (b8.center);
+
+    \node[ball,right=1.165*\outerspace of b4,fill=corange] (b5) {$b_1$};
+    \node[ball,right=\innerspace of b5,fill=cblue] (b6) {$b_2$};
+    \node[ball,right=\innerspace of b6,fill=cred] (b7) {$b_3$};
+    \node[ball,right=\innerspace of b7,fill=cgrey] (b8) {$b_4$};
+
+    % Reaction arrow
+    \draw[%
+        line width=1.0pt,-stealth'
+    ] ([xshift=0.425cm]b4.east) -- node[above,font=\Large] {$v$} ([xshift=-\rxnspace]b5.west);
+
+    %% Atomic flux network
+    \node[ball,right=1.5*\fluxspace of b8,fill=cblue] (b9)  {$a_1$};
+    \node[ball,below=\fluxspace of b9,fill=cblue] (b10) {$b_2$};
+    \draw[line width=1.0pt,-stealth'] (b9.south) -- node[right,font=\Large] {$v$} (b10.north);
+
+    \node[ball,right=\fluxspace of b9,fill=corange]  (b11) {$a_2$};
+    \node[ball,below=\fluxspace of b11,fill=corange] (b12) {$b_1$};
+    \draw[line width=1.0pt,-stealth'] (b11.south) -- node[right,font=\Large] {$v$} (b12.north);
+
+    \node[ball,right=\fluxspace of b11,fill=cred] (b13) {$a_3$};
+    \node[ball,below=\fluxspace of b13,fill=cred] (b14) {$b_3$};
+    \draw[line width=1.0pt,-stealth'] (b13.south) -- node[right,font=\Large] {$v$} (b14.north);
+
+    \node[ball,right=\fluxspace of b13,fill=cgrey] (b15) {$a_4$};
+    \node[ball,below=\fluxspace of b15,fill=cgrey] (b16) {$b_4$};
+    \draw[line width=1.0pt,-stealth'] (b15.south) -- node[right,font=\Large] {$v$} (b16.north);
+\end{tikzpicture}
+
+\end{document}

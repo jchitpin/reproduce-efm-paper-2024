@@ -1,0 +1,264 @@
+\documentclass{standalone}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{chemfig}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+
+\usepackage[most]{tcolorbox}
+\tcbset{%
+  on line,
+  boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+  arc=7.5pt,
+  colframe=white,
+  %colback=LightLavender,
+  highlight math style={enhanced}
+}
+\renewcommand{\familydefault}{\sfdefault}
+
+% The following chemfig code was generated via mol2chemfig:
+% Glucose 6-phosphate
+% mol2chemfig -w -i direct "C(C1C(C(C(C(O1)O)O)O)O)OP(=O)(O)O"
+% Fructose 6-phosphate
+% mol2chemfig -w -i direct "C(C(C(C(C(=O)CO)O)O)O)OP(=O)(O)O"
+% Fructose 1,6-bisphosphate
+% mol2chemfig -w -i direct "C(C1C(C(C(O1)(COP(=O)(O)O)O)O)O)OP(=O)(O)O"
+% G3P
+% mol2chemfig -w -i direct "C(C(C=O)O)OP(=O)(O)O"
+% DHAP
+% mol2chemfig -w -i direct "C(C(=O)COP(=O)(O)O)O"
+% 1,3-biphosphoglycerate
+% mol2chemfig -w -i direct "C(C(C(=O)OP(=O)(O)O)O)OP(=O)(O)O"
+
+\begin{document}
+
+%\setchemfig{atom sep=10pt}
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=2em,
+  bond offset=1pt
+}
+
+\begin{tikzpicture}
+  \node (G6P)
+    []
+    {%
+      %\chemname{%
+        \chemfig{%
+                      OH% 8
+             -[:90,,1]% 6
+               %-[:150]% 5
+               -[:150]{\colorbox{corange}{\color{black}{C}}}
+                         (%
+               -[:210,,,2]HO% 9
+                         )
+                %-[:90]% 4
+                -[:90]{\colorbox{cblue}{\color{black}{C}}}
+                         (%
+               -[:150,,,2]HO% 10
+                         )
+                %-[:30]% 3
+                -[:30]{\tcbox[colback=cblue]{C}}
+                         (%
+                -[:90,,,1]OH% 11
+                         )
+               %-[:330]% 2
+               -[:330]{\tcbox[colback=corange]{C}}
+                         (%
+                   -[:270]O% 7
+                   %-[:210]% -> 6
+                   -[:210]{\colorbox{cgreen}{\color{black}{C}}}
+                         )
+                %-[:30]% 1
+                -[:30]{\tcbox[colback=cgreen]{C}}
+               -[:330]O% 12
+                -[:30]P% 13
+                         (%
+                    =[:90]O% 14
+                         )
+                         (%
+               -[:330,,,1]OH% 15
+                         )
+            -[:30,,,1]OH% 16
+        }
+      %}{G6P}
+    };
+  \node[below=0.1cm of G6P] () {G6P};
+  \node (arr1)
+    [right=0.1cm of G6P]
+    {\schemestart\arrow{<=>}\schemestop};
+  \node (F6P)
+    [right=0.1cm of arr1]
+    {%
+      \chemfig{%
+                     O% 6
+               %=[:90]% 5
+               =[:90]{\colorbox{corange}{\color{black}{C}}}
+                        (%
+                  %-[:150]% 7
+                  -[:150]{\colorbox{cgreen}{\color{black}{C}}}
+              -[:210,,,2]HO% 8
+                        )
+               %-[:30]% 4
+               -[:30]{\colorbox{cblue}{\color{black}{C}}}
+                        (%
+               -[:90,,,1]OH% 9
+                        )
+              %-[:330]% 3
+              -[:330]{\tcbox[colback=cblue]{C}}
+                        (%
+              -[:270,,,1]OH% 10
+                        )
+               %-[:30]% 2
+               -[:30]{\tcbox[colback=corange]{C}}
+                        (%
+               -[:90,,,1]OH% 11
+                        )
+              %-[:330]% 1
+              -[:330]{\tcbox[colback=cgreen]{C}}
+               -[:30]O% 12
+              -[:330]P% 13
+                        (%
+                  =[:270]O% 14
+                        )
+                        (%
+               -[:30,,,1]OH% 15
+                        )
+          -[:330,,,1]OH% 16
+      }
+    };
+  \node[below=0.1cm of F6P] () {F6P};
+  \node (arr2)
+    [right=0.1cm of F6P]
+    {\schemestart\arrow{-U>[\tiny ATP][\tiny ADP][][0.25]}\schemestop};
+  \node (F16P)
+    [right=0.1cm of arr2]
+    {%
+      \chemfig{%
+                   O% 10
+            =[:228]P% 9
+                      (%
+            -[:168,,,2]HO% 11
+                      )
+                      (%
+            -[:108,,,2]HO% 12
+                      )
+            -[:288]O% 8
+            %-[:348]% 7
+            -[:348]{\tcbox[colback=cgreen]{C}}
+            %-[:288]% 5
+            -[:288]{\tcbox[colback=corange]{C}}
+                      (%
+            -[:192,,,2]HO% 13
+                      )
+            %-[:276]% 4
+            -[:276]{\tcbox[colback=cblue]{C}}
+                      (%
+            -[:222,,,2]HO% 14
+                      )
+            %-[:348]% 3
+            -[:348]{\colorbox{cblue}{\color{black}{C}}}
+                      (%
+            -[:294,,,1]OH% 15
+                      )
+             %-[:60]% 2
+             -[:60]{\colorbox{corange}{\color{black}{C}}}
+                      (%
+                -[:132]O% 6
+                -[:204]{\tcbox[colback=corange]{C}}% -> 5
+                      )
+              %-[:6]% 1
+              -[:6]{\colorbox{cgreen}{\color{black}{C}}}
+             -[:66]O% 16
+              -[:6]P% 17
+                      (%
+                =[:306]O% 18
+                      )
+                      (%
+             -[:66,,,1]OH% 19
+                      )
+          -[:6,,,1]OH% 20
+      }
+    };
+  \node[below=0.1cm of F16P] () {FDP};
+
+  \node (G3P)
+    [right=1.0cm of F16P, yshift=1.25cm]
+    {%
+      \chemfig{%
+                    O% 4
+              %=[:30]% 3
+              =[:30]{\colorbox{cblue}{\color{black}{C}}}
+             %-[:330]% 2
+             -[:330]{\colorbox{corange}{\color{black}{C}}}
+                       (%
+             -[:270,,,1]OH% 5
+                       )
+              %-[:30]% 1
+              -[:30]{\colorbox{cgreen}{\color{black}{C}}}
+             -[:330]O% 6
+              -[:30]P% 7
+                       (%
+                 =[:330]O% 8
+                       )
+                       (%
+              -[:90,,,1]OH% 9
+                       )
+          -[:30,,,1]OH% 10
+      }
+    };
+  \node[above=0.1cm of G3P] () {G3P};
+  \node (DHAP)
+    [right=1.0cm of F16P, yshift=-1.25cm]
+    {%
+      \chemfig{%
+                   O% 3
+             %=[:90]% 2
+             %=[:90]{\colorbox{corange}{\color{black}{C}}}
+             =[:90]{\tcbox[colback=corange]{C}}
+                      (%
+                 %-[:30]% 1
+                 %-[:30]{\colorbox{cblue}{\color{black}{C}}}
+                 -[:30]{\tcbox[colback=cblue]{C}}
+            -[:330,,,1]OH% 10
+                      )
+            %-[:150]% 4
+            %-[:150]{\colorbox{cgreen}{\color{black}{C}}}
+            -[:150]{\tcbox[colback=cgreen]{C}}
+            -[:210]O% 5
+            -[:150]P% 6
+                      (%
+                =[:210]O% 7
+                      )
+                      (%
+             -[:90,,,1]OH% 8
+                      )
+        -[:150,,,2]HO% 9
+    }
+  };
+  \node[below=0.1cm of DHAP] () {DHAP};
+
+  \node (arr3) at ($(G3P)!0.5!(DHAP)$)
+    [rotate=90]
+    {\schemestart\arrow{<=>}\schemestop};
+  \draw[-stealth] (F16P) -- ( $ (F16P.0)!0.5!(G3P.west|-F16P.0) $ ) |- (G3P.west) node[auto,pos=0.7] {};
+  \draw[-stealth] (F16P) -- ( $ (F16P.0)!0.5!(DHAP.west|-F16P.0) $ ) |- (DHAP.west) node[auto,pos=0.7] {};
+
+
+\end{tikzpicture}
+
+
+\end{document}
+

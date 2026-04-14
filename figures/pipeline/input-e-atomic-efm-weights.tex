@@ -1,0 +1,202 @@
+% Glucose
+\node[%
+    ring6,
+    draw opacity=0.25,
+    %right=4.72cm of glucose_efms % 6.12cm is touching
+    right=8.72cm of glucose_efms
+] (glucose_weights) {};
+\node[above=0.5cm of glucose_weights.corner 2,carbon,fill=cblue] (glucose_weights_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (glucose_weights.corner 2) to (glucose_weights_c6);
+\draw[fill=white] (glucose_weights.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (glucose_weights.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (glucose_weights.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (glucose_weights.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (glucose_weights.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (glucose_weights.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (glucose_weights.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (glucose_weights.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (glucose_weights.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (glucose_weights.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(glucose_weights) (glucose_weights_c6), draw=none,label={[align=center]above:{\normalsize}}] (glucose_weights_box) {};
+\node[labelFont] () at (glucose_weights.center) {Glc};
+
+% Glucose 6-phosphate
+\node[%
+    ring6,
+    draw opacity=0.25,
+] (g6p_weights) at (pgl.center -| glucose_weights.center) {};
+\node[above=0.5cm of g6p_weights.corner 2,carbon,fill=cblue] (g6p_weights_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (g6p_weights.corner 2) to (g6p_weights_c6);
+\draw[fill=white] (g6p_weights.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (g6p_weights.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (g6p_weights.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (g6p_weights.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (g6p_weights.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (g6p_weights.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (g6p_weights.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (g6p_weights.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (g6p_weights.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (g6p_weights.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(g6p_weights) (g6p_weights_c6), draw=none,label={above:{\normalsize}}] (g6p_weights_box) {};
+\node[labelFont] () at (g6p_weights.center) {G6P$\,\,$};
+
+% 6-Phosphonoglucono-D-lactone
+\node[%
+    ring6,
+    draw opacity=0.25,
+    below=1.75cm of g6p_weights_box,xshift=-1.0cm
+] (pgl_weights) {};
+\node[above=0.5cm of pgl_weights.corner 2,carbon,fill=cblue] (pgl_weights_c6) {};
+\draw[carbonDraw,draw opacity=0.25] (pgl_weights.corner 2) to (pgl_weights_c6);
+\draw[fill=white] (pgl_weights.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (pgl_weights.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (pgl_weights.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (pgl_weights.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (pgl_weights.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (pgl_weights.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (pgl_weights.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (pgl_weights.corner 5) node[carbonGrey,fill=corange] () {};
+\draw[fill=white] (pgl_weights.corner 6) node[carbonBlank] () {};
+\draw[fill=white] (pgl_weights.corner 6) node[carbonGrey,fill=cpurple] () {};
+\node[fit=(pgl_weights) (pgl_weights_c6), draw=none,label={left:{\normalsize}}] (pgl_weights_box) {};
+\node[labelFont] () at (pgl_weights.center) {6PG};
+
+% Fructose 6-phosphate
+\node[%
+    ring5,
+    draw opacity=0.25,
+    below=1.12cm of g6p_weights_box,xshift=+1.5cm
+] (f6p_weights) {};
+\node[above=0.5cm of f6p_weights.corner 2,carbon,fill=cblue] (f6p_weights_c2) {};
+\draw[carbonDraw,draw opacity=0.25] (f6p_weights.corner 2) to (f6p_weights_c2);
+\node[above=0.5cm of f6p_weights.corner 5,circle, draw, inner sep=1.5pt,carbonBlank] (f6p_weights_c5) {};
+\node[above=0.5cm of f6p_weights.corner 5,circle, draw, inner sep=1.5pt,fill=cpurple,carbonGrey] (f6p_weights_c5) {};
+\draw[carbonDraw,draw opacity=0.25] (f6p_weights.corner 5) to (f6p_weights_c5);
+\draw[fill=white] (f6p_weights.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (f6p_weights.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (f6p_weights.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (f6p_weights.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (f6p_weights.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (f6p_weights.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (f6p_weights.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (f6p_weights.corner 5) node[carbonGrey,fill=corange] () {};
+\node[fit=(f6p_weights) (f6p_weights_c2) (f6p_weights_c5), draw=none,label={right:{\normalsize}}] (f6p_weights_box) {};
+\node[labelFont] () at (f6p_weights.center) {$\,\,$F6P};
+
+% Fructose 1,6-phosphate
+\node[%
+    ring5,
+    draw opacity=0.25,
+    below=1.5cm of f6p_weights_box
+] (fdp_weights) {};
+\node[above=0.5cm of fdp_weights.corner 2,carbon,fill=cblue] (fdp_weights_c2) {};
+\draw[carbonDraw,draw opacity=0.25] (fdp_weights.corner 2) to (fdp_weights_c2);
+\node[above=0.5cm of fdp_weights.corner 5,circle, draw, inner sep=1.5pt,carbonBlank] (fdp_weights_c5) {};
+\node[above=0.5cm of fdp_weights.corner 5,circle, draw, inner sep=1.5pt,carbonGrey,fill=cpurple] (fdp_weights_c5) {};
+\draw[carbonDraw,draw opacity=0.25] (fdp_weights.corner 5) to (fdp_weights_c5);
+\draw[fill=white] (fdp_weights.corner 2) node[carbonBlank] () {};
+\draw[fill=white] (fdp_weights.corner 2) node[carbonGrey,fill=cred] () {};
+\draw[fill=white] (fdp_weights.corner 3) node[carbonBlank] () {};
+\draw[fill=white] (fdp_weights.corner 3) node[carbonGrey,fill=cyellow] () {};
+\draw[fill=white] (fdp_weights.corner 4) node[carbonBlank] () {};
+\draw[fill=white] (fdp_weights.corner 4) node[carbonGrey,fill=cgreen] () {};
+\draw[fill=white] (fdp_weights.corner 5) node[carbonBlank] () {};
+\draw[fill=white] (fdp_weights.corner 5) node[carbonGrey,fill=corange] () {};
+\node[fit=(fdp_weights) (fdp_weights_c2) (fdp_weights_c5), draw=none,label={right:{\normalsize}}] (fdp_weights_box) {};
+\node[labelFont] () at (fdp_weights.center) {FDP};
+
+% Dihydroxyacetone phosphate
+\node[carbon, below=2.75cm of fdp_weights_c2,fill=cblue] (dhap_weights_1) {};
+\node[carbonGrey, right=0.25cm of dhap_weights_1,fill=cred]  (dhap_weights_2) {};
+\node[carbonGrey, right=0.25cm of dhap_weights_2,fill=cyellow] (dhap_weights_3) {};
+\draw[carbonDraw,draw opacity=0.25] (dhap_weights_1) to (dhap_weights_2);
+\draw[carbonDraw,draw opacity=0.25] (dhap_weights_2) to (dhap_weights_3);
+\node[fit=(dhap_weights_1) (dhap_weights_2) (dhap_weights_3), draw=none,label={above:{\LARGE $\;\;$DHAP}}] (dhap_weights_box) {};
+
+% Glycerol 3-phosphate
+\node[carbonGrey, below=2.25cm of dhap_weights_box,fill=corange] (g3p_weights_2) {};
+\node[carbon, left=0.25cm of g3p_weights_2,fill=cblue]  (g3p_weights_1) {}; % changed from green to blue 
+\node[carbonGrey, right=0.25cm of g3p_weights_2,fill=cpurple] (g3p_weights_3) {};
+\draw[draw opacity=0.25] (g3p_weights_1) to (g3p_weights_2);
+\draw[draw opacity=0.25] (g3p_weights_2) to (g3p_weights_3);
+\node[fit=(g3p_weights_1) (g3p_weights_2) (g3p_weights_3), draw=none,label={below:{\LARGE G3P}}] (g3p_weights_box) {};
+
+% Transition arrows
+\draw[chmcArrow2,draw=none] (glucose_weights_c6) to[out=225,in=135] node[midway,left,labelFont] {v\textsubscript{1}} (g6p_weights_c6);
+\draw[efm5,line width=3pt] ([xshift=-3.2pt,yshift=+3.2pt]glucose_weights_c6.south west) to[out=225,in=125] ([xshift=-7.2pt,yshift=+0.9pt]g6p_weights_c6.center);
+\draw[efm2,line width=3pt] ([xshift=-1.1pt,yshift=1.1pt]glucose_weights_c6.south west) to[out=225,in=125] ([xshift=-1.5pt,yshift=-0.7pt]g6p_weights_c6.north west);
+\draw[efm1,line width=6pt] ([xshift=+2.05pt,yshift=-2.05pt]glucose_weights_c6.south west) to[out=225,in=125] ([xshift=+2.2pt,yshift=+1.8pt]g6p_weights_c6.north west);
+%\draw[chmcArrow2] ([xshift=-0.235cm,yshift=+0.35cm]g6p_weights_c6.north west) to (g6p_weights_c6.135);
+
+\draw[chmcArrow2,draw=none, out=225,in=90,looseness=1.25] (g6p_weights_c6) to node[midway,above left,yshift=0.6cm,xshift=+0.3cm,labelFont] {v\textsubscript{2}} (pgl_weights_c6);
+\draw[efm5,line width=3pt, out=225,in=90,looseness=1.25] (g6p_weights_c6) to ([xshift=-0.3pt,yshift=0.0cm]pgl_weights_c6.north);
+%\draw[chmcArrow2,black,line width=3pt] ([xshift=-0.01cm,yshift=0.15cm]pgl_weights_c6.north) to (pgl_weights_c6);
+
+\draw[chmcArrow2,line width=9pt,draw=none,out=-45,in=90,looseness=1.25] (g6p_weights_c6) to (f6p_weights_c2.north);
+\draw[efm2, line width=3pt, out=-45,in=90,looseness=1.26] ([xshift=-2.2pt,yshift=-2.2pt]g6p_weights_c6.south east) to ([xshift=-2.8pt,yshift=0.0cm]f6p_weights_c2.north);
+\draw[efm1,line width=6pt, out=-45,in=90,looseness=1.25] ([xshift=1.0pt,yshift=1.0pt]g6p_weights_c6.south east) to node[midway,above right,yshift=0.6cm,xshift=-0.3cm,labelFont] {\textcolor{black}{v\textsubscript{4}}} ([xshift=+1.6pt,yshift=0.0cm]f6p_weights_c2.north);
+%\draw[chmcArrow,line width=9pt] ([xshift=0.005cm,yshift=0.45cm]f6p_weights_c2.north) to (f6p_weights_c2.north);
+
+\draw[chmcArrow,line width=14pt,draw=none] (f6p_weights_c2) to[out=225,in=135,looseness=1] node[midway,below left,yshift=-0.3cm,labelFont,xshift=-4pt] {v\textsubscript{5}} (fdp_weights_c2);
+\draw[efm2,line width=3pt] ([xshift=-3.9pt,yshift=+3.9pt]f6p_weights_c2.south west) to[out=225,in=125] ([xshift=-6.1pt,yshift=-4.2pt]fdp_weights_c2.north west);
+\draw[efm1,line width=6pt] ([xshift=-0.76pt,yshift=0.76pt]f6p_weights_c2.south west) to[out=225,in=125] ([xshift=-2.4pt,yshift=-1.7pt]fdp_weights_c2.north west);
+\draw[efm3,line width=5pt] ([xshift=+3.1pt,yshift=-3.1pt]f6p_weights_c2.south west) to[out=225,in=125] ([xshift=+2.0pt,yshift=+1.5pt]fdp_weights_c2.north west);
+%\draw[chmcArrow,line width=14pt] ([xshift=-0.246cm,yshift=+0.45cm]fdp_weights_c2.north west) to (fdp_weights_c2.135);
+
+\draw[chmcArrow,line width=5pt,draw=none] (fdp_weights_c2) to[out=45,in=-45] node[midway,below right,yshift=-0.3cm,labelFont] {v\textsubscript{6}} (f6p_weights_c2);
+\draw[efm3,line width=5pt] ([xshift=-0.0pt,yshift=+0.0pt]fdp_weights_c2.north east) to[out=45,in=-45] ([xshift=+5pt,yshift=-6pt]f6p_weights_c2.south east);
+\draw[chmcArrow,efm3,line width=5pt] ([xshift=+0.12cm,yshift=-0.15cm]f6p_weights_c2.south east) to (f6p_weights_c2.-45);
+
+\draw[chmcArrow,line width=9pt,draw=none] (fdp_weights_c2) to[out=225,in=135] node[midway,left,labelFont] {v\textsubscript{7}} (dhap_weights_1);
+\draw[efm2,line width=3pt] ([xshift=-2.1pt,yshift=2.1pt]fdp_weights_c2.south west) to[out=225,in=135] ([xshift=-0.5pt,yshift=-0.3pt]dhap_weights_1.north west);
+\draw[efm1,line width=6pt] ([xshift=1.0pt,yshift=-1.0pt]fdp_weights_c2.south west) to[out=225,in=135] ([xshift=2.6pt,yshift=+2.9pt]dhap_weights_1.north west);
+%\draw[chmcArrow,line width=9pt] ([xshift=-0.231cm,yshift=+0.35cm]dhap_weights_1.north west) to (dhap_weights_1.135);
+
+\draw[chmcArrow,line width=8pt,draw=none] (dhap_weights_1) to[out=225,in=135] node[midway,left,labelFont] {v\textsubscript{8}} (g3p_weights_1);
+\draw[efm1,line width=6.0pt] ([xshift=-0.7pt,yshift=+0.7pt]dhap_weights_1.south west) to[out=225,in=125] ([xshift=-2.6pt,yshift=-1.7pt]g3p_weights_1.north west);
+\draw[efm4,line width=2pt] ([xshift=+2.1pt,yshift=-2.1pt]dhap_weights_1.south west) to[out=225,in=125] ([xshift=-2.6pt,yshift=+3.9pt]g3p_weights_1.center);
+%\draw[chmcArrow, line width=8pt] ([xshift=-0.225cm,yshift=+0.35cm]g3p_weights_1.north west) to (g3p_weights_1.135);
+
+\draw[chmcArrow,line width=2pt,draw=none] (g3p_weights_1) to[out=45,in=-45] node[midway,right,labelFont] {v\textsubscript{9}} (dhap_weights_1);
+\draw[efm4,line width=2pt] ([xshift=0.0pt,yshift=+0.0pt]g3p_weights_1.north east) to[out=45,in=-45,looseness=0.90] ([xshift=+6.0pt,yshift=-6.4pt]dhap_weights_1.center);
+\draw[chmcArrow,efm4,line width=2pt] ([xshift=+0.087cm,yshift=-0.10cm]dhap_weights_1.south east) to (dhap_weights_1.-45);
+
+% Transition arrows leaving inset
+\draw[chmcArrow2,draw=none] ([yshift=1.85cm]glucose_weights_c6.center) to node[midway,left,labelFont,xshift=-5pt] {v\textsubscript{0}} (glucose_weights_c6.north);
+\draw[efm5,line width=3.0pt] ([xshift=-4.5pt,yshift=1.85cm]glucose_weights_c6.center) to ([xshift=-4.5pt,yshift=0.0cm]glucose_weights_c6.north);
+\draw[efm2,line width=3.0pt] ([xshift=-1.5pt,yshift=1.85cm]glucose_weights_c6.center) to ([xshift=-1.5pt,yshift=0.0cm]glucose_weights_c6.north);
+\draw[efm1,line width=6.0pt] ([xshift=+3.0pt,yshift=1.85cm]glucose_weights_c6.center) to ([xshift=+3.0pt,yshift=0.0cm]glucose_weights_c6.north);
+%\draw[chmcArrow2] ([yshift=0.6cm]glucose_weights_c6.center) to (glucose_weights_c6.north);
+
+\node[below=3.0cm of pgl_weights_c6] (pgl_weights_out) {};
+\draw[chmcArrow,line width=3pt,draw=none] (pgl_weights_c6) to[out=225,in=135] node[midway,left,labelFont] {v\textsubscript{3}} (pgl_weights_out);
+\draw[efm5,line width=3.0pt] (pgl_weights_c6) to[out=225,in=135,looseness=0.9] ([xshift=-3.4pt,yshift=+4.0pt]pgl_weights_out.north west);
+\draw[chmcArrow,efm5,line width=3pt] ([xshift=-6.1pt,yshift=+3.0pt]pgl_weights_out.north) to (pgl_weights_out.north west);
+
+
+\node[below=6.85cm of pgl_weights_out] (dhap_weights_out) {};
+\node[right=1.5cm of dhap_weights_out] (g3p_weights_out) {};
+\draw[chmcArrow,line width=3pt,draw=none] (dhap_weights_1) to[out=180,in=90] node[midway,above left,labelFont] {v\textsubscript{10}} (dhap_weights_out);
+\draw[efm2,line width=3pt] (dhap_weights_1) to[out=180,in=90] ([yshift=4.0pt]dhap_weights_out.north);
+\draw[chmcArrow,efm2,line width=3pt] ([yshift=0.1cm]dhap_weights_out.north) to (dhap_weights_out.north);
+
+\draw[chmcArrow,line width=6pt,draw=none] (g3p_weights_1) to[out=225,in=90] node[midway,left,labelFont,xshift=-3pt] {v\textsubscript{11}} (g3p_weights_out);
+\draw[efm1,line width=6pt] (g3p_weights_1.south west) to[out=225,in=90] ([xshift=-0.5pt,yshift=8pt]g3p_weights_out.north);
+\draw[chmcArrow,efm1,line width=6pt] ([xshift=-0.3pt,yshift=0.3cm]g3p_weights_out.north) to (g3p_weights_out.north);
+
+
+
+% Framing box around atomic weights
+\node[gem_node_ph,left=1.0cm of pgl_weights_box] (box_weights_west) {};
+\node[gem_node_ph,right=0.1cm of f6p_weights_box] (box_weights_east) {};
+\node[gem_node_ph,below=0.1cm of g3p_weights_out.north,yshift=0.185cm] (box_weights_south) {};
+\node[gem_node_ph,above=1.44cm of glucose_weights_box.north] (box_weights_north) {};
+\node[gem_node_ph] (box_weights_north_west) at (box_weights_north -| box_weights_west) {};
+\node[gem_node_ph] (box_weights_north_east) at (box_weights_north -| box_weights_east) {};
+\node[gem_node_ph] (box_weights_south_west) at (box_weights_south -| box_weights_west) {};
+\node[gem_node_ph] (box_weights_south_east) at (box_weights_south -| box_weights_east) {};
+\node[fit=(box_weights_north_east) (box_weights_north_west) (box_weights_south_east) (box_weights_south_west), draw, ultra thick,inner sep=0pt,rounded corners=10pt] (box_weights) {};
+\node[fit=(box_weights_north_east) (box_weights_north_west) (box_weights_south_east) (box_weights_south_west), ultra thick,inner sep=0pt,label={[anchor=south]above:{}}] (box_weights) {};
+%\node[above=0.1cm of box_weights.north, anchor=south] () {\huge 4. Output AEFM weights};
+\node[above=0.1cm of box_weights.north,align=center,text width=6.0cm] () {\huge 5. Output estimated\\AEFM weights};
+

@@ -1,0 +1,134 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+% Default preamble
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{smithchart}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{dateplot}
+\usepgfplotslibrary{ternary}
+
+% Custom preamble from global variable:
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\definecolor{julia1}{HTML}{1F77B4}
+\definecolor{julia2}{HTML}{FF7F0E}
+\definecolor{julia3}{HTML}{2CA02C}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\tikzset{
+    pinnode/.style={draw=none, fill=none, outer sep=0.15, font=\tiny},
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pgfplotsset{
+    /pgfplots/mybar/.style 1 args={%
+        legend image code/.code={%
+            \draw[#1]
+                (0cm,-0.1cm)
+                rectangle
+                (0.2cm,0.25cm);
+        }
+    }
+}
+
+\begin{document}
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            height=7cm,
+            width=7cm,
+            ytick = {0, 2, 4},
+            yticklabels = {{$10^0$}, {$10^2$}, {$10^4$}},
+            xtick = {1, 2, 3, 4, 5},
+            xticklabels = {{E. coli core}, {iAB RBC 283}, {iIT341}, {iSB619}, {HepG2}},
+            xticklabel style = {rotate=45},
+            ylabel = {Per source metabolite\\[0.1cm]$\bigg(\frac{\max(\text{\# Carbon AEFMs})}{\min(\text{\# Carbon AEFMs})}\bigg)$},
+            ylabel style = {align=center},
+            ymin=-1.0,
+            ymax=5,
+            xmin=0.5,
+            xmax=5.5,
+            xtick pos = bottom,
+            ytick pos = left,
+            legend pos=outer north east,
+            legend cell align=left,
+            axis line style={thick,black},
+            xtick style={/pgfplots/on layer=axis foreground, thick, black},
+            ytick style={/pgfplots/on layer=axis foreground, thick, black},
+        ]
+            \addplot [%
+                scatter,
+                only marks,
+                scatter src=explicit symbolic,
+                mark size=2.0pt,
+                scatter/classes={%
+                    1={mark=*,draw=black,fill=cred},
+                    2={mark=*,draw=black,fill=cgreen},
+                    3={mark=*,draw=black,fill=cpurple},
+                    4={mark=*,draw=black,fill=corange},
+                    5={mark=*,draw=black,fill=cblue}
+                }
+            ] table[x=z, y=y, meta=x]{figure-jitter-max-over-min-log10-number-efms-carbon.dat};
+
+            % Manual labels of interest
+            \node[pinnode] at (axis cs: 4.94, 4.7) (phenylalanine) {Phenylalanine$^*$};
+            \draw[line width=0.5pt] (axis cs: 4.9948498117867500, 4.22772734841117400) -- (phenylalanine);
+            \node[pinnode] at (axis cs: 4.99, 3.982) (methionine) {Methionine$^*$};
+            \draw[line width=0.5pt] (axis cs: 4.99856649012589, 3.435351083036678) -- (methionine);
+            \node[pinnode] at (axis cs: 5.11, 3.2) (histidine) {Histidine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.113849293131518, 2.7963790083759443) -- (histidine);
+            \node[pinnode] at (axis cs: 4.075, 2.567) (isoleucine) {Isoleucine};
+            \draw[line width=0.5pt] (axis cs: 2.7793806780476875, 0.0) -- (isoleucine);
+            \draw[line width=0.5pt] (axis cs: 4.0754640160363770, 1.0511525224473812) -- (isoleucine);
+            \draw[line width=0.5pt] (axis cs: 5.0941185801427600, 2.5668772945310625) -- (isoleucine);
+            \node[pinnode] at (axis cs: 4.5, 1.7) (lysine) {Lysine};
+            \draw[line width=0.5pt] (axis cs: 4.9488657750465440, 1.96829937920344440) -- (lysine);
+
+            \node[pinnode] at (axis cs: 4.5, 2.3) (leucine) {Leucine$^*$};
+            \draw[line width=0.5pt] (axis cs: 5.0296293853815195, 1.9682993799034444) -- (leucine);
+
+            \node[pinnode] at (axis cs: 3.5, -0.5) (glycine) {Glycine};
+            \draw[line width=0.5pt] (axis cs: 1.801291611283892, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 2.920326842878735, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 4.047488634997549, 0) -- (glycine);
+            \draw[line width=0.5pt] (axis cs: 5.183617418150977, 0) -- (glycine);
+
+            \node[pinnode] at (axis cs: 3.3, 3.0) (gps) {Glycerophosphoserine};
+            \draw[line width=0.5pt] (axis cs: 3.9509088647355926, 1.96791653166285988) -- (gps);
+
+            \node[pinnode] at (axis cs: 1.6, 0.885) (AKG) {AKG$^*$};
+            \draw[line width=0.5pt] (axis cs: 1.0252323439443554, 0.8846065812979305) -- (AKG);
+
+            \node[pinnode] at (axis cs: 2.0, 3.5) (nadmla) {N-Acetyl-D-muramoyl-L-alanine};
+            \draw[line width=0.5pt] (axis cs: 2.9801804884841383, 2.2121876044039577) -- (nadmla);
+
+            \node[pinnode] at (axis cs: 1.93, 1.4) (salh) {S-Adenoyl-L-homocysteine};
+            \draw[line width=0.5pt] (axis cs: 1.9278778556290500, 2.0934216851622350) -- (salh);
+            \draw[line width=0.5pt] (axis cs: 2.8908375782619835, 1.7745169657285496) -- (salh);
+
+            \node[pinnode] at (axis cs: 1.666, 2.6) (o5p) {Orotidine 5'-phosphate};
+            \draw[line width=0.5pt] (axis cs: 1.6661507207468910, 1.6020599913279623) -- (o5p);
+            \draw[line width=0.5pt] (axis cs: 2.7502479469744614, 1.7668182877659970) -- (o5p);
+            \draw[line width=0.5pt] (axis cs: 4.0233417358927310, 1.6014881749426513) -- (o5p);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
+

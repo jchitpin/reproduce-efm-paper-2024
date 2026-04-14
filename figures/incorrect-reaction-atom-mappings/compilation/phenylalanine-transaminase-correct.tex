@@ -1,0 +1,135 @@
+\documentclass{standalone}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+%\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+%\setchemfig{atom sep=10pt}
+\setchemfig{%
+  scheme debug=false,
+  atom style={scale=0.5},
+  atom sep=3.5em,
+  bond offset=1pt
+}
+
+\schemestart\
+    \chemname{%
+        \chemfig{%
+                   \mcfright{O}{\mcfatomno{7}}% 1
+            =[:270]\mcfatomno{5}% 2
+                      (
+                -[:210]\mcfleft{\mcfatomno{6}}{HO}% 3
+                      )
+            -[:330]\mcfatomno{4}% 4
+             -[:30]\mcfatomno{3}% 5
+             -[:330]\mcfatomno{\colorbox{cblue}{14}}% 6
+                      (
+                      =[:270]\colorbox{cyellow}{O}\mcfright{}{\mcfatomno{15}}% 7
+                      )
+                    -[:30]\mcfatomno{\colorbox{cblue}{12}}% 8
+                      (
+                      =[:90]\mcfright{\colorbox{cblue}{O}}{\mcfatomno{11}}% 9
+                      )
+                      -[:330]\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{13}}% 10
+        }
+    }{Alpha-ketoglutarate}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemnameinit{}
+    \chemname{%
+        \chemfig{%
+            \colorbox{white}{}\colorbox{white}{}\mcfright{\colorbox{cred}{NH$_2$}}{\mcfatomno{1}}% 1
+                            >[:90]\mcfatomno{\colorbox{corange}{2}}% 2
+                               (
+                           -[:30]\mcfatomno{\colorbox{corange}{8}}% 10
+                                   (
+                                   -[:330]\mcfright{\colorbox{corange}{OH}}{\mcfatomno{9}}% 12
+                                   )
+                                   =[:90]\mcfright{\colorbox{corange}{O}}{\mcfatomno{10}}% 11
+                               )
+                     -[:150]\mcfatomno{16}% 3
+                     -[:210]\mcfatomno{17}% 4
+                     -[:150]\mcfatomno{22}% 5
+                               (
+            -[:270,,,,draw=none]\mcfcringle{1.3}% (o)
+                               )
+                     -[:210]\mcfatomno{21}% 6
+                     -[:270]\mcfatomno{20}% 7
+                     -[:330]\mcfatomno{19}% 8
+                      -[:30]\mcfatomno{18}% 9
+                               (
+                          -[:90]\phantom{4}% -> 4
+                               )
+        }
+    }{Phenylalanine\vspace*{2pt}}
+    \arrow{<=>[\footnotesize KEGG R00694][\footnotesize(Manually corrected)]}[0, 1.75]
+    \chemname{%
+        \chemfig{%
+            \colorbox{white}{}\colorbox{white}{}\mcfright{\colorbox{cred}{NH$_2$}}{\mcfatomno{1}}% 1
+                   -[:90]\mcfatomno{\colorbox{cblue}{14}}% 2
+                      (
+                  -[:30]\mcfatomno{\colorbox{cblue}{12}}% 8
+                          (
+                          -[:330]\mcfright{\colorbox{cblue}{OH}}{\mcfatomno{13}}% 10
+                          )
+                          =[:90]\mcfright{\colorbox{cblue}{O}}{\mcfatomno{11}}% 9
+                      )
+            -[:150]\mcfatomno{3}% 3
+            -[:210]\mcfatomno{4}% 4
+            -[:150]\mcfatomno{5}% 5
+                      (
+                 =[:90]\mcfright{O}{\mcfatomno{7}}% 6
+                      )
+            -[:210]\mcfleft{\mcfatomno{6}}{HO}% 7
+        }
+    }{Glutamate}
+    \arrow{0}[,0]
+    \+
+    \arrow{0}[,0]
+    \chemname{%
+        \chemfig{
+            \mcfright{\colorbox{corange}{O}}{\mcfatomno{10}}% 1
+                    =[:270]\mcfatomno{\colorbox{corange}{8}}% 2
+                       (
+                       -[:330]\mcfright{\colorbox{corange}{OH}}{\mcfatomno{9}}% 3
+                       )
+                       -[:210]\mcfatomno{\colorbox{corange}{2}}% 4
+                       (
+                       =[:270]\mcfright{\colorbox{cyellow}{O}}{\mcfatomno{15}}% 5
+                       )
+             -[:150]\mcfatomno{16}% 6
+             -[:210]\mcfatomno{17}% 7
+             -[:150]\mcfatomno{22}% 8
+                       (
+    -[:270,,,,draw=none]\mcfcringle{1.3}% (o)
+                       )
+             -[:210]\mcfatomno{21}% 9
+             -[:270]\mcfatomno{20}% 10
+             -[:330]\mcfatomno{19}% 11
+              -[:30]\mcfatomno{18}% 12
+                       (
+                  -[:90]\phantom{7}% -> 7
+                       )
+        }
+    }{Phenylpyruvate}
+    \arrow{0}[,0]
+\schemestop\
+
+\end{document}
+

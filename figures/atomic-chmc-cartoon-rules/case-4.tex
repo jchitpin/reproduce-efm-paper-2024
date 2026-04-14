@@ -1,0 +1,144 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{%
+    patterns, plotmarks, backgrounds, shapes, arrows, calc, trees, positioning,
+    chains, shapes.geometric, decorations.pathreplacing,
+    decorations.pathmorphing, shapes.arrows, decorations.markings, quotes,
+    arrows.meta, spy, fit, matrix, math
+}
+\usepackage{amsmath,amsthm,bm}
+
+% General image and colour support
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Captions and subcaptions
+\usepackage{caption}
+\usepackage[labelformat=parens]{subcaption}
+%\renewcommand\thesubfigure{\sffamily\alph{subfigure})}
+
+% Define colours
+\definecolor{cred}{HTML}{ED1C24}
+\definecolor{cgrey}{HTML}{7F7F7F}
+\definecolor{cblue}{HTML}{00A2E8}
+\definecolor{cgreen}{HTML}{22B14C}
+\definecolor{cyellow}{HTML}{FFF200}
+\definecolor{corange}{HTML}{EA7904}
+\definecolor{cpurple}{HTML}{9100FC}
+
+\makeatletter
+\tikzset{circle split part fill/.style  args={#1,#2}{%
+    alias=tmp@name, % Jake's idea !!
+        postaction={%
+            insert path={%
+                \pgfextra{%
+                    \pgfpointdiff{\pgfpointanchor{\pgf@node@name}{center}}
+                    {\pgfpointanchor{\pgf@node@name}{east}}
+                    \pgfmathsetmacro\insiderad{\pgf@x}
+                    \fill[#1] (\pgf@node@name.base)
+                    ([xshift=-\pgflinewidth]\pgf@node@name.east)
+                    arc
+                    (0:180:\insiderad-\pgflinewidth)--cycle;
+                    \fill[#2] (\pgf@node@name.base)
+                    ([xshift=\pgflinewidth]\pgf@node@name.west)
+                    arc
+                    (180:360:\insiderad-\pgflinewidth)--cycle;
+                }
+            }
+        }
+    }
+}
+\makeatother
+
+% Define main node types
+\tikzstyle{ball} = [%
+    circle,
+    draw=black,
+    minimum height=0.5cm,
+    line width=1.0pt,
+    align=center,
+    fill=cgrey,
+    fill opacity=1.0,
+    text opacity=1.0,
+    text centered,
+    text=black,
+    inner sep=0.5pt,
+    font=\normalsize
+]
+
+\begin{document}
+
+\tikzmath{%
+    \innerspace=0.25pt;
+    \outerspace=1.5pt;
+    \rxnspace=5pt;
+    \fluxspace=0.5pt;
+    \multispace = 0.5pt;
+}
+\begin{tikzpicture}[]
+    %% Reaction mapping
+    % Substrate copy 1
+    \node[ball,fill=cblue] (b1) {$a_1$};
+    \node[ball,right=\innerspace of b1,fill=corange] (b2) {$a_2$};
+    \draw[-,line width=1.0pt] (b1.center) to (b2.center);
+    \node[ball,fill=cblue] (b1) {$a_1$};
+    \node[ball,right=\innerspace of b1,fill=corange] (b2) {$a_2$};
+
+    % Substrate copy 2
+    \node[ball,right=\multispace of b2,fill=cred] (b3) {$a_1$};
+    \node[ball,right=\innerspace of b3,fill=cgrey] (b4) {$a_2$};
+    \draw[-,line width=1.0pt] (b3.center) to (b4.center);
+    \node[ball,right=\multispace of b2,fill=cred] (b3) {$a_1$};
+    \node[ball,right=\innerspace of b3,fill=cgrey] (b4) {$a_2$};
+
+    % Substrate addition
+    \draw[draw=none] (b2.east) -- node[] {$\bm{+}$} (b3.west);
+
+    % Product 1
+    \node[ball,right=\outerspace of b4,fill=cblue] (b5) {$b_1$};
+    \node[ball,right=\innerspace of b5,fill=corange] (b6) {$b_2$};
+    \draw[-,line width=1.0pt] (b5.center) to (b6.center);
+    \node[ball,right=\outerspace of b4,fill=cblue] (b5) {$b_1$};
+    \node[ball,right=\innerspace of b5,fill=corange] (b6) {$b_2$};
+
+    % Product 2
+    \node[ball,right=\multispace of b6,fill=cred] (b7) {$b_1$};
+    \node[ball,right=\innerspace of b7,fill=cgrey] (b8) {$b_2$};
+    \draw[-,line width=1.0pt] (b7.center) to (b8.center);
+    \node[ball,right=\multispace of b6,fill=cred] (b7) {$b_1$};
+    \node[ball,right=\innerspace of b7,fill=cgrey] (b8) {$b_2$};
+
+    % Product addition
+    \draw[draw=none] (b6.east) -- node[] {$\bm{+}$} (b7.west);
+
+    % Reaction arrow
+    \draw[%
+        line width=1.0pt,-stealth'
+    ] ([xshift=+\rxnspace]b4.east) -- node[above,font=\Large] {$v$} ([xshift=-\rxnspace]b5.west);
+
+    %% Atomic flux network
+    \node[ball,right=\fluxspace of b8,fill=none,draw=white] (ph1)   {\textcolor{white}{$a_1$}};
+
+    \node[ball,right=\fluxspace of ph1,fill=none] (b9)   {$a_1$};
+    \node[ball,above=0cm of b9.east,rotate=90,circle split part fill={cblue,cred},anchor=south] (b9)  {};
+    \node[ball,right=\fluxspace of ph1,fill=none] (b9)   {$a_1$};
+
+    \node[ball,below=\fluxspace of b9,fill=none] (b10)  {$b_1$};
+    \node[ball,above=0cm of b10.east,rotate=90,circle split part fill={cblue,cred},anchor=south] (b10)  {};
+    \node[ball,below=\fluxspace of b9,fill=none] (b10)  {$b_1$};
+    \draw[line width=1.0pt,-stealth'] (b9.south) -- node[right,font=\Large] {$2v$} (b10.north);
+
+    \node[ball,right=\fluxspace of b9,fill=none] (b11)  {$a_2$};
+    \node[ball,above=0cm of b11.east,rotate=90,circle split part fill={corange,cgrey},anchor=south] (b11)  {};
+    \node[ball,right=\fluxspace of b9,fill=none] (b11)  {$a_2$};
+
+    \node[ball,below=\fluxspace of b11,fill=none] (b12)  {$b_2$};
+    \node[ball,above=0cm of b12.east,rotate=90,circle split part fill={corange,cgrey},anchor=south] (b12)  {};
+    \node[ball,below=\fluxspace of b11,fill=none] (b12)  {$b_2$};
+
+    \draw[line width=1.0pt,-stealth'] (b11.south) -- node[right,font=\Large] {$2v$} (b12.north);
+\end{tikzpicture}
+
+\end{document}
+
+
