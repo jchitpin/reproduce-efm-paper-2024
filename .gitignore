@@ -4,6 +4,8 @@ data/gems/hepg2/atomic-efms-carbon
 data/gems/hepg2/atomic-efms-nitrogen
 data/gems/hepg2/atomic-efm-weights-carbon
 data/gems/hepg2/atomic-efm-weights-nitrogen
+data/gems/hepg2/processed/linked-list-reactions-dict-carbon.jld2
+data/gems/hepg2/processed/linked-list-reactions-dict-nitrogen.jld2
 data/gems/hepg2/processed/sankey-diagram-linked-lists-carbon.jld2
 data/gems/hepg2/processed/sankey-diagram-linked-lists-nitrogen.jld2
 data/gems/hepg2/processed/sankey-diagram-linked-list-compressed-carbon.jld2
