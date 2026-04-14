@@ -65,7 +65,7 @@ $ bash jobs/02-install-r-packages.sh
 
 ### MATLAB
 
-Download [FluxModeCalculator](https://bioinformaticshome.com/db/tool/FluxModeCalculator) to `/some/directory/flux-mode-calculator`.
+Unzip `fluxmodecalculator.zip` to `/some/directory/flux-mode-calculator`.
 
 Add the following line in `startup.mat` to load this automatically load this
 package into MATLAB.
